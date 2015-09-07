@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: e773f1c0363e3fd44a47fef4477b34a1
+timeCreated: 1441642498
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DarkGreenApple
+    100004: DarkRedApple
+    100006: GreenApple
+    100008: RedApple
+    100010: AppleTree
+    100012: AppleTree1
+    100014: AppleTree_001
+    100016: AppleTreeHQ1
+    100018: AppleTreeHQ2
+    100020: AppleTreeHQ3
+    100022: AppleTreeLQ1
+    100024: AppleTreeLQ2
+    100026: AppleTreeLQ3
+    100028: AppleTreeLQ4
+    100030: AppleTreeLQ5
+    100032: AppleTreeLQ6
+    100034: AppleTreeLQ7
+    100036: AppleTreeLQ8
+    400000: //RootNode
+    400002: DarkGreenApple
+    400004: DarkRedApple
+    400006: GreenApple
+    400008: RedApple
+    400010: AppleTree
+    400012: AppleTree1
+    400014: AppleTree_001
+    400016: AppleTreeHQ1
+    400018: AppleTreeHQ2
+    400020: AppleTreeHQ3
+    400022: AppleTreeLQ1
+    400024: AppleTreeLQ2
+    400026: AppleTreeLQ3
+    400028: AppleTreeLQ4
+    400030: AppleTreeLQ5
+    400032: AppleTreeLQ6
+    400034: AppleTreeLQ7
+    400036: AppleTreeLQ8
+    2300000: DarkGreenApple
+    2300002: DarkRedApple
+    2300004: GreenApple
+    2300006: RedApple
+    2300008: AppleTree
+    2300010: AppleTree1
+    2300012: AppleTree_001
+    2300014: AppleTreeHQ1
+    2300016: AppleTreeHQ2
+    2300018: AppleTreeHQ3
+    2300020: AppleTreeLQ1
+    2300022: AppleTreeLQ2
+    2300024: AppleTreeLQ3
+    2300026: AppleTreeLQ4
+    2300028: AppleTreeLQ5
+    2300030: AppleTreeLQ6
+    2300032: AppleTreeLQ7
+    2300034: AppleTreeLQ8
+    3300000: DarkGreenApple
+    3300002: DarkRedApple
+    3300004: GreenApple
+    3300006: RedApple
+    3300008: AppleTree
+    3300010: AppleTree1
+    3300012: AppleTree_001
+    3300014: AppleTreeHQ1
+    3300016: AppleTreeHQ2
+    3300018: AppleTreeHQ3
+    3300020: AppleTreeLQ1
+    3300022: AppleTreeLQ2
+    3300024: AppleTreeLQ3
+    3300026: AppleTreeLQ4
+    3300028: AppleTreeLQ5
+    3300030: AppleTreeLQ6
+    3300032: AppleTreeLQ7
+    3300034: AppleTreeLQ8
+    4300000: DarkRedApple
+    4300002: DarkGreenApple
+    4300004: RedApple
+    4300006: GreenApple
+    4300008: AppleTree_001
+    4300010: AppleTree
+    4300012: AppleTree1
+    4300014: AppleTreeLQ1
+    4300016: AppleTreeLQ2
+    4300018: AppleTreeLQ3
+    4300020: AppleTreeLQ8
+    4300022: AppleTreeLQ7
+    4300024: AppleTreeLQ6
+    4300026: AppleTreeLQ5
+    4300028: AppleTreeLQ4
+    4300030: AppleTreeHQ3
+    4300032: AppleTreeHQ2
+    4300034: AppleTreeHQ1
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .449999988
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
