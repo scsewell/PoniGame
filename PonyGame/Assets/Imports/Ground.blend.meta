@@ -6,10 +6,159 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Ground
+    100004: SAA
+    100006: Ground_001
+    100008: NurbsPath
+    100010: Path
+    100012: NurbsPath_001
+    100014: NurbsPath_002
+    100016: NurbsPath_003
+    100018: Path_001
+    100020: Path_002
+    100022: Path_003
+    100024: NurbsPath_004
+    100026: Path_004
+    100028: Path_007
+    100030: Parths
+    100032: Plane
+    100034: Plane_MeshPart0
+    100036: Plane_MeshPart1
+    100038: NurbsPath_005
+    100040: Path_005
+    100042: Plane_001
+    100044: Plane_002
+    100046: RIverBed
+    100048: RIverBed_001
+    100050: Plane_003
+    100052: Plane_004
+    100054: Plane_005
+    100056: Plane_006
+    100058: RiverBed
+    100060: SAATerrain
     400000: //RootNode
+    400002: Ground
+    400004: SAA
+    400006: Ground_001
+    400008: NurbsPath
+    400010: Path
+    400012: NurbsPath_001
+    400014: NurbsPath_002
+    400016: NurbsPath_003
+    400018: Path_001
+    400020: Path_002
+    400022: Path_003
+    400024: NurbsPath_004
+    400026: Path_004
+    400028: Path_007
+    400030: Parths
+    400032: Plane
+    400034: Plane_MeshPart0
+    400036: Plane_MeshPart1
+    400038: NurbsPath_005
+    400040: Path_005
+    400042: Plane_001
+    400044: Plane_002
+    400046: RIverBed
+    400048: RIverBed_001
+    400050: Plane_003
+    400052: Plane_004
+    400054: Plane_005
+    400056: Plane_006
+    400058: RiverBed
+    400060: SAATerrain
     2300000: //RootNode
+    2300002: Ground
+    2300004: SAA
+    2300006: Ground_001
+    2300008: NurbsPath
+    2300010: Path
+    2300012: NurbsPath_001
+    2300014: NurbsPath_002
+    2300016: NurbsPath_003
+    2300018: Path_001
+    2300020: Path_002
+    2300022: Path_003
+    2300024: NurbsPath_004
+    2300026: Path_004
+    2300028: Path_007
+    2300030: Parths
+    2300032: Plane_MeshPart0
+    2300034: Plane_MeshPart1
+    2300036: Plane
+    2300038: NurbsPath_005
+    2300040: Path_005
+    2300042: Plane_001
+    2300044: Plane_002
+    2300046: RIverBed
+    2300048: RIverBed_001
+    2300050: Plane_003
+    2300052: Plane_004
+    2300054: Plane_005
+    2300056: Plane_006
+    2300058: RiverBed
+    2300060: SAATerrain
     3300000: //RootNode
+    3300002: Ground
+    3300004: SAA
+    3300006: Ground_001
+    3300008: NurbsPath
+    3300010: Path
+    3300012: NurbsPath_001
+    3300014: NurbsPath_002
+    3300016: NurbsPath_003
+    3300018: Path_001
+    3300020: Path_002
+    3300022: Path_003
+    3300024: NurbsPath_004
+    3300026: Path_004
+    3300028: Path_007
+    3300030: Parths
+    3300032: Plane_MeshPart0
+    3300034: Plane_MeshPart1
+    3300036: Plane
+    3300038: NurbsPath_005
+    3300040: Path_005
+    3300042: Plane_001
+    3300044: Plane_002
+    3300046: RIverBed
+    3300048: RIverBed_001
+    3300050: Plane_003
+    3300052: Plane_004
+    3300054: Plane_005
+    3300056: Plane_006
+    3300058: RiverBed
+    3300060: SAATerrain
     4300000: Ground
+    4300002: SAA
+    4300004: Ground_001
+    4300006: NurbsPath
+    4300008: Path
+    4300010: NurbsPath_003
+    4300012: Path_003
+    4300014: NurbsPath_002
+    4300016: Path_002
+    4300018: NurbsPath_001
+    4300020: Path_001
+    4300022: NurbsPath_004
+    4300024: Path_004
+    4300026: Path_007
+    4300028: Parths
+    4300030: Plane_MeshPart0
+    4300032: Plane_MeshPart1
+    4300034: Plane
+    4300036: NurbsPath_005
+    4300038: Path_005
+    4300040: Plane_002
+    4300042: Plane_001
+    4300044: RIverBed
+    4300046: RIverBed_001
+    4300048: Plane_005
+    4300050: Plane_004
+    4300052: Plane_003
+    4300054: Plane_006
+    4300056: RiverBed
+    4300058: SAATerrain
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -35,8 +184,8 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .349999994
-    meshCompression: 3
+    globalScale: .400000006
+    meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
