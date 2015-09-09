@@ -85,7 +85,7 @@ public class TSMovement : MonoBehaviour
             }
             inputs.forward = Input.GetAxis("Vertical");
             inputs.run = Input.GetKey(KeyCode.LeftShift) && Input.GetAxis("Vertical") > 0;
-            inputs.jump = Input.GetButtonDown("Jump");
+            inputs.jump = Input.GetButton("Jump");
 
             ExecuteMovement(inputs);
         }
