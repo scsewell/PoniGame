@@ -46,6 +46,7 @@ ModelImporter:
     100076: Circle_003
     100078: Water
     100080: SAATerrainDistant
+    100082: SAAWalls
     400000: //RootNode
     400002: Ground
     400004: SAA
@@ -87,6 +88,7 @@ ModelImporter:
     400076: Circle_003
     400078: Water
     400080: SAATerrainDistant
+    400082: SAAWalls
     2300000: //RootNode
     2300002: Ground
     2300004: SAA
@@ -128,6 +130,7 @@ ModelImporter:
     2300076: Circle_003
     2300078: Water
     2300080: SAATerrainDistant
+    2300082: SAAWalls
     3300000: //RootNode
     3300002: Ground
     3300004: SAA
@@ -169,6 +172,7 @@ ModelImporter:
     3300076: Circle_003
     3300078: Water
     3300080: SAATerrainDistant
+    3300082: SAAWalls
     4300000: Ground
     4300002: SAA
     4300004: Ground_001
@@ -209,6 +213,7 @@ ModelImporter:
     4300074: Circle_003
     4300076: Water
     4300078: SAATerrainDistant
+    4300080: SAAWalls
     7400000: Default Take
     9500000: //RootNode
   materials:

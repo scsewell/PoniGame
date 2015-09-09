@@ -144,10 +144,16 @@ public class TSMovement : MonoBehaviour
     {
         Rigidbody body = hit.collider.attachedRigidbody;
 
-        //dont move the rigidbody if the character is on top of it
+        // dont move the rigidbody if the character is on top of it
         if (m_CollisionFlags == CollisionFlags.Below)
         {
             return;
+        }
+
+        // if we are airborne and hit our head reverse our vertical velocity
+        if (m_CollisionFlags == CollisionFlags.Above && !m_controller.isGrounded)
+        {
+            m_move.y *= -0.5f;
         }
 
         if (body == null || body.isKinematic)
