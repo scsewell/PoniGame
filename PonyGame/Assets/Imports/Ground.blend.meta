@@ -45,6 +45,7 @@ ModelImporter:
     100074: Circle_002
     100076: Circle_003
     100078: Water
+    100080: SAATerrainDistant
     400000: //RootNode
     400002: Ground
     400004: SAA
@@ -85,6 +86,7 @@ ModelImporter:
     400074: Circle_002
     400076: Circle_003
     400078: Water
+    400080: SAATerrainDistant
     2300000: //RootNode
     2300002: Ground
     2300004: SAA
@@ -125,6 +127,7 @@ ModelImporter:
     2300074: Circle_002
     2300076: Circle_003
     2300078: Water
+    2300080: SAATerrainDistant
     3300000: //RootNode
     3300002: Ground
     3300004: SAA
@@ -165,6 +168,7 @@ ModelImporter:
     3300074: Circle_002
     3300076: Circle_003
     3300078: Water
+    3300080: SAATerrainDistant
     4300000: Ground
     4300002: SAA
     4300004: Ground_001
@@ -204,6 +208,7 @@ ModelImporter:
     4300072: Circle_002
     4300074: Circle_003
     4300076: Water
+    4300078: SAATerrainDistant
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -262,8 +267,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
