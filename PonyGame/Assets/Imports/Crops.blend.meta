@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: cf7b0c6b6f77d054fb99ef947bcd4f0b
+timeCreated: 1441728143
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cattail1
+    100002: Cattail2
+    100004: Cattail3
+    100006: Corn1
+    100008: Corn2
+    100010: //RootNode
+    100012: Crops1
+    100014: Crops1_1
+    100016: Crops1_2
+    100018: Crops1_3
+    100020: Crops1_4
+    100022: Crops2_1
+    100024: Crops2_2
+    100026: Crops2_3
+    100028: Crops2_4
+    100030: Crops3_1
+    100032: Crops3_2
+    100034: Crops3_3
+    100036: Crops3_4
+    100038: Crops4_1
+    100040: Crops4_2
+    100042: Crops4_3
+    100044: Crops4_4
+    400000: Cattail1
+    400002: Cattail2
+    400004: Cattail3
+    400006: Corn1
+    400008: Corn2
+    400010: //RootNode
+    400012: Crops1
+    400014: Crops1_1
+    400016: Crops1_2
+    400018: Crops1_3
+    400020: Crops1_4
+    400022: Crops2_1
+    400024: Crops2_2
+    400026: Crops2_3
+    400028: Crops2_4
+    400030: Crops3_1
+    400032: Crops3_2
+    400034: Crops3_3
+    400036: Crops3_4
+    400038: Crops4_1
+    400040: Crops4_2
+    400042: Crops4_3
+    400044: Crops4_4
+    2300000: Cattail1
+    2300002: Cattail2
+    2300004: Cattail3
+    2300006: Corn1
+    2300008: Corn2
+    2300010: Crops1
+    2300012: Crops1_1
+    2300014: Crops1_2
+    2300016: Crops1_3
+    2300018: Crops1_4
+    2300020: Crops2_1
+    2300022: Crops2_2
+    2300024: Crops2_3
+    2300026: Crops2_4
+    2300028: Crops3_1
+    2300030: Crops3_2
+    2300032: Crops3_3
+    2300034: Crops3_4
+    2300036: Crops4_1
+    2300038: Crops4_2
+    2300040: Crops4_3
+    2300042: Crops4_4
+    3300000: Cattail1
+    3300002: Cattail2
+    3300004: Cattail3
+    3300006: Corn1
+    3300008: Corn2
+    3300010: Crops1
+    3300012: Crops1_1
+    3300014: Crops1_2
+    3300016: Crops1_3
+    3300018: Crops1_4
+    3300020: Crops2_1
+    3300022: Crops2_2
+    3300024: Crops2_3
+    3300026: Crops2_4
+    3300028: Crops3_1
+    3300030: Crops3_2
+    3300032: Crops3_3
+    3300034: Crops3_4
+    3300036: Crops4_1
+    3300038: Crops4_2
+    3300040: Crops4_3
+    3300042: Crops4_4
+    4300000: Crops4_3
+    4300002: Crops4_4
+    4300004: Crops4_2
+    4300006: Crops4_1
+    4300008: Crops2_4
+    4300010: Crops2_3
+    4300012: Crops2_2
+    4300014: Crops2_1
+    4300016: Crops1_1
+    4300018: Crops1_2
+    4300020: Crops1_3
+    4300022: Crops1_4
+    4300024: Crops3_4
+    4300026: Crops3_3
+    4300028: Crops3_1
+    4300030: Crops3_2
+    4300032: Cattail3
+    4300034: Cattail2
+    4300036: Cattail1
+    4300038: Corn2
+    4300040: Corn1
+    4300042: Crops1
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

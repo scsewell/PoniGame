@@ -36,6 +36,15 @@ ModelImporter:
     100056: Plane_006
     100058: RiverBed
     100060: SAATerrain
+    100062: Circle
+    100064: Circle_001
+    100066: SAATerrain_001
+    100068: SAATerrain_001_MeshPart0
+    100070: SAATerrain_001_MeshPart1
+    100072: SAATerrainBackup
+    100074: Circle_002
+    100076: Circle_003
+    100078: Water
     400000: //RootNode
     400002: Ground
     400004: SAA
@@ -67,6 +76,15 @@ ModelImporter:
     400056: Plane_006
     400058: RiverBed
     400060: SAATerrain
+    400062: Circle
+    400064: Circle_001
+    400066: SAATerrain_001
+    400068: SAATerrain_001_MeshPart0
+    400070: SAATerrain_001_MeshPart1
+    400072: SAATerrainBackup
+    400074: Circle_002
+    400076: Circle_003
+    400078: Water
     2300000: //RootNode
     2300002: Ground
     2300004: SAA
@@ -98,6 +116,15 @@ ModelImporter:
     2300056: Plane_006
     2300058: RiverBed
     2300060: SAATerrain
+    2300062: Circle
+    2300064: Circle_001
+    2300066: SAATerrain_001_MeshPart0
+    2300068: SAATerrain_001_MeshPart1
+    2300070: SAATerrain_001
+    2300072: SAATerrainBackup
+    2300074: Circle_002
+    2300076: Circle_003
+    2300078: Water
     3300000: //RootNode
     3300002: Ground
     3300004: SAA
@@ -129,6 +156,15 @@ ModelImporter:
     3300056: Plane_006
     3300058: RiverBed
     3300060: SAATerrain
+    3300062: Circle
+    3300064: Circle_001
+    3300066: SAATerrain_001_MeshPart0
+    3300068: SAATerrain_001_MeshPart1
+    3300070: SAATerrain_001
+    3300072: SAATerrainBackup
+    3300074: Circle_002
+    3300076: Circle_003
+    3300078: Water
     4300000: Ground
     4300002: SAA
     4300004: Ground_001
@@ -159,6 +195,15 @@ ModelImporter:
     4300054: Plane_006
     4300056: RiverBed
     4300058: SAATerrain
+    4300060: SAATerrain_001_MeshPart0
+    4300062: SAATerrain_001_MeshPart1
+    4300064: Circle_001
+    4300066: Circle
+    4300068: SAATerrain_001
+    4300070: SAATerrainBackup
+    4300072: Circle_002
+    4300074: Circle_003
+    4300076: Water
     7400000: Default Take
     9500000: //RootNode
   materials:

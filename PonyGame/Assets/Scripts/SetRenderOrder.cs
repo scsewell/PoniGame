@@ -6,8 +6,8 @@ public class SetRenderOrder : MonoBehaviour
 	// Sets the render order for a gameobject explicitly.
 	// This avoids Outlined objects switching which one renders first causing rendering artifacts
 	// -1 means use default render que from shader
-	// Should be between 3000 and 4000
-	[Range(3100, 3900)]
+	// Should typically be between 3000 and 4000
+	[Range(2900, 3900)]
 	public int renderQue = -1;
 
 	// Use this for initialization

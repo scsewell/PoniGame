@@ -113,7 +113,7 @@ public class TSMovement : MonoBehaviour
 
             // keeps the character on the ground by applying a small downwards velocity proportional to the slope the character is standing on
             float slopeFactor = (1 - Mathf.Clamp01(Vector3.Dot(normal, Vector3.up)));
-            m_move.y = -0.2f * slopeFactor + (1 - slopeFactor) * -0.01f;
+            m_move.y = -0.5f * slopeFactor + (1 - slopeFactor) * -0.01f;
 
             // jumping
             if (inputs.jump)
