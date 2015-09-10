@@ -53,10 +53,11 @@ public class CameraRig : MonoBehaviour
     {
         if (!m_player)
         {
-            m_player = GameObject.FindGameObjectWithTag("Player").transform;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            if (m_player)
+            if (player)
             {
+                m_player = player.transform;
                 transform.position = m_player.position;
                 transform.rotation = m_player.rotation;
                 Camera.main.transform.position = posTarget.position;

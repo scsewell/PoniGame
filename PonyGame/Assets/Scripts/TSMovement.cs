@@ -53,6 +53,7 @@ public class TSMovement : MonoBehaviour
     private CollisionFlags m_CollisionFlags;
     private CharacterController m_controller;
     private Vector3 m_move = Vector3.zero;
+    private bool m_run = false;
 
     private float m_forwardVelocity = 0;
     public float ForwardSpeed
@@ -72,14 +73,13 @@ public class TSMovement : MonoBehaviour
      */
 	void Update ()
     {
-        if (GetComponent<TSAI>())
+        if (tag != "Player")
         {
             ExecuteMovement(GetComponent<TSAI>().GetMovement());
         }
         else
         {
             MoveInputs inputs = new MoveInputs();
-
             InputDevice device = InputManager.ActiveDevice;
 
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -91,8 +91,9 @@ public class TSMovement : MonoBehaviour
                 inputs.forward = move.magnitude;
             }
 
-            inputs.run = (Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State) && move.magnitude > 0;
-            inputs.jump = ((Input.GetButton("Jump") && !device.Action4.State) || device.Action3.State);
+            m_run = Input.GetKeyDown(KeyCode.LeftControl) || device.Action3.IsPressed ? !m_run : m_run;
+            inputs.run = Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State ? !m_run : m_run;
+            inputs.jump = (Input.GetKey(KeyCode.Space) && !device.Action4.State) || device.Action3.State;
 
             ExecuteMovement(inputs);
         }

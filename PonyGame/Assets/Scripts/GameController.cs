@@ -4,27 +4,22 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
     public Transform twilightPrefab;
-    public int twilights = 1;
+    public Transform twilightSpawn;
 
     /*
      * Spawns some amout of Twilights on the ground
      */
 	void Start ()
     {
-	    for (int i = 0; i < twilights; i++)
+        if (twilightSpawn != null)
         {
-            Vector3 pos = new Vector3(Random.Range(-9, 9), 10, Random.Range(-9, 9));
-
             RaycastHit hit;
-            Physics.Raycast(pos, Vector3.down, out hit);
+            Physics.Raycast(twilightSpawn.position, Vector3.down, out hit);
 
-            Transform twilight = Instantiate(twilightPrefab, hit.point, Quaternion.Euler(0, Random.Range(0, 360), 0)) as Transform;
+            Transform twilight = Instantiate(twilightPrefab, hit.point, twilightSpawn.rotation) as Transform;
 
-            if (i == 0)
-            {
-                twilight.tag = "Player";
-                Destroy(twilight.GetComponent<TSAI>());
-            }
+            twilight.tag = "Player";
+            twilight.GetComponent<TSAI>().enabled = false;
         }
 	}
 }
