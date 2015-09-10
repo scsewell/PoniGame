@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using InControl;
 
 public class CameraRig : MonoBehaviour
 {
@@ -9,13 +10,21 @@ public class CameraRig : MonoBehaviour
 
     public LayerMask layers; // which colliders the camera will put itself in front of if one is obscuring the character
 
-    [Tooltip("How fast the character may look around horizontally (No Units)")]
+    [Tooltip("How fast the character may look around horizontally with the mouse (No Units)")]
     [Range(1.0f, 10.0f)]
-    public float lookXSensitivity = 4.0f;
+    public float mouseLookXSensitivity = 4.0f;
 
-    [Tooltip("How fast the character may look around vertically (No Units)")]
+    [Tooltip("How fast the character may look around vertically with the mouse (No Units)")]
     [Range(1.0f, 10.0f)]
-    public float lookYSensitivity = 2.0f;
+    public float mouseLookYSensitivity = 2.0f;
+
+    [Tooltip("How fast the character may look around horizontally with the gamepad (No Units)")]
+    [Range(1.0f, 15.0f)]
+    public float stickLookXSensitivity = 6.0f;
+
+    [Tooltip("How fast the character may look around vertically with the gamepad (No Units)")]
+    [Range(1.0f, 15.0f)]
+    public float stickLookYSensitivity = 3.0f;
 
     [Tooltip("Max amount the character may look around horizontally (Degrees / Second)")]
     [Range(1.0f, 30.0f)]
@@ -63,10 +72,12 @@ public class CameraRig : MonoBehaviour
         {
             transform.position = m_player.position;
 
-            float rotateX = Mathf.Clamp(Input.GetAxis("Mouse X") * lookXSensitivity, -lookXRateCap, lookXRateCap);
+            InputDevice device = InputManager.ActiveDevice;
+
+            float rotateX = Mathf.Clamp(Input.GetAxis("Mouse X") * mouseLookXSensitivity + device.RightStick.X * stickLookXSensitivity, -lookXRateCap, lookXRateCap);
             transform.Rotate(0, rotateX, 0, Space.Self);
 
-            m_elevation += Mathf.Clamp(-Input.GetAxis("Mouse Y") * lookYSensitivity, -lookYRateCap, lookYRateCap);
+            m_elevation += Mathf.Clamp(-Input.GetAxis("Mouse Y") * mouseLookYSensitivity - device.RightStick.Y * stickLookYSensitivity, -lookYRateCap, lookYRateCap);
             m_elevation = Mathf.Clamp(m_elevation, minElevation, maxElevation);
             pivot.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
 
