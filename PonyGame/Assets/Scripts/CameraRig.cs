@@ -6,25 +6,43 @@ public class CameraRig : MonoBehaviour
     public Transform posTarget;
     public Transform rotTarget;
 
-    public float lookHeight = 0.65f;
-    public float turnLookDistance = 0.2f;
-    public float positionSmoothTime = 0.25f;
-    public float lookSmoothTime = 0.25f;
+    [Tooltip("How fast the character may look around horizontally (No Units)")]
+    [Range(1.0f, 10.0f)]
+    public float lookXSensitivity = 4.0f;
 
-    private Transform player;
-    private Vector3 mainVelocity = Vector3.zero;
-    private Vector3 lookVelocity = Vector3.zero;
+    [Tooltip("How fast the character may look around vertically (No Units)")]
+    [Range(1.0f, 10.0f)]
+    public float lookYSensitivity = 2.0f;
+
+    [Tooltip("Max amount the character may look around horizontally (Degrees / Second)")]
+    [Range(1.0f, 30.0f)]
+    public float lookXRateCap = 10.0f;
+
+    [Tooltip("Max amount the character may look around vertically in (Degrees / Second)")]
+    [Range(1.0f, 30.0f)]
+    public float lookYRateCap = 10.0f;
+
+    [Tooltip("Max angle towards the upper pole the camera may be elevated (Degrees)")]
+    [Range(0, 90.0f)]
+    public float maxElevation = 45.0f;
+
+    [Tooltip("Max angle towards the lower pole the camera may be depressed (Degrees)")]
+    [Range(-90, 0)]
+    public float minElevation = -30;
+
+    private Transform m_player;
+    private float m_elevation = 0;
 
     void Update()
     {
-        if (!player)
+        if (!m_player)
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            m_player = GameObject.FindGameObjectWithTag("Player").transform;
 
-            if (player)
+            if (m_player)
             {
-                transform.position = player.position;
-                transform.rotation = player.rotation;
+                transform.position = m_player.position;
+                transform.rotation = m_player.rotation;
                 Camera.main.transform.position = posTarget.position;
                 Camera.main.transform.LookAt(rotTarget);
             }
@@ -34,15 +52,26 @@ public class CameraRig : MonoBehaviour
 	// Update is called once per frame
 	void LateUpdate () 
 	{
-        if (player)
+        if (m_player)
         {
-            transform.position = player.position;
-            transform.rotation = player.rotation;
+            transform.position = m_player.position;
 
-            Vector3 lookPosTarget = new Vector3(Input.GetAxis("Horizontal") * turnLookDistance, lookHeight, 0);
-            rotTarget.localPosition = Vector3.SmoothDamp(rotTarget.localPosition, lookPosTarget, ref lookVelocity, lookSmoothTime);
+            float rotateX = Mathf.Clamp(Input.GetAxis("Mouse X") * lookXSensitivity, -lookXRateCap, lookXRateCap);
+            transform.Rotate(0, rotateX, 0, Space.Self);
 
-            Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, posTarget.position, ref mainVelocity, positionSmoothTime);
+            m_elevation += Mathf.Clamp(-Input.GetAxis("Mouse Y") * lookYSensitivity, -lookYRateCap, lookYRateCap);
+            m_elevation = Mathf.Clamp(m_elevation, minElevation, maxElevation);
+            rotTarget.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
+
+            Vector3 camPos = posTarget.position;
+
+            RaycastHit hit;
+            if (Physics.Linecast(rotTarget.position, posTarget.position, out hit))
+            {
+                camPos = hit.point + (rotTarget.position - hit.point).normalized * 0.1f;
+            }
+
+            Camera.main.transform.position = camPos;
             Camera.main.transform.LookAt(rotTarget);
         }
     }

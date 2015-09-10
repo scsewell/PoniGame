@@ -1,22 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Responsible for moving the player character
+ */
 public class TSMovement : MonoBehaviour
 {
     public bool debugView = true;
 
+    [Tooltip("How fast the character may walk (Units / Second)")]
+    [Range(0.5f, 2.0f)]
     public float walkSpeed = 1.0f;
+
+    [Tooltip("How fast the character may run (Units / Second)")]
+    [Range(1.0f, 4.0f)]
     public float runSpeed = 2.0f;
-    public float strafeSpeed = 1.0f;
+
+    [Tooltip("How fast the character accelerates forward (Units / Second^2)")]
+    [Range(1.0f, 10.0f)]
     public float acceleration = 5.0f;
-    public float strafeAcceleration = 7.0f;
-    public float mouseLookSpeed = 0.8f;
+
+    [Tooltip("How fast the character may rotate (Degrees / Second)")]
+    [Range(60, 720)]
     public float rotSpeed = 120.0f;
+
+    [Tooltip("How fast the character begins moving on jumping (Units / Frame)")]
+    [Range(0.005f, 0.1f)]
     public float jumpSpeed = 0.03f;
+
+    [Tooltip("Fraction of the world's gravity is applied when in the air")]
+    [Range(0.005f, 0.1f)]
     public float gravityFraction = 0.02f;
+
+    [Tooltip("The number of raycasts done in a circle around the character to get an average ground normal")]
+    [Range(0, 21)]
     public int normalSamples = 4;
-    public float groundSmoothRadius = 0.1f;     // radius from ground contact point that the character will sample ground mesh normals to align along
+
+    [Tooltip("The radius of the raycast circle around the character to get an average ground normal (Units)")]
+    [Range(0.0f, 1.0f)]
+    public float groundSmoothRadius = 0.1f;
+
+    [Tooltip("The higher this value, the faster the character will align to the ground normal when on terrain")]
+    [Range(1.0f, 24.0f)]
     public float groundAlignSpeed = 10.0f;
+
+    [Tooltip("The higher this value, the faster the character will align upwards when midair")]
+    [Range(0.25f, 24.0f)]
     public float airAlignSpeed = 1.5f;
 
     private CollisionFlags m_CollisionFlags;
@@ -41,6 +70,7 @@ public class TSMovement : MonoBehaviour
         get { return m_angularVelocity; }
     }
 
+
     void Start ()
     {
         m_controller = GetComponent<CharacterController>();
@@ -60,36 +90,25 @@ public class TSMovement : MonoBehaviour
         {
             MoveInputs inputs = new MoveInputs();
 
-            // show and hide cursor as appropriate
-            if (Input.GetMouseButtonDown(1))
+            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+            if (move.magnitude > 0)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else if (Input.GetMouseButtonUp(1))
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                float playerDir = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up).eulerAngles.y;
+                float camDir = Quaternion.LookRotation(Vector3.ProjectOnPlane(Camera.main.transform.rotation * move, Vector3.up), Vector3.up).eulerAngles.y;
+                float bearing = Mathf.DeltaAngle(camDir, playerDir);
+
+                inputs.turn = -bearing;
+                inputs.forward = move.magnitude;
             }
 
-            // if rmb held down, use mouse-view
-            if (Input.GetMouseButton(1))
-            {
-                inputs.turn = Input.GetAxis("Mouse X") * mouseLookSpeed;
-                inputs.strafe = Input.GetAxis("Horizontal");
-            }
-            else
-            {
-                inputs.turn = Input.GetAxis("Horizontal");
-                inputs.strafe = 0;
-            }
-            inputs.forward = Input.GetAxis("Vertical");
-            inputs.run = Input.GetKey(KeyCode.LeftShift) && Input.GetAxis("Vertical") > 0;
+            inputs.run = Input.GetKey(KeyCode.LeftShift) && move.magnitude > 0;
             inputs.jump = Input.GetButton("Jump");
 
             ExecuteMovement(inputs);
         }
     }
+
 
     /*
      * Moves the character based on the provided input
@@ -97,10 +116,9 @@ public class TSMovement : MonoBehaviour
     private void ExecuteMovement(MoveInputs inputs)
     {
         m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
-        m_strafeVelocity = Mathf.MoveTowards(m_strafeVelocity, inputs.strafe * strafeSpeed, strafeAcceleration * Time.deltaTime);
-        Vector3 desiredMove = transform.forward * m_forwardVelocity * Time.deltaTime + transform.right * m_strafeVelocity * Time.deltaTime;
+        Vector3 desiredMove = transform.forward * m_forwardVelocity * Time.deltaTime;
 
-        m_angularVelocity = rotSpeed * inputs.turn;
+        m_angularVelocity = Mathf.Clamp(inputs.turn, -rotSpeed * Time.deltaTime, rotSpeed * Time.deltaTime);
 
         m_move = new Vector3(desiredMove.x, m_move.y, desiredMove.z);
 
@@ -133,7 +151,7 @@ public class TSMovement : MonoBehaviour
         }
 
         m_CollisionFlags = m_controller.Move(m_move);
-        transform.Rotate(0, m_angularVelocity * Time.deltaTime, 0, Space.Self);
+        transform.Rotate(0, m_angularVelocity, 0, Space.Self);
     }
 
 
@@ -151,7 +169,7 @@ public class TSMovement : MonoBehaviour
         }
 
         // if we are airborne and hit our head reverse our vertical velocity
-        if (m_CollisionFlags == CollisionFlags.Above && !m_controller.isGrounded)
+        if ((m_CollisionFlags & CollisionFlags.Above) != 0 && !m_controller.isGrounded)
         {
             m_move.y *= -0.5f;
         }
