@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using InControl;
 
 /*
  * Responsible for moving the player character
@@ -90,7 +91,10 @@ public class TSMovement : MonoBehaviour
         {
             MoveInputs inputs = new MoveInputs();
 
+            InputDevice device = InputManager.ActiveDevice;
+
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            move += new Vector3(device.LeftStick.X, 0, device.LeftStick.Y);
 
             if (move.magnitude > 0)
             {
@@ -102,8 +106,8 @@ public class TSMovement : MonoBehaviour
                 inputs.forward = move.magnitude;
             }
 
-            inputs.run = Input.GetKey(KeyCode.LeftShift) && move.magnitude > 0;
-            inputs.jump = Input.GetButton("Jump");
+            inputs.run = (Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State) && move.magnitude > 0;
+            inputs.jump = ((Input.GetButton("Jump") && !device.Action4.State) || device.Action3.State);
 
             ExecuteMovement(inputs);
         }
