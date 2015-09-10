@@ -48,6 +48,7 @@ public class TSMovement : MonoBehaviour
     [Range(0.25f, 24.0f)]
     public float airAlignSpeed = 1.5f;
 
+
     private CollisionFlags m_CollisionFlags;
     private CharacterController m_controller;
     private Vector3 m_move = Vector3.zero;
@@ -56,18 +57,6 @@ public class TSMovement : MonoBehaviour
     public float ForwardSpeed
     {
         get { return m_forwardVelocity; }
-    }
-
-    private float m_strafeVelocity = 0;
-    public float StrafeSpeed
-    {
-        get { return m_strafeVelocity; }
-    }
-
-    private float m_angularVelocity = 0;
-    public float AngularlVelocity
-    {
-        get { return m_angularVelocity; }
     }
 
 
@@ -94,11 +83,7 @@ public class TSMovement : MonoBehaviour
 
             if (move.magnitude > 0)
             {
-                float playerDir = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up).eulerAngles.y;
-                float camDir = Quaternion.LookRotation(Vector3.ProjectOnPlane(Camera.main.transform.rotation * move, Vector3.up), Vector3.up).eulerAngles.y;
-                float bearing = Mathf.DeltaAngle(camDir, playerDir);
-
-                inputs.turn = -bearing;
+                inputs.turn = GetBearing(transform.forward, Camera.main.transform.rotation * move);
                 inputs.forward = move.magnitude;
             }
 
@@ -109,6 +94,16 @@ public class TSMovement : MonoBehaviour
         }
     }
 
+    /*
+     * Gets the bearing in degrees between two vectors is viewed from the -y direction
+     */
+    public float GetBearing(Vector3 dir1, Vector3 dir2)
+    {
+        float vec1 = Quaternion.LookRotation(Vector3.ProjectOnPlane(dir1, Vector3.up), Vector3.up).eulerAngles.y;
+        float vec2 = Quaternion.LookRotation(Vector3.ProjectOnPlane(dir2, Vector3.up), Vector3.up).eulerAngles.y;
+        return -Mathf.DeltaAngle(vec2, vec1);
+    }
+
 
     /*
      * Moves the character based on the provided input
@@ -117,8 +112,6 @@ public class TSMovement : MonoBehaviour
     {
         m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
         Vector3 desiredMove = transform.forward * m_forwardVelocity * Time.deltaTime;
-
-        m_angularVelocity = Mathf.Clamp(inputs.turn, -rotSpeed * Time.deltaTime, rotSpeed * Time.deltaTime);
 
         m_move = new Vector3(desiredMove.x, m_move.y, desiredMove.z);
 
@@ -151,7 +144,9 @@ public class TSMovement : MonoBehaviour
         }
 
         m_CollisionFlags = m_controller.Move(m_move);
-        transform.Rotate(0, m_angularVelocity, 0, Space.Self);
+        
+        float angularVelocity = Mathf.Clamp(inputs.turn, -rotSpeed * Time.deltaTime, rotSpeed * Time.deltaTime);
+        transform.Rotate(0, angularVelocity, 0, Space.Self);
     }
 
 
@@ -230,7 +225,6 @@ public class MoveInputs
 {
     public float    turn        = 0;
     public float    forward     = 0;
-    public float    strafe      = 0;
     public bool     run         = false;
     public bool     jump        = false;
 }

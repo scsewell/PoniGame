@@ -5,6 +5,9 @@ public class CameraRig : MonoBehaviour
 {
     public Transform posTarget;
     public Transform rotTarget;
+    public Transform pivot;
+
+    public LayerMask layers; // which colliders the camera will put itself in front of if one is obscuring the character
 
     [Tooltip("How fast the character may look around horizontally (No Units)")]
     [Range(1.0f, 10.0f)]
@@ -29,6 +32,10 @@ public class CameraRig : MonoBehaviour
     [Tooltip("Max angle towards the lower pole the camera may be depressed (Degrees)")]
     [Range(-90, 0)]
     public float minElevation = -30;
+
+    [Tooltip("Camera collision radius (Units)")]
+    [Range(0.0f, 1.0f)]
+    public float radius = 0.1f;
 
     private Transform m_player;
     private float m_elevation = 0;
@@ -61,17 +68,18 @@ public class CameraRig : MonoBehaviour
 
             m_elevation += Mathf.Clamp(-Input.GetAxis("Mouse Y") * lookYSensitivity, -lookYRateCap, lookYRateCap);
             m_elevation = Mathf.Clamp(m_elevation, minElevation, maxElevation);
-            rotTarget.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
+            pivot.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
 
-            Vector3 camPos = posTarget.position;
+            Vector3 disp = posTarget.position - pivot.position;
+            float camDist = disp.magnitude;
 
             RaycastHit hit;
-            if (Physics.Linecast(rotTarget.position, posTarget.position, out hit))
+            if (Physics.SphereCast(pivot.position, radius, disp, out hit, disp.magnitude, layers))
             {
-                camPos = hit.point + (rotTarget.position - hit.point).normalized * 0.1f;
+                camDist = (hit.point + hit.normal * radius - pivot.position).magnitude;
             }
-
-            Camera.main.transform.position = camPos;
+            
+            Camera.main.transform.position = pivot.position + disp.normalized * camDist;
             Camera.main.transform.LookAt(rotTarget);
         }
     }
