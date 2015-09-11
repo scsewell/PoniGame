@@ -17,10 +17,11 @@ public class TSAnimation : MonoBehaviour
 
     private Animator m_animator;
     private TSMovement m_movement;
-    private float m_horizontalLook = 0;
+    private float m_lookH = 0;
+    private float m_lookV = 0;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start () 
     {
 		m_animator = GetComponent<Animator>();
         m_movement = GetComponent<TSMovement>();
@@ -31,13 +32,21 @@ public class TSAnimation : MonoBehaviour
     {
         //float runFactor = Mathf.Max(m_movement.ForwardSpeed - m_movement.walkSpeed, 0) / (m_movement.runSpeed - m_movement.walkSpeed);
 
-        float lookBearing = m_movement.GetBearing(transform.forward, Camera.main.transform.forward);
-        float targetBearing = Mathf.Abs(lookBearing) < headReverseAng ? lookBearing : -Mathf.Sign(lookBearing) * (180 - Mathf.Abs(lookBearing));
-        float horizontalTarget = Mathf.Clamp(targetBearing / headHorizontalAng, -1, 1);
-        m_horizontalLook = Mathf.Lerp(m_horizontalLook, horizontalTarget, Time.deltaTime * headRotateSpeed);
+        float lookBearingH = m_movement.GetBearing(transform.forward, Camera.main.transform.forward);
+        bool faceCamera = Mathf.Abs(lookBearingH) > headReverseAng;
+        float targetBearingH = faceCamera ? -Mathf.Sign(lookBearingH) * (180 - Mathf.Abs(lookBearingH)) : lookBearingH;
+        float targetH = Mathf.Clamp(targetBearingH / headHorizontalAng, -1, 1);
+        
+        float lookBearingV = Mathf.DeltaAngle(0, (Quaternion.Inverse(transform.rotation) * FindObjectOfType<CameraRig>().pivot.rotation).eulerAngles.x);
+        float targetBearingV = faceCamera ? lookBearingV + 20 : -lookBearingV;
+        float targetV = Mathf.Clamp(targetBearingV / 40, -1, 1);
+
+        m_lookH = Mathf.Lerp(m_lookH, targetH, Time.deltaTime * headRotateSpeed);
+        m_lookV = Mathf.Lerp(m_lookV, targetV, Time.deltaTime * headRotateSpeed);
 
         m_animator.SetFloat("Forward", m_movement.ForwardSpeed);
-        m_animator.SetFloat("LookHorizontal", m_horizontalLook);
+        m_animator.SetFloat("LookHorizontal", m_lookH);
+        m_animator.SetFloat("LookVertical", m_lookV);
         m_animator.SetBool("MidAir" , !GetComponent<CharacterController>().isGrounded);
     }
 }

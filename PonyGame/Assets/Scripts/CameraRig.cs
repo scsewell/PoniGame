@@ -49,6 +49,7 @@ public class CameraRig : MonoBehaviour
     private Transform m_player;
     private float m_elevation = 0;
 
+
     void Update()
     {
         if (!m_player)
@@ -59,7 +60,7 @@ public class CameraRig : MonoBehaviour
             {
                 m_player = player.transform;
                 transform.position = m_player.position;
-                transform.rotation = m_player.rotation;
+                transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(m_player.forward, Vector3.up), Vector3.up);
                 Camera.main.transform.position = posTarget.position;
                 Camera.main.transform.LookAt(rotTarget);
             }
@@ -90,7 +91,7 @@ public class CameraRig : MonoBehaviour
             {
                 camDist = (hit.point + hit.normal * radius - pivot.position).magnitude;
             }
-            
+
             Camera.main.transform.position = pivot.position + disp.normalized * camDist;
             Camera.main.transform.LookAt(rotTarget);
         }

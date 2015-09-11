@@ -67,7 +67,6 @@ public class TSMovement : MonoBehaviour
         m_controller = GetComponent<CharacterController>();
     }
 	
-
     /*
      * Executes the player's or AI's commands
      */
@@ -84,6 +83,7 @@ public class TSMovement : MonoBehaviour
 
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             move += new Vector3(device.LeftStick.X, 0, device.LeftStick.Y);
+            move = Vector3.ClampMagnitude(move, 1);
 
             if (move.magnitude > 0)
             {
@@ -91,7 +91,7 @@ public class TSMovement : MonoBehaviour
                 inputs.forward = move.magnitude;
             }
 
-            m_run = Input.GetKeyDown(KeyCode.LeftControl) || device.Action3.IsPressed ? !m_run : m_run;
+            m_run = Input.GetKeyDown(KeyCode.C) || device.Action3.IsPressed ? !m_run : m_run;
             inputs.run = Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State ? !m_run : m_run;
             inputs.jump = (Input.GetKey(KeyCode.Space) && !device.Action4.State) || device.Action3.State;
 
@@ -100,7 +100,7 @@ public class TSMovement : MonoBehaviour
     }
 
     /*
-     * Gets the bearing in degrees between two vectors is viewed from the -y direction
+     * Gets the bearing in degrees between two vectors as viewed from a certain direction
      */
     public float GetBearing(Vector3 dir1, Vector3 dir2)
     {
