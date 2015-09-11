@@ -91,7 +91,7 @@ public class TSMovement : MonoBehaviour
                 inputs.forward = move.magnitude;
             }
 
-            m_run = Input.GetKeyDown(KeyCode.C) || device.Action3.IsPressed ? !m_run : m_run;
+            m_run = Input.GetKeyDown(KeyCode.C) || (device.LeftStick.State && device.LeftStick.HasChanged) ? !m_run : m_run;
             inputs.run = Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State ? !m_run : m_run;
             inputs.jump = (Input.GetKey(KeyCode.Space) && !device.Action4.State) || device.Action3.State;
 
