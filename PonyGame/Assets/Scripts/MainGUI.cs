@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MainGUI : MonoBehaviour
 {
-    public bool lockCursor = false; 
+    public bool lockCursor = true;
 
 	void Start ()
     {
