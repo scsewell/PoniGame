@@ -25,13 +25,13 @@ public class TSMovement : MonoBehaviour
     [Range(60, 720)]
     public float rotSpeed = 120.0f;
 
-    [Tooltip("How fast the character begins moving on jumping (Units / Frame)")]
-    [Range(0.005f, 0.1f)]
-    public float jumpSpeed = 0.03f;
+    [Tooltip("How fast the character begins moving on jumping (Units / Second)")]
+    [Range(0.5f, 3.0f)]
+    public float jumpSpeed = 1.0f;
 
     [Tooltip("Fraction of the world's gravity is applied when in the air")]
-    [Range(0.005f, 0.1f)]
-    public float gravityFraction = 0.02f;
+    [Range(0.25f, 2.5f)]
+    public float gravityFraction = 1.0f;
 
     [Tooltip("The number of raycasts done in a circle around the character to get an average ground normal")]
     [Range(0, 21)]
@@ -52,7 +52,7 @@ public class TSMovement : MonoBehaviour
 
     private CollisionFlags m_CollisionFlags;
     private CharacterController m_controller;
-    private Vector3 m_move = Vector3.zero;
+    private float m_velocityY = 0;
     private bool m_run = false;
 
     private float m_forwardVelocity = 0;
@@ -115,10 +115,9 @@ public class TSMovement : MonoBehaviour
      */
     private void ExecuteMovement(MoveInputs inputs)
     {
+        // linearly accelerate towards some target velocity
         m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
-        Vector3 desiredMove = transform.forward * m_forwardVelocity * Time.deltaTime;
-
-        m_move = new Vector3(desiredMove.x, m_move.y, desiredMove.z);
+        Vector3 moveVelocity = transform.forward * m_forwardVelocity;
 
         if (m_controller.isGrounded)
         {
@@ -127,14 +126,16 @@ public class TSMovement : MonoBehaviour
             Quaternion targetRot = Quaternion.LookRotation(Vector3.Cross(transform.right, normal), normal);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * groundAlignSpeed);
 
-            // keeps the character on the ground by applying a small downwards velocity proportional to the slope the character is standing on
-            float slopeFactor = (1 - Mathf.Clamp01(Vector3.Dot(normal, Vector3.up)));
-            m_move.y = -0.5f * slopeFactor + (1 - slopeFactor) * -0.01f;
-
-            // jumping
             if (inputs.jump)
             {
-                m_move.y = jumpSpeed;
+                // jumping
+                m_velocityY = jumpSpeed;
+            }
+            else
+            {
+                // keeps the character on the ground by applying a small downwards velocity that increases with the slope the character is standing on
+                float slopeFactor = (1 - Mathf.Clamp01(Vector3.Dot(normal, Vector3.up)));
+                m_velocityY = (-0.5f * slopeFactor + (1 - slopeFactor) * -0.01f) / Time.deltaTime;
             }
         }
         else
@@ -144,11 +145,12 @@ public class TSMovement : MonoBehaviour
             Quaternion targetRot = Quaternion.LookRotation(Vector3.Cross(transform.right, normal), normal);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * airAlignSpeed);
 
-            // gravity when character is in the air
-            m_move += Physics.gravity * gravityFraction * Time.deltaTime;
+            // apply downwards acceleration when the character is in the air
+            m_velocityY += Physics.gravity.y * Time.deltaTime * gravityFraction;
         }
-
-        m_CollisionFlags = m_controller.Move(m_move);
+        
+        Vector3 move = new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime;
+        m_CollisionFlags = m_controller.Move(move);
         
         float angularVelocity = Mathf.Clamp(inputs.turn, -rotSpeed * Time.deltaTime, rotSpeed * Time.deltaTime);
         transform.Rotate(0, angularVelocity, 0, Space.Self);
@@ -171,7 +173,7 @@ public class TSMovement : MonoBehaviour
         // if we are airborne and hit our head reverse our vertical velocity
         if ((m_CollisionFlags & CollisionFlags.Above) != 0 && !m_controller.isGrounded)
         {
-            m_move.y *= -0.5f;
+            m_velocityY *= -0.5f;
         }
 
         if (body == null || body.isKinematic)
