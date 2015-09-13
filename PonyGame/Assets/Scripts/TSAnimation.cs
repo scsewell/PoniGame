@@ -30,6 +30,7 @@ public class TSAnimation : MonoBehaviour
 	// Update is called once per frame
 	void LateUpdate ()
     {
+        bool isPlayer = gameObject.tag == "Player";
         //float runFactor = Mathf.Max(m_movement.ForwardSpeed - m_movement.walkSpeed, 0) / (m_movement.runSpeed - m_movement.walkSpeed);
 
         float lookBearingH = m_movement.GetBearing(transform.forward, Camera.main.transform.forward);
@@ -41,8 +42,8 @@ public class TSAnimation : MonoBehaviour
         float targetBearingV = faceCamera ? lookBearingV + 20 : -lookBearingV;
         float targetV = Mathf.Clamp(targetBearingV / 40, -1, 1);
 
-        m_lookH = Mathf.Lerp(m_lookH, targetH, Time.deltaTime * headRotateSpeed);
-        m_lookV = Mathf.Lerp(m_lookV, targetV, Time.deltaTime * headRotateSpeed);
+        m_lookH = Mathf.Lerp(m_lookH, isPlayer ? targetH : 0, Time.deltaTime * headRotateSpeed);
+        m_lookV = Mathf.Lerp(m_lookV, isPlayer ? targetV : 0, Time.deltaTime * headRotateSpeed);
 
         m_animator.SetFloat("Forward", m_movement.ForwardSpeed);
         m_animator.SetFloat("LookHorizontal", m_lookH);

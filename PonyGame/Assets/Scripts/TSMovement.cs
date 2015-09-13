@@ -52,10 +52,11 @@ public class TSMovement : MonoBehaviour
 
     private CollisionFlags m_CollisionFlags;
     private CharacterController m_controller;
+    private float m_forwardVelocity = 0;
+    private float m_angVelocity = 0;
     private float m_velocityY = 0;
     private bool m_run = false;
 
-    private float m_forwardVelocity = 0;
     public float ForwardSpeed
     {
         get { return m_forwardVelocity; }
@@ -151,9 +152,12 @@ public class TSMovement : MonoBehaviour
         
         Vector3 move = new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime;
         m_CollisionFlags = m_controller.Move(move);
-        
-        float angularVelocity = Mathf.Clamp(inputs.turn, -rotSpeed * Time.deltaTime, rotSpeed * Time.deltaTime);
-        transform.Rotate(0, angularVelocity, 0, Space.Self);
+
+        float targetAngVelocity = Mathf.Clamp(inputs.turn, -rotSpeed * Time.deltaTime, rotSpeed * Time.deltaTime);
+        m_angVelocity = Mathf.MoveTowards(m_angVelocity, targetAngVelocity, 20.0f * Time.deltaTime) * Mathf.Clamp01((Mathf.Abs(inputs.turn) + 25.0f) / 45.0f);
+        bool willOvershoot = Mathf.Abs(inputs.turn) < Mathf.Abs(m_angVelocity);
+        m_angVelocity = willOvershoot ? targetAngVelocity : m_angVelocity;
+        transform.Rotate(0, m_angVelocity, 0, Space.Self);
     }
 
 
