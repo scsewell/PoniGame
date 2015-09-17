@@ -108,7 +108,7 @@ public class TSAI : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up);
         Vector3 disp = Quaternion.Inverse(rot) * (m_destination - transform.position);
         float bearing = 0;
-        if (disp.sqrMagnitude > 0)
+        if (disp.sqrMagnitude > 0.001f)
         {
             bearing = Mathf.DeltaAngle(Quaternion.LookRotation(disp).eulerAngles.y, 0);
         }
