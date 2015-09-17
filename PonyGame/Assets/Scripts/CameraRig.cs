@@ -52,7 +52,7 @@ public class CameraRig : MonoBehaviour
 
     void Update()
     {
-        if (!m_player)
+        if (!m_player || m_player.tag != "Player")
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 

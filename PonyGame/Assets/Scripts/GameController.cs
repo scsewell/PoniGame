@@ -1,25 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Switches the active player between characters
+ */
 public class GameController : MonoBehaviour
 {
-    public Transform twilightPrefab;
-    public Transform twilightSpawn;
-
-    /*
-     * Spawns some amout of Twilights on the ground
-     */
+    public Transform[] characters;
+    
 	void Start ()
     {
-        if (twilightSpawn != null)
+        SetPlayer(characters[0]);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            RaycastHit hit;
-            Physics.Raycast(twilightSpawn.position, Vector3.down, out hit);
-
-            Transform twilight = Instantiate(twilightPrefab, hit.point, twilightSpawn.rotation) as Transform;
-
-            twilight.tag = "Player";
-            twilight.GetComponent<TSAI>().enabled = false;
+            if (characters[0].tag == "Player")
+            {
+                SetPlayer(characters[1]);
+                ResetPlayer(characters[0]);
+            }
+            else
+            {
+                SetPlayer(characters[0]);
+                ResetPlayer(characters[1]);
+            }
         }
-	}
+    }
+
+    private void SetPlayer(Transform newPlayer)
+    {
+        newPlayer.tag = "Player";
+        newPlayer.GetComponent<TSAI>().enabled = false;
+    }
+
+    private void ResetPlayer(Transform oldPlayer)
+    {
+        oldPlayer.tag = "Untagged";
+        oldPlayer.GetComponent<TSAI>().enabled = true;
+    }
 }

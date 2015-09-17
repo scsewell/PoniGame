@@ -1,0 +1,3042 @@
+fileFormatVersion: 2
+guid: 9a621559f7f1e444ea78a16b8bc39210
+timeCreated: 1442172626
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: AJ_Eyelashes
+    100002: AJ_Hair
+    100004: AJ_Hat
+    100006: AJ_Rig
+    100008: //RootNode
+    100010: Base_Body
+    100012: Base_Eye.L
+    100014: Base_Eye.R
+    100016: Base_Mouth
+    100018: CON_Belly
+    100020: CON_Root
+    100022: DEF_Chest1
+    100024: DEF_Chest2
+    100026: DEF_Ear1.L
+    100028: DEF_Ear1.R
+    100030: DEF_Ear2.L
+    100032: DEF_Ear2.R
+    100034: DEF_FrontHoof.L
+    100036: DEF_FrontHoof.R
+    100038: DEF_FrontUpperLeg.L
+    100040: DEF_FrontUpperLeg.R
+    100042: DEF_Hair1-2
+    100044: DEF_Hair1.1
+    100046: DEF_Hair2-1
+    100048: DEF_Hair2-2
+    100050: DEF_Hair3-1
+    100052: DEF_Hair3-2
+    100054: DEF_Hair3-3
+    100056: DEF_Hair4-1
+    100058: DEF_Hair4-2
+    100060: DEF_Hair5-1
+    100062: DEF_Hair5-2
+    100064: DEF_Head
+    100066: DEF_Hip
+    100068: DEF_Jaw
+    100070: DEF_LowerFrontLeg.L
+    100072: DEF_LowerFrontLeg.R
+    100074: DEF_Mane1-1
+    100076: DEF_Mane1-2
+    100078: DEF_Mane1-3
+    100080: DEF_Mane1-4
+    100082: DEF_Mane1-5
+    100084: DEF_Mane1-6
+    100086: DEF_Neck1
+    100088: DEF_Neck2
+    100090: DEF_RearHoof.L
+    100092: DEF_RearHoof.R
+    100094: DEF_RearLowerLeg.L
+    100096: DEF_RearLowerLeg.R
+    100098: DEF_RearUpperLeg.L
+    100100: DEF_RearUpperLeg.R
+    100102: DEF_Shoulder.L
+    100104: DEF_Shoulder.R
+    100106: DEF_Tail1-1
+    100108: DEF_Tail1-2
+    100110: DEF_Tail1-3
+    100112: DEF_Tail1-4
+    100114: DEF_Tail1-5
+    100116: DEF_Tail1-6
+    100118: DEF_Thigh.L
+    100120: DEF_Thigh.R
+    100122: DEF_Tongue1
+    100124: DEF_Tongue2
+    100126: CON_CheekPuff.L
+    100128: CON_CheekPuff.L_end
+    100130: CON_CheekPuff.R
+    100132: CON_CheekPuff.R_end
+    100134: CON_Eye.L
+    100136: CON_Eye.L_end
+    100138: CON_Eye.R
+    100140: CON_Eye.R_end
+    100142: CON_Eyes
+    100144: CON_Hair1
+    100146: CON_Hair1_end
+    100148: CON_Hair2
+    100150: CON_Hair2_end
+    100152: CON_Hair3
+    100154: CON_Hair3_end
+    100156: CON_Hair4
+    100158: CON_Hair4_end
+    100160: CON_Hair5
+    100162: CON_Hair5_end
+    100164: CON_InnerEyebrow.L
+    100166: CON_InnerEyebrow.L_end
+    100168: CON_InnerEyebrow.R
+    100170: CON_InnerEyebrow.R_end
+    100172: CON_Iris.L
+    100174: CON_Iris.L_end
+    100176: CON_Iris.R
+    100178: CON_Iris.R_end
+    100180: CON_Jaw
+    100182: CON_LipCorner.L
+    100184: CON_LipCorner.L_end
+    100186: CON_LipCorner.R
+    100188: CON_LipCorner.R_end
+    100190: CON_LowerEyelid.L
+    100192: CON_LowerEyelid.R
+    100194: CON_LowerEyelidMiddle.L
+    100196: CON_LowerEyelidMiddle.L_end
+    100198: CON_LowerEyelidMiddle.R
+    100200: CON_LowerEyelidMiddle.R_end
+    100202: CON_LowerLip
+    100204: CON_LowerLip_end
+    100206: CON_Mane1
+    100208: CON_Mane2
+    100210: CON_Mane3
+    100212: CON_Mane3_end
+    100214: CON_Tail1
+    100216: CON_Tail2
+    100218: CON_Tail3
+    100220: CON_Tail3_end
+    100222: CON_Tongue1
+    100224: CON_Tongue1_end
+    100226: CON_Tongue2
+    100228: CON_Tongue2_end
+    100230: CON_UpperEyelid.L
+    100232: CON_UpperEyelid.R
+    100234: CON_UpperEyelidMiddle.L
+    100236: CON_UpperEyelidMiddle.L_end
+    100238: CON_UpperEyelidMiddle.R
+    100240: CON_UpperEyelidMiddle.R_end
+    100242: CON_UpperLip
+    100244: CON_UpperLip_end
+    100246: CON_Wing2-1.L
+    100248: CON_Wing2-1.L_end
+    100250: CON_Wing2-1.R
+    100252: CON_Wing2-1.R_end
+    100254: CON_Wing3-1.L
+    100256: CON_Wing3-1.L_end
+    100258: CON_Wing3-1.R
+    100260: CON_Wing3-1.R_end
+    100262: CON_Wing4.L
+    100264: CON_Wing4.L_end
+    100266: CON_Wing4.R
+    100268: CON_Wing4.R_end
+    100270: DEF_Ear2.L_end
+    100272: DEF_Ear2.R_end
+    100274: DEF_FrontHoof.L_end
+    100276: DEF_FrontHoof.R_end
+    100278: DEF_Hair1-2_end
+    100280: DEF_Hair2-2_end
+    100282: DEF_Hair3-3_end
+    100284: DEF_Hair4-2_end
+    100286: DEF_Hair5-2_end
+    100288: DEF_Mane1-6_end
+    100290: DEF_RearHoof.L_end
+    100292: DEF_RearHoof.R_end
+    100294: DEF_Tail1-6_end
+    100296: DEF_Tongue2_end
+    100298: FK_FrontHoof.L
+    100300: FK_FrontHoof.L_end
+    100302: FK_FrontHoof.R
+    100304: FK_FrontHoof.R_end
+    100306: FK_FrontUpperLeg.L
+    100308: FK_FrontUpperLeg.R
+    100310: FK_LowerFrontLeg.L
+    100312: FK_LowerFrontLeg.R
+    100314: FK_RearHoof.L
+    100316: FK_RearHoof.L_end
+    100318: FK_RearHoof.R
+    100320: FK_RearHoof.R_end
+    100322: FK_RearLowerLeg.L
+    100324: FK_RearLowerLeg.R
+    100326: FK_RearUpperLeg.L
+    100328: FK_RearUpperLeg.R
+    100330: FK_Thigh.L
+    100332: FK_Thigh.R
+    100334: Hemi
+    100336: Hemi.001
+    100338: IK_Eye.L
+    100340: IK_Eye.R
+    100342: IK_FrontHoof.L
+    100344: IK_FrontHoof.R
+    100346: IK_FrontKnee.L
+    100348: IK_FrontKnee.L_end
+    100350: IK_FrontKnee.R
+    100352: IK_FrontKnee.R_end
+    100354: IK_FrontUpperLeg.L
+    100356: IK_FrontUpperLeg.R
+    100358: IK_LowerFrontLeg.L
+    100360: IK_LowerFrontLeg.L_end
+    100362: IK_LowerFrontLeg.R
+    100364: IK_LowerFrontLeg.R_end
+    100366: IK_RearHoof.L
+    100368: IK_RearHoof.L_end
+    100370: IK_RearHoof.R
+    100372: IK_RearHoof.R_end
+    100374: IK_RearKnee.L
+    100376: IK_RearKnee.L_end
+    100378: IK_RearKnee.R
+    100380: IK_RearKnee.R_end
+    100382: IK_RearLowerLeg.L
+    100384: IK_RearLowerLeg.L_end
+    100386: IK_RearLowerLeg.R
+    100388: IK_RearLowerLeg.R_end
+    100390: IK_RearUpperLeg.L
+    100392: IK_RearUpperLeg.R
+    100394: IK_Thigh.L
+    100396: IK_Thigh.R
+    100398: VIS_FrontKnee.L
+    100400: VIS_FrontKnee.L_end
+    100402: VIS_FrontKnee.R
+    100404: VIS_FrontKnee.R_end
+    100406: VIS_RearKnee.L
+    100408: VIS_RearKnee.L_end
+    100410: VIS_RearKnee.R
+    100412: VIS_RearKnee.R_end
+    400000: AJ_Eyelashes
+    400002: AJ_Hair
+    400004: AJ_Hat
+    400006: AJ_Rig
+    400008: //RootNode
+    400010: Base_Body
+    400012: Base_Eye.L
+    400014: Base_Eye.R
+    400016: Base_Mouth
+    400018: CON_Belly
+    400020: CON_Root
+    400022: DEF_Chest1
+    400024: DEF_Chest2
+    400026: DEF_Ear1.L
+    400028: DEF_Ear1.R
+    400030: DEF_Ear2.L
+    400032: DEF_Ear2.R
+    400034: DEF_FrontHoof.L
+    400036: DEF_FrontHoof.R
+    400038: DEF_FrontUpperLeg.L
+    400040: DEF_FrontUpperLeg.R
+    400042: DEF_Hair1-2
+    400044: DEF_Hair1.1
+    400046: DEF_Hair2-1
+    400048: DEF_Hair2-2
+    400050: DEF_Hair3-1
+    400052: DEF_Hair3-2
+    400054: DEF_Hair3-3
+    400056: DEF_Hair4-1
+    400058: DEF_Hair4-2
+    400060: DEF_Hair5-1
+    400062: DEF_Hair5-2
+    400064: DEF_Head
+    400066: DEF_Hip
+    400068: DEF_Jaw
+    400070: DEF_LowerFrontLeg.L
+    400072: DEF_LowerFrontLeg.R
+    400074: DEF_Mane1-1
+    400076: DEF_Mane1-2
+    400078: DEF_Mane1-3
+    400080: DEF_Mane1-4
+    400082: DEF_Mane1-5
+    400084: DEF_Mane1-6
+    400086: DEF_Neck1
+    400088: DEF_Neck2
+    400090: DEF_RearHoof.L
+    400092: DEF_RearHoof.R
+    400094: DEF_RearLowerLeg.L
+    400096: DEF_RearLowerLeg.R
+    400098: DEF_RearUpperLeg.L
+    400100: DEF_RearUpperLeg.R
+    400102: DEF_Shoulder.L
+    400104: DEF_Shoulder.R
+    400106: DEF_Tail1-1
+    400108: DEF_Tail1-2
+    400110: DEF_Tail1-3
+    400112: DEF_Tail1-4
+    400114: DEF_Tail1-5
+    400116: DEF_Tail1-6
+    400118: DEF_Thigh.L
+    400120: DEF_Thigh.R
+    400122: DEF_Tongue1
+    400124: DEF_Tongue2
+    400126: CON_CheekPuff.L
+    400128: CON_CheekPuff.L_end
+    400130: CON_CheekPuff.R
+    400132: CON_CheekPuff.R_end
+    400134: CON_Eye.L
+    400136: CON_Eye.L_end
+    400138: CON_Eye.R
+    400140: CON_Eye.R_end
+    400142: CON_Eyes
+    400144: CON_Hair1
+    400146: CON_Hair1_end
+    400148: CON_Hair2
+    400150: CON_Hair2_end
+    400152: CON_Hair3
+    400154: CON_Hair3_end
+    400156: CON_Hair4
+    400158: CON_Hair4_end
+    400160: CON_Hair5
+    400162: CON_Hair5_end
+    400164: CON_InnerEyebrow.L
+    400166: CON_InnerEyebrow.L_end
+    400168: CON_InnerEyebrow.R
+    400170: CON_InnerEyebrow.R_end
+    400172: CON_Iris.L
+    400174: CON_Iris.L_end
+    400176: CON_Iris.R
+    400178: CON_Iris.R_end
+    400180: CON_Jaw
+    400182: CON_LipCorner.L
+    400184: CON_LipCorner.L_end
+    400186: CON_LipCorner.R
+    400188: CON_LipCorner.R_end
+    400190: CON_LowerEyelid.L
+    400192: CON_LowerEyelid.R
+    400194: CON_LowerEyelidMiddle.L
+    400196: CON_LowerEyelidMiddle.L_end
+    400198: CON_LowerEyelidMiddle.R
+    400200: CON_LowerEyelidMiddle.R_end
+    400202: CON_LowerLip
+    400204: CON_LowerLip_end
+    400206: CON_Mane1
+    400208: CON_Mane2
+    400210: CON_Mane3
+    400212: CON_Mane3_end
+    400214: CON_Tail1
+    400216: CON_Tail2
+    400218: CON_Tail3
+    400220: CON_Tail3_end
+    400222: CON_Tongue1
+    400224: CON_Tongue1_end
+    400226: CON_Tongue2
+    400228: CON_Tongue2_end
+    400230: CON_UpperEyelid.L
+    400232: CON_UpperEyelid.R
+    400234: CON_UpperEyelidMiddle.L
+    400236: CON_UpperEyelidMiddle.L_end
+    400238: CON_UpperEyelidMiddle.R
+    400240: CON_UpperEyelidMiddle.R_end
+    400242: CON_UpperLip
+    400244: CON_UpperLip_end
+    400246: CON_Wing2-1.L
+    400248: CON_Wing2-1.L_end
+    400250: CON_Wing2-1.R
+    400252: CON_Wing2-1.R_end
+    400254: CON_Wing3-1.L
+    400256: CON_Wing3-1.L_end
+    400258: CON_Wing3-1.R
+    400260: CON_Wing3-1.R_end
+    400262: CON_Wing4.L
+    400264: CON_Wing4.L_end
+    400266: CON_Wing4.R
+    400268: CON_Wing4.R_end
+    400270: DEF_Ear2.L_end
+    400272: DEF_Ear2.R_end
+    400274: DEF_FrontHoof.L_end
+    400276: DEF_FrontHoof.R_end
+    400278: DEF_Hair1-2_end
+    400280: DEF_Hair2-2_end
+    400282: DEF_Hair3-3_end
+    400284: DEF_Hair4-2_end
+    400286: DEF_Hair5-2_end
+    400288: DEF_Mane1-6_end
+    400290: DEF_RearHoof.L_end
+    400292: DEF_RearHoof.R_end
+    400294: DEF_Tail1-6_end
+    400296: DEF_Tongue2_end
+    400298: FK_FrontHoof.L
+    400300: FK_FrontHoof.L_end
+    400302: FK_FrontHoof.R
+    400304: FK_FrontHoof.R_end
+    400306: FK_FrontUpperLeg.L
+    400308: FK_FrontUpperLeg.R
+    400310: FK_LowerFrontLeg.L
+    400312: FK_LowerFrontLeg.R
+    400314: FK_RearHoof.L
+    400316: FK_RearHoof.L_end
+    400318: FK_RearHoof.R
+    400320: FK_RearHoof.R_end
+    400322: FK_RearLowerLeg.L
+    400324: FK_RearLowerLeg.R
+    400326: FK_RearUpperLeg.L
+    400328: FK_RearUpperLeg.R
+    400330: FK_Thigh.L
+    400332: FK_Thigh.R
+    400334: Hemi
+    400336: Hemi.001
+    400338: IK_Eye.L
+    400340: IK_Eye.R
+    400342: IK_FrontHoof.L
+    400344: IK_FrontHoof.R
+    400346: IK_FrontKnee.L
+    400348: IK_FrontKnee.L_end
+    400350: IK_FrontKnee.R
+    400352: IK_FrontKnee.R_end
+    400354: IK_FrontUpperLeg.L
+    400356: IK_FrontUpperLeg.R
+    400358: IK_LowerFrontLeg.L
+    400360: IK_LowerFrontLeg.L_end
+    400362: IK_LowerFrontLeg.R
+    400364: IK_LowerFrontLeg.R_end
+    400366: IK_RearHoof.L
+    400368: IK_RearHoof.L_end
+    400370: IK_RearHoof.R
+    400372: IK_RearHoof.R_end
+    400374: IK_RearKnee.L
+    400376: IK_RearKnee.L_end
+    400378: IK_RearKnee.R
+    400380: IK_RearKnee.R_end
+    400382: IK_RearLowerLeg.L
+    400384: IK_RearLowerLeg.L_end
+    400386: IK_RearLowerLeg.R
+    400388: IK_RearLowerLeg.R_end
+    400390: IK_RearUpperLeg.L
+    400392: IK_RearUpperLeg.R
+    400394: IK_Thigh.L
+    400396: IK_Thigh.R
+    400398: VIS_FrontKnee.L
+    400400: VIS_FrontKnee.L_end
+    400402: VIS_FrontKnee.R
+    400404: VIS_FrontKnee.R_end
+    400406: VIS_RearKnee.L
+    400408: VIS_RearKnee.L_end
+    400410: VIS_RearKnee.R
+    400412: VIS_RearKnee.R_end
+    2300000: AJ_Hat
+    2300002: Base_Eye.L
+    2300004: Base_Eye.R
+    2300006: AJ_Eyelashes
+    3300000: AJ_Hat
+    3300002: Base_Eye.L
+    3300004: Base_Eye.R
+    3300006: AJ_Eyelashes
+    4300000: AJ_Eyelashes
+    4300002: AJ_Hat
+    4300004: Base_Eye.L
+    4300006: Base_Eye.R
+    4300008: AJ_Hair
+    4300010: Base_Body
+    4300012: Base_Mouth
+    7400000: AJ_Rig|AJ_Gallop
+    7400002: AJ_Rig|AJ_Idle
+    7400004: AJ_Rig|AJ_Jump
+    7400006: AJ_Rig|AJ_Trot
+    7400008: AJ_Rig|CameraAxisAction
+    7400010: AJ_Eyelashes|CameraAxisAction
+    7400012: AJ_Hat|CameraAxisAction
+    7400014: AJ_Hair|CameraAxisAction
+    7400016: Base_Eye.L|CameraAxisAction
+    7400018: Base_Eye.R|CameraAxisAction
+    7400020: Base_Body|CameraAxisAction
+    7400022: Base_Mouth|CameraAxisAction
+    7400024: AJ_Rig|AJ_LookAhead
+    7400026: AJ_Rig|AJ_LookLeft
+    7400028: AJ_Rig|AJ_LookRight
+    7400030: AJ_Rig|AJ_LookUp
+    7400032: AJ_Rig|AJ_LookDown
+    9500000: //RootNode
+    13700000: AJ_Eyelashes
+    13700002: AJ_Hair
+    13700004: Base_Body
+    13700006: Base_Mouth
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_Gallop
+      takeName: AJ_Rig|AJ_Gallop
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Eyes
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L/CON_Eye.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R/CON_Eye.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L/CON_Wing2-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R/CON_Wing2-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L/CON_Wing3-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R/CON_Wing3-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L/CON_Wing4.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R/CON_Wing4.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L/CON_CheekPuff.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R/CON_CheekPuff.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1/CON_Hair1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2/CON_Hair2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3/CON_Hair3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4/CON_Hair4_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5/CON_Hair5_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip/CON_LowerLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip/CON_UpperLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L/CON_LipCorner.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R/CON_LipCorner.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L/CON_LowerEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R/CON_LowerEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3/CON_Mane3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L/CON_InnerEyebrow.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L/CON_UpperEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R/CON_InnerEyebrow.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R/CON_UpperEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2/DEF_Hair1-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3/DEF_Hair3-3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2/DEF_Hair5-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1/CON_Tongue1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2/CON_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2/DEF_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L/CON_Iris.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R/CON_Iris.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L/FK_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L/IK_LowerFrontLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L/VIS_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R/FK_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R/IK_LowerFrontLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R/VIS_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3/CON_Tail3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L/FK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R/FK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L/IK_RearLowerLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L/VIS_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R/IK_RearLowerLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R/VIS_RearKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L/IK_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R/IK_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L/IK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R/IK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L/IK_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R/IK_RearKnee.R_end
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_Idle
+      takeName: AJ_Rig|AJ_Idle
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Eyes
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L/CON_Eye.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R/CON_Eye.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L/CON_Wing2-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R/CON_Wing2-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L/CON_Wing3-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R/CON_Wing3-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L/CON_Wing4.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R/CON_Wing4.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L/CON_CheekPuff.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R/CON_CheekPuff.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1/CON_Hair1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2/CON_Hair2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3/CON_Hair3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4/CON_Hair4_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5/CON_Hair5_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip/CON_LowerLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip/CON_UpperLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L/CON_LipCorner.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R/CON_LipCorner.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L/CON_LowerEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R/CON_LowerEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3/CON_Mane3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L/CON_InnerEyebrow.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L/CON_UpperEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R/CON_InnerEyebrow.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R/CON_UpperEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2/DEF_Hair1-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3/DEF_Hair3-3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2/DEF_Hair5-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1/CON_Tongue1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2/CON_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2/DEF_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L/CON_Iris.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R/CON_Iris.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L/FK_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L/IK_LowerFrontLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L/VIS_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R/FK_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R/IK_LowerFrontLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R/VIS_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3/CON_Tail3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L/FK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R/FK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L/IK_RearLowerLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L/VIS_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R/IK_RearLowerLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R/VIS_RearKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L/IK_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R/IK_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L/IK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R/IK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L/IK_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R/IK_RearKnee.R_end
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_Jump
+      takeName: AJ_Rig|AJ_Jump
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Eyes
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L/CON_Eye.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R/CON_Eye.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L/CON_Wing2-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R/CON_Wing2-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L/CON_Wing3-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R/CON_Wing3-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L/CON_Wing4.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R/CON_Wing4.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L/CON_CheekPuff.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R/CON_CheekPuff.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1/CON_Hair1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2/CON_Hair2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3/CON_Hair3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4/CON_Hair4_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5/CON_Hair5_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip/CON_LowerLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip/CON_UpperLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L/CON_LipCorner.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R/CON_LipCorner.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L/CON_LowerEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R/CON_LowerEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3/CON_Mane3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L/CON_InnerEyebrow.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L/CON_UpperEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R/CON_InnerEyebrow.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R/CON_UpperEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2/DEF_Hair1-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3/DEF_Hair3-3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2/DEF_Hair5-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1/CON_Tongue1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2/CON_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2/DEF_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L/CON_Iris.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R/CON_Iris.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L/FK_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L/IK_LowerFrontLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L/VIS_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R/FK_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R/IK_LowerFrontLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R/VIS_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3/CON_Tail3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L/FK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R/FK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L/IK_RearLowerLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L/VIS_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R/IK_RearLowerLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R/VIS_RearKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L/IK_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R/IK_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L/IK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R/IK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L/IK_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R/IK_RearKnee.R_end
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_Trot
+      takeName: AJ_Rig|AJ_Trot
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Eyes
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.L/CON_Eye.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Eyes/CON_Eye.R/CON_Eye.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.L/CON_Wing2-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing2-1.R/CON_Wing2-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.L/CON_Wing3-1.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing3-1.R/CON_Wing3-1.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.L/CON_Wing4.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/CON_Wing4.R/CON_Wing4.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.L/CON_CheekPuff.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_CheekPuff.R/CON_CheekPuff.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair1/CON_Hair1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair2/CON_Hair2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair3/CON_Hair3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair4/CON_Hair4_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Hair5/CON_Hair5_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_LowerLip/CON_LowerLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Jaw/CON_UpperLip/CON_UpperLip_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.L/CON_LipCorner.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LipCorner.R/CON_LipCorner.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.L/CON_LowerEyelidMiddle.L/CON_LowerEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_LowerEyelid.R/CON_LowerEyelidMiddle.R/CON_LowerEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_Mane1/CON_Mane2/CON_Mane3/CON_Mane3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_InnerEyebrow.L/CON_InnerEyebrow.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.L/CON_UpperEyelidMiddle.L/CON_UpperEyelidMiddle.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_InnerEyebrow.R/CON_InnerEyebrow.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/CON_UpperEyelid.R/CON_UpperEyelidMiddle.R/CON_UpperEyelidMiddle.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2/DEF_Hair1-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3/DEF_Hair3-3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2/DEF_Hair5-2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue1/CON_Tongue1_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/CON_Tongue2/CON_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2/DEF_Tongue2_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.L/CON_Iris.L/CON_Iris.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/IK_Eye.R/CON_Iris.R/CON_Iris.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/FK_FrontUpperLeg.L/FK_LowerFrontLeg.L/FK_FrontHoof.L/FK_FrontHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/IK_LowerFrontLeg.L/IK_LowerFrontLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/IK_FrontUpperLeg.L/VIS_FrontKnee.L/VIS_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/FK_FrontUpperLeg.R/FK_LowerFrontLeg.R/FK_FrontHoof.R/FK_FrontHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/IK_LowerFrontLeg.R/IK_LowerFrontLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/IK_FrontUpperLeg.R/VIS_FrontKnee.R/VIS_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/CON_Tail1/CON_Tail2/CON_Tail3/CON_Tail3_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-6_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.L/FK_RearUpperLeg.L/FK_RearLowerLeg.L/FK_RearHoof.L/FK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/FK_Thigh.R/FK_RearUpperLeg.R/FK_RearLowerLeg.R/FK_RearHoof.R/FK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/IK_RearLowerLeg.L/IK_RearLowerLeg.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.L/IK_RearUpperLeg.L/VIS_RearKnee.L/VIS_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/IK_RearLowerLeg.R/IK_RearLowerLeg.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/IK_Thigh.R/IK_RearUpperLeg.R/VIS_RearKnee.R/VIS_RearKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.L/IK_FrontKnee.L/IK_FrontKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_FrontHoof.R/IK_FrontKnee.R/IK_FrontKnee.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.L/IK_RearHoof.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearHoof.R/IK_RearHoof.R_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.L/IK_RearKnee.L_end
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/IK_RearKnee.R/IK_RearKnee.R_end
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_LookAhead
+      takeName: AJ_Rig|AJ_LookAhead
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_LookLeft
+      takeName: AJ_Rig|AJ_LookLeft
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_LookRight
+      takeName: AJ_Rig|AJ_LookRight
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_LookUp
+      takeName: AJ_Rig|AJ_LookUp
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AJ_Rig|AJ_LookDown
+      takeName: AJ_Rig|AJ_LookDown
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AJ_Hair
+        weight: 1
+      - path: AJ_Rig
+        weight: 1
+      - path: AJ_Rig/CON_Root
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Eyelashes
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/AJ_Hat
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair1.1/DEF_Hair1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair3-1/DEF_Hair3-2/DEF_Hair3-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair5-1/DEF_Hair5-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-3/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: AJ_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: Base_Mouth
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
