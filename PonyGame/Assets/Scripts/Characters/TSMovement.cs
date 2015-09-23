@@ -25,6 +25,10 @@ public class TSMovement : MonoBehaviour
     [Range(60, 720)]
     public float rotSpeed = 120.0f;
 
+    [Tooltip("What fraction of the max turn rate to use when the cart is being pulled")]
+    [Range(0.0f, 1.0f)]
+    public float cartTurnFraction = 0.25f;
+
     [Tooltip("How fast the character begins moving on jumping (Units / Second)")]
     [Range(0.5f, 3.0f)]
     public float jumpSpeed = 1.0f;
@@ -107,7 +111,7 @@ public class TSMovement : MonoBehaviour
     }
 
     /*
-     * Gets the bearing in degrees between two vectors as viewed from a certain direction
+     * Gets the bearing in degrees between two vectors as viewed from above
      */
     public float GetBearing(Vector3 dir1, Vector3 dir2)
     {
@@ -165,11 +169,14 @@ public class TSMovement : MonoBehaviour
         
         Vector3 move = new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime;
         m_CollisionFlags = m_controller.Move(move);
+        
+        float maxTurnSpeed = rotSpeed * (m_pullingCart ? cartTurnFraction : 1) * Time.deltaTime;
+        float targetAngVelocity = Mathf.Clamp(inputs.turn, -maxTurnSpeed, maxTurnSpeed);
 
-        float targetAngVelocity = Mathf.Clamp(inputs.turn, -rotSpeed * Time.deltaTime, rotSpeed * Time.deltaTime);
         m_angVelocity = Mathf.MoveTowards(m_angVelocity, targetAngVelocity, 20.0f * Time.deltaTime) * Mathf.Clamp01((Mathf.Abs(inputs.turn) + 25.0f) / 45.0f);
         bool willOvershoot = Mathf.Abs(inputs.turn) < Mathf.Abs(m_angVelocity);
         m_angVelocity = willOvershoot ? targetAngVelocity : m_angVelocity;
+
         transform.Rotate(0, m_angVelocity, 0, Space.Self);
     }
 
@@ -250,14 +257,15 @@ public class TSMovement : MonoBehaviour
      */
     private void SetCart(bool pullCart)
     {
-        Cart cart = GameController.m_harness.GetComponent<Cart>();
+        Cart cart = GameController.GetHarness().GetComponent<Cart>();
 
-        if (pullCart && Vector3.Distance(transform.position, cart.harnessCenter.position) < 0.4f)
+        if (pullCart && Vector3.Distance(transform.TransformPoint(new Vector3(0, 0.19f, 0)), cart.harnessCenter.position) < 0.15f)
         {
             m_pullingCart = pullCart;
 
             if (m_pullingCart)
             {
+                transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.position - GameController.GetHarness().position, transform.up), transform.up);
                 cart.Harness(transform);
             }
         }

@@ -10,13 +10,15 @@ public class GameController : MonoBehaviour
     public Transform harness;
 
     private static Transform m_player;
-    public static Transform m_harness;
+    private static Transform m_harness;
+    private static Transform m_cart;
     private static bool m_playerSwitched = false;
 
 
     void Start()
     {
         m_harness = harness;
+        m_cart = harness.root;
     }
 
     void Update()
@@ -78,7 +80,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No player set!");
+            Debug.LogError("No player!");
             return null;
         }
     }
@@ -92,7 +94,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No harness set!");
+            Debug.LogError("No harness!");
             return null;
         }
     }
@@ -100,13 +102,13 @@ public class GameController : MonoBehaviour
     // returns the cart transform if it is set
     public static Transform GetCart()
     {
-        if (m_harness != null)
+        if (m_cart != null)
         {
-            return m_harness.root;
+            return m_cart;
         }
         else
         {
-            Debug.LogError("No harness set!");
+            Debug.LogError("No cart!");
             return null;
         }
     }
