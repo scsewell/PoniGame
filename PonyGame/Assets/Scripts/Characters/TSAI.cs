@@ -24,7 +24,6 @@ public class TSAI : MonoBehaviour
 
     private NavMeshAgent m_agent;
     private List<Vector3> m_path;
-    private Transform m_player;
     private Vector3 m_destination;
     private bool m_run = false;
 
@@ -36,26 +35,23 @@ public class TSAI : MonoBehaviour
 	
 	void Update ()
     {
-        // get a reference to the player if we don't have one
-        if (!m_player)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-            if (player)
-            {
-                m_player = player.transform;
-            }
-        }
-
         // if we are following the player but don't have a path or the player has strayed from where we last generated at path to the player, find an updated path to the player
         if (followPlayer)
         {
-            if (m_player && (m_path.Count == 0 || Vector3.Distance(m_player.position, m_path[m_path.Count - 1]) > newPathTolerance))
+            if (GameController.PlayerExists() && (m_path.Count == 0 || Vector3.Distance(GameController.GetPlayer().position, m_path[m_path.Count - 1]) > newPathTolerance))
             {
                 NavMeshPath path = new NavMeshPath();
-                m_agent.enabled = true;
-                m_agent.CalculatePath(m_player.position, path);
-                m_agent.enabled = false;
+
+                try
+                {
+                    m_agent.enabled = true;
+                    m_agent.CalculatePath(GameController.GetPlayer().position, path);
+                    m_agent.enabled = false;
+                }
+                catch
+                {
+                    Debug.LogWarning("Attempt to find path to player failed...");
+                }
 
                 m_path.Clear();
 

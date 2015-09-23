@@ -69,6 +69,7 @@ public class TSAnimation : MonoBehaviour
         m_soundTrot.volume = grounded ? (Mathf.Min(m_movement.ForwardSpeed / m_movement.walkSpeed, 1) - runFactor) * walkVolume : 0;
         m_soundGallop.volume = grounded ? runFactor * runVolume : 0;
 
+        // stop sounds with no volume
         if (m_soundTrot.volume < 0.001f) {
             m_soundTrot.Stop();
         } else if (!m_soundTrot.isPlaying) {

@@ -46,33 +46,27 @@ public class CameraRig : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float radius = 0.1f;
 
-    private Transform m_player;
     private float m_elevation = 0;
 
 
     void Update()
     {
-        if (!m_player || m_player.tag != "Player")
+        if (GameController.PlayerChanged())
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-            if (player)
-            {
-                m_player = player.transform;
-                transform.position = m_player.position;
-                transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(m_player.forward, Vector3.up), Vector3.up);
-                Camera.main.transform.position = posTarget.position;
-                Camera.main.transform.LookAt(rotTarget);
-            }
+            Transform player = GameController.GetPlayer();
+            transform.position = player.position;
+            transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.forward, Vector3.up), Vector3.up);
+            Camera.main.transform.position = posTarget.position;
+            Camera.main.transform.LookAt(rotTarget);
         }
     }
 	
 	// Update is called once per frame
 	void LateUpdate () 
 	{
-        if (m_player)
+        if (GameController.PlayerExists())
         {
-            transform.position = m_player.position;
+            transform.position = GameController.GetPlayer().position;
 
             InputDevice device = InputManager.ActiveDevice;
 

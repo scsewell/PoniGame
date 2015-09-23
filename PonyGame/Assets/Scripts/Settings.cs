@@ -51,5 +51,10 @@ public class Settings : MonoBehaviour
         {
             Camera.main.GetComponent<Antialiasing>().enabled = quality == VideoQ.Low;
         }
+
+        if (Camera.main.GetComponent<SunShafts>())
+        {
+            Camera.main.GetComponent<SunShafts>().enabled = quality == VideoQ.High;
+        }
     }
 }

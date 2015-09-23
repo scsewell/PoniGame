@@ -56,6 +56,7 @@ public class TSMovement : MonoBehaviour
     private float m_angVelocity = 0;
     private float m_velocityY = 0;
     private bool m_run = false;
+    private bool m_pullingCart = false;
 
     public float ForwardSpeed
     {
@@ -73,14 +74,17 @@ public class TSMovement : MonoBehaviour
      */
 	void Update ()
     {
-        if (tag != "Player")
+        MoveInputs inputs = new MoveInputs();
+        InputDevice device = InputManager.ActiveDevice;
+
+        m_run = Input.GetKeyDown(KeyCode.C) || device.LeftStickButton.WasPressed ? !m_run : m_run;
+
+        if (tag == "Player")
         {
-            ExecuteMovement(GetComponent<TSAI>().GetMovement());
-        }
-        else
-        {
-            MoveInputs inputs = new MoveInputs();
-            InputDevice device = InputManager.ActiveDevice;
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                SetCart(!m_pullingCart);
+            }
 
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             move += new Vector3(device.LeftStick.X, 0, device.LeftStick.Y);
@@ -91,12 +95,14 @@ public class TSMovement : MonoBehaviour
                 inputs.turn = GetBearing(transform.forward, Camera.main.transform.rotation * move);
                 inputs.forward = move.magnitude;
             }
-
-            m_run = Input.GetKeyDown(KeyCode.C) || (device.LeftStick.State && device.LeftStick.HasChanged) ? !m_run : m_run;
             inputs.run = Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State ? !m_run : m_run;
             inputs.jump = (Input.GetKey(KeyCode.Space) && !device.Action4.State) || device.Action3.State;
 
             ExecuteMovement(inputs);
+        }
+        else
+        {
+            ExecuteMovement(GetComponent<TSAI>().GetMovement());
         }
     }
 
@@ -116,6 +122,13 @@ public class TSMovement : MonoBehaviour
      */
     private void ExecuteMovement(MoveInputs inputs)
     {
+        // cancel invalid actions
+        if (m_pullingCart)
+        {
+            inputs.run = false;
+            inputs.jump = false;
+        }
+
         // linearly accelerate towards some target velocity
         m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
         Vector3 moveVelocity = transform.forward * m_forwardVelocity;
@@ -228,6 +241,30 @@ public class TSMovement : MonoBehaviour
         else
         {
             return Vector3.up;
+        }
+    }
+
+
+    /*
+     * Tries to hitch the pony and the cart
+     */
+    private void SetCart(bool pullCart)
+    {
+        Cart cart = GameController.m_harness.GetComponent<Cart>();
+
+        if (pullCart && Vector3.Distance(transform.position, cart.harnessCenter.position) < 0.4f)
+        {
+            m_pullingCart = pullCart;
+
+            if (m_pullingCart)
+            {
+                cart.Harness(transform);
+            }
+        }
+        else if (!pullCart)
+        {
+            m_pullingCart = pullCart;
+            cart.RemoveHarness();
         }
     }
 }
