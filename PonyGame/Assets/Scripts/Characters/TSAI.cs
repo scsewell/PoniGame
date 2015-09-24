@@ -44,7 +44,11 @@ public class TSAI : MonoBehaviour
 
                 try
                 {
+                    int noCartMask = 9; //...001001 (4th bit is cartable layer, 1 is walkable)
+                    int cartMask = 8; //...001000
+                    
                     m_agent.enabled = true;
+                    m_agent.areaMask = GetComponent<TSMovement>().PullingCart ? cartMask : noCartMask;
                     m_agent.CalculatePath(GameController.GetPlayer().position, path);
                     m_agent.enabled = false;
                 }

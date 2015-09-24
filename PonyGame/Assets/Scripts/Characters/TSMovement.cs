@@ -56,12 +56,18 @@ public class TSMovement : MonoBehaviour
 
     private CollisionFlags m_CollisionFlags;
     private CharacterController m_controller;
-    private float m_forwardVelocity = 0;
     private float m_angVelocity = 0;
     private float m_velocityY = 0;
     private bool m_run = false;
-    private bool m_pullingCart = false;
 
+
+    private bool m_pullingCart = false;
+    public bool PullingCart
+    {
+        get { return m_pullingCart; }
+    }
+
+    private float m_forwardVelocity = 0;
     public float ForwardSpeed
     {
         get { return m_forwardVelocity; }

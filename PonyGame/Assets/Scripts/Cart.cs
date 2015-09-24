@@ -47,11 +47,12 @@ public class Cart : MonoBehaviour
         sweepTester.GetComponent<Collider>().enabled = true;
         foreach (RaycastHit hit in sweepTester.SweepTestAll(transform.forward, 0.15f))
         {
+            bool isgroundHit = hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground");
             bool isSelfHit = hit.transform.root == GameController.GetCart() || hit.transform.root == m_pony;
             bool isKinematic = hit.transform.GetComponent<CharacterController>();
             bool isStatic = hit.transform.gameObject.isStatic;
 
-            if ((isStatic || isKinematic) && !isSelfHit)
+            if ((isStatic || isKinematic) && !isSelfHit && !isgroundHit)
             {
                 frontIsClear = false;
             }
