@@ -5,17 +5,18 @@ public class Cart : MonoBehaviour
 {
     public Transform harnessCenter;
     public Transform centerOfMass;
+    public Rigidbody sweepTester;
+    public ConfigurableJoint harnessJoint;
+    public AudioSource rattleSource;
 
     private Transform m_pony;
     private Transform m_waist;
     private ConfigurableJoint m_joint;
-    private Vector3 m_restPos;
 
-    // Use this for initialization
+    
     void Start ()
     {
         GameController.GetCart().GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
-        m_restPos = GameController.GetCart().InverseTransformPoint(transform.position);
     }
 
     void LateUpdate()
@@ -24,13 +25,45 @@ public class Cart : MonoBehaviour
         {
             m_joint.connectedAnchor = m_pony.InverseTransformPoint(m_waist.position);
         }
+
+        rattleSource.volume = Mathf.Min(GameController.GetCart().GetComponent<Rigidbody>().velocity.magnitude / 2.5f, 0.4f);
     }
 
-    public float GetJointDistance()
+    /*
+     * Gets the rotation of the harness joint
+     */
+    public Quaternion GetHarnessRotation()
     {
-        return Vector3.Distance(GameController.GetCart().TransformPoint(m_restPos), transform.position);
+        return Quaternion.Inverse(GameController.GetCart().transform.rotation) * transform.rotation;
     }
 
+    /*
+     * Does a sweep and checks if there is nothing obstucting the forward movement of the cart, ignoring the cart and player itself
+     */
+    public bool IsFrontClear()
+    {
+        bool frontIsClear = true;
+
+        sweepTester.GetComponent<Collider>().enabled = true;
+        foreach (RaycastHit hit in sweepTester.SweepTestAll(transform.forward, 0.15f))
+        {
+            bool isSelfHit = hit.transform.root == GameController.GetCart() || hit.transform.root == m_pony;
+            bool isKinematic = hit.transform.GetComponent<CharacterController>();
+            bool isStatic = hit.transform.gameObject.isStatic;
+
+            if ((isStatic || isKinematic) && !isSelfHit)
+            {
+                frontIsClear = false;
+            }
+        }
+        sweepTester.GetComponent<Collider>().enabled = false;
+
+        return frontIsClear;
+    }
+
+    /*
+     * Harnesses a pony to the cart by adding a joint
+     */
     public void Harness(Transform pony)
     {
         m_pony = pony;
@@ -44,9 +77,9 @@ public class Cart : MonoBehaviour
             }
         }
 
-        Vector3 targetPos = GameController.GetPlayer().position + new Vector3(0, 0.2f, -0.014f);
+        Vector3 targetPos = m_pony.TransformPoint(new Vector3(0, 0.2f, -0.014f));
         Vector3 dir = (targetPos - transform.position).normalized;
-        transform.rotation = Quaternion.LookRotation(dir, GameController.GetPlayer().up);
+        transform.rotation = Quaternion.LookRotation(dir, m_pony.up);
 
         if (m_joint)
         {
@@ -83,6 +116,9 @@ public class Cart : MonoBehaviour
         m_joint.anchor = harnessCenter.localPosition;
     }
 
+    /*
+     * Removes the joint connecting the cart and a pony
+     */
     public void RemoveHarness()
     {
         m_pony = null;

@@ -78,17 +78,21 @@ public class TSMovement : MonoBehaviour
      */
 	void Update ()
     {
-        MoveInputs inputs = new MoveInputs();
-        InputDevice device = InputManager.ActiveDevice;
-
-        m_run = Input.GetKeyDown(KeyCode.C) || device.LeftStickButton.WasPressed ? !m_run : m_run;
-
         if (tag == "Player")
         {
+            InputDevice device = InputManager.ActiveDevice;
+
+            // toggle pulling the cart
             if (Input.GetKeyDown(KeyCode.F))
             {
                 SetCart(!m_pullingCart);
             }
+
+            // toggle run stance
+            m_run = Input.GetKeyDown(KeyCode.C) || device.LeftStickButton.WasPressed ? !m_run : m_run;
+
+            // get movement input
+            MoveInputs inputs = new MoveInputs();
 
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             move += new Vector3(device.LeftStick.X, 0, device.LeftStick.Y);
@@ -135,7 +139,7 @@ public class TSMovement : MonoBehaviour
 
         // linearly accelerate towards some target velocity
         m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
-        Vector3 moveVelocity = transform.forward * m_forwardVelocity;
+        Vector3 moveVelocity = transform.forward * m_forwardVelocity * (m_pullingCart && !GameController.GetHarness().GetComponent<Cart>().IsFrontClear() ? 0 : 1);
 
         if (m_controller.isGrounded)
         {
@@ -169,15 +173,19 @@ public class TSMovement : MonoBehaviour
         
         Vector3 move = new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime;
         m_CollisionFlags = m_controller.Move(move);
-        
-        float maxTurnSpeed = rotSpeed * (m_pullingCart ? cartTurnFraction : 1) * Time.deltaTime;
-        float targetAngVelocity = Mathf.Clamp(inputs.turn, -maxTurnSpeed, maxTurnSpeed);
 
-        m_angVelocity = Mathf.MoveTowards(m_angVelocity, targetAngVelocity, 20.0f * Time.deltaTime) * Mathf.Clamp01((Mathf.Abs(inputs.turn) + 25.0f) / 45.0f);
-        bool willOvershoot = Mathf.Abs(inputs.turn) < Mathf.Abs(m_angVelocity);
-        m_angVelocity = willOvershoot ? targetAngVelocity : m_angVelocity;
+        float cartHingeAng = Mathf.DeltaAngle(0, GameController.GetHarness().GetComponent<Cart>().GetHarnessRotation().eulerAngles.y);
+        if (!m_pullingCart || !(Mathf.Abs(cartHingeAng) > 38 && Mathf.Sign(cartHingeAng) == Mathf.Sign(inputs.turn)))
+        {
+            float maxTurnSpeed = rotSpeed * (m_pullingCart ? cartTurnFraction : 1) * Time.deltaTime;
+            float targetAngVelocity = Mathf.Clamp(inputs.turn, -maxTurnSpeed, maxTurnSpeed);
 
-        transform.Rotate(0, m_angVelocity, 0, Space.Self);
+            m_angVelocity = Mathf.MoveTowards(m_angVelocity, targetAngVelocity, 20.0f * Time.deltaTime) * Mathf.Clamp01((Mathf.Abs(inputs.turn) + 25.0f) / 45.0f);
+            bool willOvershoot = Mathf.Abs(inputs.turn) < Mathf.Abs(m_angVelocity);
+            m_angVelocity = willOvershoot ? targetAngVelocity : m_angVelocity;
+
+            transform.Rotate(0, m_angVelocity, 0, Space.Self);
+        }
     }
 
 
