@@ -63,7 +63,7 @@ public class UnityOBJExporter : ScriptableWizard {
 		return "" + i1 + "/" + i2 + "/" + i3;
 	}
 
-	List<string> notReadableTextures = new List<string>();
+	//List<string> notReadableTextures = new List<string>();
 
 	List<string> matNameCache = new List<string>();
 	string GenerateMaterialNew(ref System.Text.StringBuilder sbR,ref Material m){
@@ -131,7 +131,7 @@ public class UnityOBJExporter : ScriptableWizard {
 							
 						}
 					}catch(System.Exception ex){
-	
+                        Debug.Log(ex.Message);
 					}
 				}
 

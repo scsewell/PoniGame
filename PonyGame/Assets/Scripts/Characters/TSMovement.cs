@@ -17,6 +17,10 @@ public class TSMovement : MonoBehaviour
     [Range(1.0f, 4.0f)]
     public float runSpeed = 2.0f;
 
+    [Tooltip("The speed relative to normal when pulling the cart (No Units)")]
+    [Range(0.5f, 1.0f)]
+    public float cartSpeedFraction = 0.9f;
+
     [Tooltip("How fast the character accelerates forward (Units / Second^2)")]
     [Range(1.0f, 10.0f)]
     public float acceleration = 5.0f;
@@ -144,7 +148,7 @@ public class TSMovement : MonoBehaviour
         }
 
         // linearly accelerate towards some target velocity
-        m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
+        m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed) * (PullingCart ? cartSpeedFraction : 1), acceleration * Time.deltaTime);
         Vector3 moveVelocity = transform.forward * m_forwardVelocity * (m_pullingCart && !GameController.GetHarness().GetComponent<Cart>().IsFrontClear() ? 0 : 1);
 
         if (m_controller.isGrounded)
