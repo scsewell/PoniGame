@@ -1,47 +1,53 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 /*
  * Switches the active player between characters
  */
 public class GameController : MonoBehaviour
 {
-    public Transform[] characters;
-    public Transform harness;
+    public Transform defaultCharacter;
+    public Transform spawnPoint;
 
+    private static List<Transform> m_characters;
     private static Transform m_player;
-    private static Transform m_harness;
-    private static Transform m_cart;
-    private static bool m_playerSwitched = false;
 
+    public delegate void CharacterChangeHandler(Transform newCharacter);
+    public static event CharacterChangeHandler CharacterChanged;
 
     void Start()
     {
-        m_harness = harness;
-        m_cart = harness.root;
+        m_characters = new List<Transform>();
     }
 
-    void Update()
+    public static void AddCharacter(Transform transform)
     {
-        m_playerSwitched = false;
+        m_characters.Add(transform);
+    }
 
-        if (!PlayerExists())
+    public static void RemoveCharacter(Transform transform)
+    {
+        m_characters.Remove(transform);
+    }
+
+    private void Update()
+    {
+        if (m_characters.Count == 0)
         {
-            SetPlayer(characters[0]);
+            Instantiate(defaultCharacter, spawnPoint.position, spawnPoint.rotation);
+        }
+
+        if (m_player == null && m_characters.Count > 0)
+        {
+            SetPlayer(m_characters.First());
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (characters[0] == m_player)
-            {
-                SetPlayer(characters[1]);
-                ResetPlayer(characters[0]);
-            }
-            else
-            {
-                SetPlayer(characters[0]);
-                ResetPlayer(characters[1]);
-            }
+            SetPlayer(m_characters[(m_characters.IndexOf(m_player) + 1) % m_characters.Count]);
+            m_characters.Where(c => c != m_player).ToList().ForEach(c => ResetPlayer(c));
         }
     }
 
@@ -50,7 +56,7 @@ public class GameController : MonoBehaviour
         m_player = newPlayer;
         newPlayer.tag = "Player";
         newPlayer.GetComponent<TSAI>().enabled = false;
-        m_playerSwitched = true;
+        InvokePlayerChanged();
     }
 
     private void ResetPlayer(Transform oldPlayer)
@@ -59,57 +65,8 @@ public class GameController : MonoBehaviour
         oldPlayer.GetComponent<TSAI>().enabled = true;
     }
 
-    // returns true if there is a player object
-    public static bool PlayerExists()
+    private void InvokePlayerChanged()
     {
-        return (m_player != null);
-    }
-
-    // returns true if the player object was changed this frame
-    public static bool PlayerChanged()
-    {
-        return m_playerSwitched;
-    }
-
-    // returns the player's transform if it exists
-    public static Transform GetPlayer()
-    {
-        if (PlayerExists())
-        {
-            return m_player;
-        }
-        else
-        {
-            Debug.LogError("No player!");
-            return null;
-        }
-    }
-
-    // returns the harness transform if it is set
-    public static Transform GetHarness()
-    {
-        if (m_harness != null)
-        {
-            return m_harness;
-        }
-        else
-        {
-            Debug.LogError("No harness!");
-            return null;
-        }
-    }
-
-    // returns the cart transform if it is set
-    public static Transform GetCart()
-    {
-        if (m_cart != null)
-        {
-            return m_cart;
-        }
-        else
-        {
-            Debug.LogError("No cart!");
-            return null;
-        }
+        CharacterChanged(m_player);
     }
 }

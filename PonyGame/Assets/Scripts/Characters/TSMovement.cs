@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using InControl;
 
 /*
  * Responsible for moving the player character
@@ -16,11 +15,7 @@ public class TSMovement : MonoBehaviour
     [Tooltip("How fast the character may run (Units / Second)")]
     [Range(1.0f, 4.0f)]
     public float runSpeed = 2.0f;
-
-    [Tooltip("The speed relative to normal when pulling the cart (No Units)")]
-    [Range(0.5f, 1.0f)]
-    public float cartSpeedFraction = 0.9f;
-
+    
     [Tooltip("How fast the character accelerates forward (Units / Second^2)")]
     [Range(1.0f, 10.0f)]
     public float acceleration = 5.0f;
@@ -28,11 +23,7 @@ public class TSMovement : MonoBehaviour
     [Tooltip("How fast the character may rotate (Degrees / Second)")]
     [Range(60, 720)]
     public float rotSpeed = 120.0f;
-
-    [Tooltip("What fraction of the max turn rate to use when the cart is being pulled")]
-    [Range(0.0f, 1.0f)]
-    public float cartTurnFraction = 0.25f;
-
+    
     [Tooltip("How fast the character begins moving on jumping (Units / Second)")]
     [Range(0.5f, 3.0f)]
     public float jumpSpeed = 1.0f;
@@ -57,19 +48,16 @@ public class TSMovement : MonoBehaviour
     [Range(0.25f, 24.0f)]
     public float airAlignSpeed = 1.5f;
 
+    [Tooltip("Higher values allow the character to push rigidbodies faster")]
+    [Range(0.0f, 5.0f)]
+    public float pushStrength = 0.5f;
 
+    private TransformInterpolator m_transformInterpolator;
     private CollisionFlags m_CollisionFlags;
     private CharacterController m_controller;
     private float m_angVelocity = 0;
     private float m_velocityY = 0;
     private bool m_run = false;
-
-
-    private bool m_pullingCart = false;
-    public bool PullingCart
-    {
-        get { return m_pullingCart; }
-    }
 
     private float m_forwardVelocity = 0;
     public float ForwardSpeed
@@ -78,43 +66,44 @@ public class TSMovement : MonoBehaviour
     }
 
 
-    void Start ()
+    void Start()
     {
+        m_transformInterpolator = GetComponent<TransformInterpolator>();
         m_controller = GetComponent<CharacterController>();
+
+        m_transformInterpolator.ForgetPreviousValues();
+        GameController.AddCharacter(transform);
+    }
+
+    void OnDestroy()
+    {
+        GameController.RemoveCharacter(transform);
     }
 	
     /*
      * Executes the player's or AI's commands
      */
-	void Update ()
+	void FixedUpdate()
     {
         if (tag == "Player")
         {
-            InputDevice device = InputManager.ActiveDevice;
-
-            // toggle pulling the cart
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                SetCart(!m_pullingCart);
-            }
-
-            // toggle run stance
-            m_run = Input.GetKeyDown(KeyCode.C) || device.LeftStickButton.WasPressed ? !m_run : m_run;
-
-            // get movement input
             MoveInputs inputs = new MoveInputs();
 
-            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            move += new Vector3(device.LeftStick.X, 0, device.LeftStick.Y);
-            move = Vector3.ClampMagnitude(move, 1);
+            float x = Controls.AverageValue(GameAxis.MoveX) + (Controls.IsDown(GameButton.MoveLeft) ? -1 : 0) + (Controls.IsDown(GameButton.MoveRight) ? 1 : 0);
+            float y = Controls.AverageValue(GameAxis.MoveY) + (Controls.IsDown(GameButton.MoveBackward) ? -1 : 0) + (Controls.IsDown(GameButton.MoveForward) ? 1 : 0);
+            Vector3 raw = new Vector3(x, 0, y);
+            Vector3 move = raw.magnitude > 0.25f ? raw.normalized : Vector3.zero;
 
             if (move.magnitude > 0)
             {
-                inputs.turn = GetBearing(transform.forward, Camera.main.transform.rotation * move);
+                inputs.turn = Utils.GetBearing(transform.forward, Camera.main.transform.rotation * move, Vector3.up);
                 inputs.forward = move.magnitude;
             }
-            inputs.run = Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State ? !m_run : m_run;
-            inputs.jump = (Input.GetKey(KeyCode.Space) && !device.Action4.State) || device.Action3.State;
+
+            m_run = Controls.JustDown(GameButton.RunToggle) ? !m_run : m_run;
+
+            inputs.run = Controls.IsDown(GameButton.Run) ? !m_run : m_run;
+            inputs.jump = Controls.JustDown(GameButton.Jump);
 
             ExecuteMovement(inputs);
         }
@@ -125,31 +114,13 @@ public class TSMovement : MonoBehaviour
     }
 
     /*
-     * Gets the bearing in degrees between two vectors as viewed from above
-     */
-    public float GetBearing(Vector3 dir1, Vector3 dir2)
-    {
-        float vec1 = Quaternion.LookRotation(Vector3.ProjectOnPlane(dir1, Vector3.up), Vector3.up).eulerAngles.y;
-        float vec2 = Quaternion.LookRotation(Vector3.ProjectOnPlane(dir2, Vector3.up), Vector3.up).eulerAngles.y;
-        return -Mathf.DeltaAngle(vec2, vec1);
-    }
-
-
-    /*
      * Moves the character based on the provided input
      */
     private void ExecuteMovement(MoveInputs inputs)
     {
-        // cancel invalid actions
-        if (m_pullingCart)
-        {
-            inputs.run = false;
-            inputs.jump = false;
-        }
-
         // linearly accelerate towards some target velocity
-        m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed) * (PullingCart ? cartSpeedFraction : 1), acceleration * Time.deltaTime);
-        Vector3 moveVelocity = transform.forward * m_forwardVelocity * (m_pullingCart && !GameController.GetHarness().GetComponent<Cart>().IsFrontClear() ? 0 : 1);
+        m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
+        Vector3 moveVelocity = transform.forward * m_forwardVelocity;
 
         if (m_controller.isGrounded)
         {
@@ -183,21 +154,16 @@ public class TSMovement : MonoBehaviour
         
         Vector3 move = new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime;
         m_CollisionFlags = m_controller.Move(move);
+        
+        float maxTurnSpeed = rotSpeed * Time.deltaTime;
+        float targetAngVelocity = Mathf.Clamp(inputs.turn, -maxTurnSpeed, maxTurnSpeed);
 
-        float cartHingeAng = Mathf.DeltaAngle(0, GameController.GetHarness().GetComponent<Cart>().GetHarnessRotation().eulerAngles.y);
-        if (!m_pullingCart || !(Mathf.Abs(cartHingeAng) > 38 && Mathf.Sign(cartHingeAng) == Mathf.Sign(inputs.turn)))
-        {
-            float maxTurnSpeed = rotSpeed * (m_pullingCart ? cartTurnFraction : 1) * Time.deltaTime;
-            float targetAngVelocity = Mathf.Clamp(inputs.turn, -maxTurnSpeed, maxTurnSpeed);
+        m_angVelocity = Mathf.MoveTowards(m_angVelocity, targetAngVelocity, 20.0f * Time.deltaTime) * Mathf.Clamp01((Mathf.Abs(inputs.turn) + 25.0f) / 45.0f);
+        bool willOvershoot = Mathf.Abs(inputs.turn) < Mathf.Abs(m_angVelocity);
+        m_angVelocity = willOvershoot ? targetAngVelocity : m_angVelocity;
 
-            m_angVelocity = Mathf.MoveTowards(m_angVelocity, targetAngVelocity, 20.0f * Time.deltaTime) * Mathf.Clamp01((Mathf.Abs(inputs.turn) + 25.0f) / 45.0f);
-            bool willOvershoot = Mathf.Abs(inputs.turn) < Mathf.Abs(m_angVelocity);
-            m_angVelocity = willOvershoot ? targetAngVelocity : m_angVelocity;
-
-            transform.Rotate(0, m_angVelocity, 0, Space.Self);
-        }
+        transform.Rotate(0, m_angVelocity, 0, Space.Self);
     }
-
 
     /*
      * Moves rigidbodies that are blocking the characters path and are moveable
@@ -224,7 +190,7 @@ public class TSMovement : MonoBehaviour
         }
 
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.y);
-        body.AddForceAtPosition(pushDir * 0.5f, hit.point, ForceMode.Impulse);
+        body.AddForceAtPosition(pushDir * pushStrength, hit.point, ForceMode.Impulse);
     }
 
 
@@ -266,31 +232,6 @@ public class TSMovement : MonoBehaviour
         else
         {
             return Vector3.up;
-        }
-    }
-
-
-    /*
-     * Tries to hitch the pony and the cart
-     */
-    private void SetCart(bool pullCart)
-    {
-        Cart cart = GameController.GetHarness().GetComponent<Cart>();
-
-        if (pullCart && Vector3.Distance(transform.TransformPoint(new Vector3(0, 0.19f, 0)), cart.harnessCenter.position) < 0.15f)
-        {
-            m_pullingCart = pullCart;
-
-            if (m_pullingCart)
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.position - GameController.GetHarness().position, transform.up), transform.up);
-                cart.Harness(transform);
-            }
-        }
-        else if (!pullCart)
-        {
-            m_pullingCart = pullCart;
-            cart.RemoveHarness();
         }
     }
 }

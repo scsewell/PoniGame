@@ -24,32 +24,42 @@ public class TSAI : MonoBehaviour
 
     private NavMeshAgent m_agent;
     private List<Vector3> m_path;
+    private Transform m_player;
     private Vector3 m_destination;
     private bool m_run = false;
 
-	void Start ()
+
+	void Start()
     {
+        GameController.CharacterChanged += SetPlayer;
         m_agent = GetComponent<NavMeshAgent>();
         m_path = new List<Vector3>();
     }
-	
-	void Update ()
+    
+    void OnDestroy()
+    {
+        GameController.CharacterChanged -= SetPlayer;
+    }
+
+    void SetPlayer(Transform player)
+    {
+        m_player = player;
+    }
+
+    void Update()
     {
         // if we are following the player but don't have a path or the player has strayed from where we last generated at path to the player, find an updated path to the player
         if (followPlayer)
         {
-            if (GameController.PlayerExists() && (m_path.Count == 0 || Vector3.Distance(GameController.GetPlayer().position, m_path[m_path.Count - 1]) > newPathTolerance))
+            if (m_player && (m_path.Count == 0 || Vector3.Distance(m_player.position, m_path[m_path.Count - 1]) > newPathTolerance))
             {
                 NavMeshPath path = new NavMeshPath();
 
                 try
                 {
-                    int noCartMask = 9; //...001001 (4th bit is cartable layer, 1 is walkable)
-                    int cartMask = 8; //...001000
-                    
                     m_agent.enabled = true;
-                    m_agent.areaMask = GetComponent<TSMovement>().PullingCart ? cartMask : noCartMask;
-                    m_agent.CalculatePath(GameController.GetPlayer().position, path);
+                    m_agent.areaMask = 1; //...000001
+                    m_agent.CalculatePath(m_player.position, path);
                     m_agent.enabled = false;
                 }
                 catch

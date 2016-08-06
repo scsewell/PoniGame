@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityStandardAssets.ImageEffects;
-using System.Collections;
+using UnityStandardAssets.CinematicEffects;
 
 /*
  * Manages settings for the game
@@ -20,7 +20,7 @@ public class Settings : MonoBehaviour
     }
 
 
-    void Start ()
+    void Start()
     {
         m_videoQuality = (VideoQ)QualitySettings.GetQualityLevel();
 	}
@@ -36,8 +36,7 @@ public class Settings : MonoBehaviour
             SetVideoQuality(VideoQ.High);
         }
     }
-
-
+    
     /*
      * Sets the graphics quality for the game and applies them
      */
@@ -47,14 +46,19 @@ public class Settings : MonoBehaviour
 
         QualitySettings.SetQualityLevel((int)quality);
 
-        if (Camera.main.GetComponent<Antialiasing>())
+        if (Camera.main.GetComponent<AntiAliasing>())
         {
-            Camera.main.GetComponent<Antialiasing>().enabled = quality == VideoQ.Low;
+            Camera.main.GetComponent<AntiAliasing>().enabled = quality == VideoQ.Low;
         }
 
         if (Camera.main.GetComponent<SunShafts>())
         {
             Camera.main.GetComponent<SunShafts>().enabled = quality == VideoQ.High;
+        }
+
+        if (Camera.main.GetComponent<UnityStandardAssets.CinematicEffects.Bloom>())
+        {
+            Camera.main.GetComponent<UnityStandardAssets.CinematicEffects.Bloom>().enabled = quality == VideoQ.High;
         }
     }
 }
