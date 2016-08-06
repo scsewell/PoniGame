@@ -37,8 +37,11 @@ public class TSAnimation : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float runVolume = 0.5f;
 
-    public AudioSource m_soundTrot;
-    public AudioSource m_soundGallop;
+    public AudioSource frontLeftHoof;
+    public AudioSource frontRightHoof;
+    public AudioSource backLeftHoof;
+    public AudioSource backRightHoof;
+    public AudioClip[] hoofsteps;
 
     private Animator m_animator;
     private TSMovement m_movement;
@@ -79,26 +82,6 @@ public class TSAnimation : MonoBehaviour
         m_animator.SetFloat("LookHorizontal", m_lookH);
         m_animator.SetFloat("LookVertical", m_lookV);
         m_animator.SetBool("MidAir", !GetComponent<CharacterController>().isGrounded);
-
-        // audio
-        float runFactor = Mathf.Max(m_movement.ForwardSpeed - m_movement.walkSpeed, 0) / (m_movement.runSpeed - m_movement.walkSpeed);
-        bool grounded = GetComponent<CharacterController>().isGrounded;
-
-        m_soundTrot.volume = grounded ? (Mathf.Min(m_movement.ForwardSpeed / m_movement.walkSpeed, 1) - runFactor) * walkVolume : 0;
-        m_soundGallop.volume = grounded ? runFactor * runVolume : 0;
-
-        // stop sounds with no volume
-        if (m_soundTrot.volume < 0.001f) {
-            m_soundTrot.Stop();
-        } else if (!m_soundTrot.isPlaying) {
-            m_soundTrot.Play();
-        }
-
-        if (m_soundGallop.volume < 0.001f) {
-            m_soundGallop.Stop();
-        } else if (!m_soundGallop.isPlaying) {
-            m_soundGallop.Play();
-        }
     }
 
     void LateUpdate()
@@ -115,5 +98,29 @@ public class TSAnimation : MonoBehaviour
             headBone.rotation = Quaternion.Slerp(m_lastHeadRot, targetRot, Time.deltaTime * headRotateSpeed);
         }
         m_lastHeadRot = headBone.rotation;
+    }
+
+    public void FrontLeftHoofstep()
+    {
+        PlayHoofstep(frontLeftHoof);
+    }
+    public void FrontRightHoofstep()
+    {
+        PlayHoofstep(frontRightHoof);
+    }
+    public void BackLeftHoofstep()
+    {
+        PlayHoofstep(backLeftHoof);
+    }
+    public void BackRightHoofstep()
+    {
+        PlayHoofstep(backRightHoof);
+    }
+
+    private void PlayHoofstep(AudioSource source)
+    {
+        source.clip = hoofsteps[Random.Range(0, hoofsteps.Length)];
+        source.pitch = 0.95f + 0.1f * Random.value;
+        source.Play();
     }
 }

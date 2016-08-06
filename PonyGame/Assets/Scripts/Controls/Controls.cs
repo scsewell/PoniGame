@@ -8,7 +8,7 @@ using InputController;
 // Actions needing a key binding.
 public enum GameButton
 {
-    MoveLeft, MoveRight, MoveForward, MoveBackward, Run, RunToggle, Jump,
+    MoveLeft, MoveRight, MoveForward, MoveBackward, Walk, WalkToggle, Jump, Lock
 }
 
 // Actions needing an axis binding.
@@ -83,9 +83,10 @@ public class Controls : MonoBehaviour
         m_buttons.Add(GameButton.MoveRight,     new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.D)                }));
         m_buttons.Add(GameButton.MoveForward,   new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.W)                }));
         m_buttons.Add(GameButton.MoveBackward,  new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.S)                }));
+        m_buttons.Add(GameButton.Walk,          new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.LeftShift),       }));
+        m_buttons.Add(GameButton.WalkToggle,    new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.LeftControl),     }));
         m_buttons.Add(GameButton.Jump,          new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.Space),           new JoystickButton(GamepadButton.A)             }));
-        m_buttons.Add(GameButton.Run,           new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.LeftShift),       new JoystickButton(GamepadButton.LStick)        }));
-        m_buttons.Add(GameButton.RunToggle,     new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.LeftControl),     new JoystickButton(GamepadButton.B)             }));
+        m_buttons.Add(GameButton.Lock,          new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.Q),               new JoystickButton(GamepadButton.RStick)        }));
 
         m_axis = new Dictionary<GameAxis, BufferedAxis>();
         

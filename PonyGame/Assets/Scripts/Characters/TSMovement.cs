@@ -21,11 +21,27 @@ public class TSMovement : MonoBehaviour
     public float acceleration = 5.0f;
 
     [Tooltip("How fast the character may rotate (Degrees / Second)")]
-    [Range(60, 720)]
+    [Range(0, 2000)]
     public float rotSpeed = 120.0f;
+
+    [Tooltip("How fast the character may rotate while in the air (Degrees / Second)")]
+    [Range(0, 2000)]
+    public float airRotSpeed = 45.0f;
     
+    [Tooltip("The target angular velocity when the character is facing away from the goal direction (Degrees / Second)")]
+    [Range(0, 2000)]
+    public float oppositeAngVelocity = 100.0f;
+
+    [Tooltip("The target angular velocity when the character is facing in the goal direction (Degrees / Second)")]
+    [Range(0, 2000)]
+    public float forwardAngVelocity = 100.0f;
+
+    [Tooltip("The character's torque (Degrees / Second^2)")]
+    [Range(0, 10000)]
+    public float maxTorque = 100.0f;
+
     [Tooltip("How fast the character begins moving on jumping (Units / Second)")]
-    [Range(0.5f, 3.0f)]
+    [Range(0.0f, 6.0f)]
     public float jumpSpeed = 1.0f;
 
     [Tooltip("Fraction of the world's gravity is applied when in the air")]
@@ -57,7 +73,7 @@ public class TSMovement : MonoBehaviour
     private CharacterController m_controller;
     private float m_angVelocity = 0;
     private float m_velocityY = 0;
-    private bool m_run = false;
+    private bool m_walk = false;
 
     private float m_forwardVelocity = 0;
     public float ForwardSpeed
@@ -91,18 +107,17 @@ public class TSMovement : MonoBehaviour
 
             float x = Controls.AverageValue(GameAxis.MoveX) + (Controls.IsDown(GameButton.MoveLeft) ? -1 : 0) + (Controls.IsDown(GameButton.MoveRight) ? 1 : 0);
             float y = Controls.AverageValue(GameAxis.MoveY) + (Controls.IsDown(GameButton.MoveBackward) ? -1 : 0) + (Controls.IsDown(GameButton.MoveForward) ? 1 : 0);
-            Vector3 raw = new Vector3(x, 0, y);
-            Vector3 move = raw.magnitude > 0.25f ? raw.normalized : Vector3.zero;
+            Vector3 raw = Vector3.ClampMagnitude(new Vector3(x, 0, y), 1);
 
-            if (move.magnitude > 0)
+            if (raw.magnitude > 0)
             {
-                inputs.turn = Utils.GetBearing(transform.forward, Camera.main.transform.rotation * move, Vector3.up);
-                inputs.forward = move.magnitude;
+                inputs.turn = Utils.GetBearing(transform.forward, Camera.main.transform.rotation * raw, Vector3.up);
+                inputs.forward = 1;
             }
 
-            m_run = Controls.JustDown(GameButton.RunToggle) ? !m_run : m_run;
-
-            inputs.run = Controls.IsDown(GameButton.Run) ? !m_run : m_run;
+            m_walk = Controls.JustDown(GameButton.WalkToggle) ? !m_walk : m_walk;
+            
+            inputs.run = raw.magnitude > 0.75f && m_walk == Controls.IsDown(GameButton.Walk);
             inputs.jump = Controls.JustDown(GameButton.Jump);
 
             ExecuteMovement(inputs);
@@ -154,15 +169,19 @@ public class TSMovement : MonoBehaviour
         
         Vector3 move = new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime;
         m_CollisionFlags = m_controller.Move(move);
-        
-        float maxTurnSpeed = rotSpeed * Time.deltaTime;
-        float targetAngVelocity = Mathf.Clamp(inputs.turn, -maxTurnSpeed, maxTurnSpeed);
 
-        m_angVelocity = Mathf.MoveTowards(m_angVelocity, targetAngVelocity, 20.0f * Time.deltaTime) * Mathf.Clamp01((Mathf.Abs(inputs.turn) + 25.0f) / 45.0f);
-        bool willOvershoot = Mathf.Abs(inputs.turn) < Mathf.Abs(m_angVelocity);
-        m_angVelocity = willOvershoot ? targetAngVelocity : m_angVelocity;
+        float maxTurnSpeed = m_controller.isGrounded ? rotSpeed : airRotSpeed;
+        float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.turn / 180);
+        m_angVelocity = Mathf.Clamp(Mathf.MoveTowards(m_angVelocity, targetAngVelocity, maxTorque * Time.deltaTime), -maxTurnSpeed, maxTurnSpeed);
 
-        transform.Rotate(0, m_angVelocity, 0, Space.Self);
+        float deltaRotation = m_angVelocity * Time.deltaTime;
+        if (Mathf.Abs(inputs.turn) < Mathf.Abs(deltaRotation))
+        {
+            deltaRotation = inputs.turn;
+            m_angVelocity = 0;
+        }
+
+        transform.Rotate(0, deltaRotation, 0, Space.Self);
     }
 
     /*

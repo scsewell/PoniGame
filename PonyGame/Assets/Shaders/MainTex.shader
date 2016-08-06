@@ -51,7 +51,7 @@
 		{
 			Name "OUTLINE"
 			Tags { "LightMode" = "Always" }
-			Cull Off
+			Cull Back
 			ZWrite Off
 			ColorMask RGB // alpha not used
 			Blend SrcAlpha OneMinusSrcAlpha
@@ -94,8 +94,8 @@
         	o.Albedo = col * (1 - _Shading);
         	o.Emission = col * _Shading;
         }
-		
 		ENDCG
+		
 	}
 	Fallback "Diffuse"
 }

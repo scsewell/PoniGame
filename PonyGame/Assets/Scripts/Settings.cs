@@ -45,6 +45,7 @@ public class Settings : MonoBehaviour
         m_videoQuality = quality;
 
         QualitySettings.SetQualityLevel((int)quality);
+        Application.targetFrameRate = quality == VideoQ.High ? 30 : 999;
 
         if (Camera.main.GetComponent<AntiAliasing>())
         {
