@@ -43,7 +43,7 @@ Shader "Toon/Basic Outline" {
 		UsePass "Toon/Basic/BASE"
 		Pass {
 			Name "OUTLINE"
-			Tags { "LightMode" = "Always" }
+			Tags { "Queue" = "Transparent+2" "LightMode" = "Always" }
 			Cull Front
 			ZWrite On
 			ColorMask RGB

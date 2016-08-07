@@ -7,7 +7,7 @@ Shader "Toon/Basic" {
 
 
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "Queue" = "Geometry+1" "RenderType"="Opaque" }
 		Pass {
 			Name "BASE"
 			Cull Off

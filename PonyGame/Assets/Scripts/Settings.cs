@@ -13,7 +13,7 @@ public class Settings : MonoBehaviour
         High,
     }
 
-    private VideoQ m_videoQuality;
+    private VideoQ m_videoQuality = VideoQ.High;
     public VideoQ VideoQuality
     {
         get { return m_videoQuality; }
@@ -22,7 +22,7 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        m_videoQuality = (VideoQ)QualitySettings.GetQualityLevel();
+        SetVideoQuality(m_videoQuality);
 	}
 
     void Update()
@@ -45,7 +45,7 @@ public class Settings : MonoBehaviour
         m_videoQuality = quality;
 
         QualitySettings.SetQualityLevel((int)quality);
-        Application.targetFrameRate = quality == VideoQ.High ? 30 : 999;
+        Application.targetFrameRate = quality == VideoQ.High ? 999 : 30;
 
         if (Camera.main.GetComponent<AntiAliasing>())
         {

@@ -6,7 +6,7 @@ Shader "Toon/Lit" {
 	}
 
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "Queue" = "Geometry+1"  "RenderType"="Opaque" }
 		LOD 200
 		
 CGPROGRAM

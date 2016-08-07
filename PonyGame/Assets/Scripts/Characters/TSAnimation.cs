@@ -3,39 +3,52 @@ using System.Collections;
 
 public class TSAnimation : MonoBehaviour 
 {
+    public SkinnedMeshRenderer body;
+    public SkinnedMeshRenderer upperEyelashes;
+    public SkinnedMeshRenderer lowerEyelashes;
     public Transform headBone;
 
     [Tooltip("The bearing between the Camera and character forward directions at which the head is at maximum rotation")]
-    [Range(10.0f, 90.0f)]
+    [Range(10, 90)]
     public float headHorizontalAng = 60.0f;
 
     [Tooltip("The bearing between the Camera and character forward directions at which the head begins looking at the camera")]
-    [Range(90.0f, 170.0f)]
+    [Range(90, 180)]
     public float headLookBeginAng = 120.0f;
 
     [Tooltip("The bearing between the Camera and character forward directions at which the head stops looking at the camera")]
-    [Range(90.0f, 170.0f)]
+    [Range(90, 180)]
     public float headLookEndAng = 120.0f;
 
     [Tooltip("How fast the head will face the camera direction")]
-    [Range(0.5f, 32.0f)]
+    [Range(0, 32)]
     public float headRotateSpeed = 4.0f;
 
     [Tooltip("The softcap on the head's vertical look angle")]
-    [Range(00.0f, 45.0f)]
+    [Range(0, 45)]
     public float headVerticalAngSoft = 20.0f;
 
     [Tooltip("Proportionally how much the head is not rorated beyond the soft cap angle")]
-    [Range(0, 1f)]
+    [Range(0, 1)]
     public float headVerticalSoftFactor = 0.5f;
+    
+    public AnimationCurve blinkCurve;
 
-    [Tooltip("Walk sound volume")]
-    [Range(0.0f, 1.0f)]
-    public float walkVolume = 0.5f;
+    [Tooltip("Changes the speed of the blink animation")]
+    [Range(0, 30)]
+    public float blinkSpeedScale = 1.0f;
 
-    [Tooltip("Run sound volume")]
-    [Range(0.0f, 1.0f)]
-    public float runVolume = 0.5f;
+    [Tooltip("The length of the blinking animation (Seconds)")]
+    [Range(0, 1)]
+    public float blinkTime = 0.5f;
+
+    [Tooltip("The average time between blinks (Seconds)")]
+    [Range(0, 30)]
+    public float blinkChance = 5.0f;
+
+    [Tooltip("Always blink if the head is rotating faster than this speed (Degrees / Second)")]
+    [Range(0, 360)]
+    public float blinkingMotionThreshold = 40.0f;
 
     public AudioSource frontLeftHoof;
     public AudioSource frontRightHoof;
@@ -50,6 +63,7 @@ public class TSAnimation : MonoBehaviour
     private float m_lookV = 0;
     private Quaternion m_lastHeadRot;
     private bool m_lookAtCamera = false;
+    private float m_currentBlinkTime = 0;
 
     // Use this for initialization
     void Start() 
@@ -86,6 +100,8 @@ public class TSAnimation : MonoBehaviour
 
     void LateUpdate()
     {
+        float lookAngVelocity = 0;
+
         if (m_lookAtCamera)
         {
             Vector3 disp = Camera.main.transform.position - headBone.position;
@@ -95,9 +111,31 @@ public class TSAnimation : MonoBehaviour
             Quaternion verticalSoftened = lookDir * Quaternion.AngleAxis(verticalSoftening, Vector3.right);
             Quaternion targetRot = verticalSoftened * Quaternion.AngleAxis(30.0f, Vector3.right);
 
-            headBone.rotation = Quaternion.Slerp(m_lastHeadRot, targetRot, Time.deltaTime * headRotateSpeed);
+            Quaternion newRot = Quaternion.Slerp(m_lastHeadRot, targetRot, Time.deltaTime * headRotateSpeed);
+            headBone.rotation = newRot;
+            lookAngVelocity = Quaternion.Angle(newRot, m_lastHeadRot) / Time.deltaTime;
         }
         m_lastHeadRot = headBone.rotation;
+
+        // blinking
+        if (m_currentBlinkTime == 0 && (Random.value * blinkChance < Time.deltaTime || lookAngVelocity > blinkingMotionThreshold))
+        {
+            m_currentBlinkTime += Time.deltaTime;
+        }
+        
+        if (m_currentBlinkTime > 0)
+        {
+            float blinkFactor = blinkCurve.Evaluate(m_currentBlinkTime * blinkSpeedScale);
+            body.SetBlendShapeWeight(0, blinkFactor * 100);
+            upperEyelashes.SetBlendShapeWeight(0, blinkFactor * 100);
+            lowerEyelashes.SetBlendShapeWeight(0, blinkFactor * 100);
+
+            m_currentBlinkTime += Time.deltaTime;
+            if (m_currentBlinkTime > blinkTime)
+            {
+                m_currentBlinkTime = 0;
+            }
+        }
     }
 
     public void FrontLeftHoofstep()
