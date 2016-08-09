@@ -5,9 +5,8 @@ public class ShapeKeys : MonoBehaviour
 {
 	public Transform animatedBone;
     public int shapeKeyIndex = 0;
-
-	// Update is called once per frame
-	void Update ()
+    
+	void LateUpdate()
     {
 		if (animatedBone != null)
         {

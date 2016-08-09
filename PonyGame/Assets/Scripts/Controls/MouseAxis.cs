@@ -8,37 +8,36 @@ namespace InputController
     public class MouseAxis : AxisSource
     {
         public enum Axis { None, ScrollWheel, MouseX, MouseY }
-        public Axis axis;
 
-        //private float m_scale = 1;
-        //private float m_lastVelocity = 0;
+        private Axis m_axis;
+        private float m_threshold;
 
-        public MouseAxis(Axis axis)
+        public MouseAxis(Axis axis, float threshold = 0)
         {
-            this.axis = axis;
+            m_axis = axis;
+            m_threshold = threshold;
         }
 
         // returns the value of the relevant axis
         public float GetValue()
         {
-            return GetAxis(axis);
+            return GetAxisValue(m_axis);
         }
 
-        public float GetAxis(Axis mouseAxis)
+        private float GetAxisValue(Axis mouseAxis)
         {
             switch (mouseAxis)
             {
-                case Axis.ScrollWheel: return Input.GetAxis("Mouse ScrollWheel") * 0.8f / Time.deltaTime;
-                case Axis.MouseX: return (Input.GetAxis("Mouse X") * 0.008f / Time.deltaTime);
-                case Axis.MouseY: return Input.GetAxis("Mouse Y") * 0.008f / Time.deltaTime;
+                case Axis.ScrollWheel: return ThresholdValue(Input.GetAxis("Mouse ScrollWheel")) * 0.8f / Time.deltaTime;
+                case Axis.MouseX: return ThresholdValue(Input.GetAxis("Mouse X")) * 0.008f / Time.deltaTime;
+                case Axis.MouseY: return ThresholdValue(Input.GetAxis("Mouse Y")) * 0.008f / Time.deltaTime;
             }
             return 0;
         }
 
-        //public void RecordState()
-        //{
-        //    m_scale = Time.fixedDeltaTime / Time.deltaTime;
-        //    m_lastVelocity = GetAxis(axis);
-        //}
+        private float ThresholdValue(float value)
+        {
+            return Mathf.Abs(value) > m_threshold ? value : 0;
+        }
     }
 }

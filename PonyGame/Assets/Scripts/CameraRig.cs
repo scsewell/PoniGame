@@ -7,7 +7,8 @@ public class CameraRig : MonoBehaviour
     public Transform rotTarget;
     public Transform pivot;
 
-    public LayerMask layers; // which colliders the camera will put itself in front of if one is obscuring the character
+    public LayerMask cameraBlockLayers;
+    public LayerMask lineOfSightBlocking;
 
     [Tooltip("How fast the character may look around horizontally")]
     [Range(0, 20)]
@@ -46,7 +47,7 @@ public class CameraRig : MonoBehaviour
     public float maxZoom = 2.0f;
     
     [Tooltip("How much the camera height is lowered as the camera approaches the pivot")]
-    [Range(0, 2)]
+    [Range(0, 5)]
     public float zoomLowerHeight = 1.0f;
 
     [Tooltip("How quickly the camera changes zoom")]
@@ -65,23 +66,43 @@ public class CameraRig : MonoBehaviour
     [Range(0, 50)]
     public float lockLoseRange = 10.0f;
 
+    [Tooltip("True if objects with line of sight to the camera but are not in the fustrum are unlockable")]
+    public bool onlyLockOnScreen = false;
+
     [Tooltip("Higher values require targets to be more central in the screen to be locked on to")]
     [Range(0, 1)]
     public float minimumLockCenterness = 0.8f;
 
+    [Tooltip("The angle new lock targets must be within from the input direction to be considered")]
+    [Range(0, 180)]
+    public float lockChangeBearingMax = 50.0f;
+
+    [Tooltip("The higher this value, the greater weighting to targets aligned with the select direction")]
+    [Range(0, 10)]
+    public float lockDirectioness = 2.0f;
+
     [Tooltip("How quickly the camera aims at the lock target")]
     [Range(0, 30)]
     public float lockSmoothing = 8.0f;
-
+    
+    [Tooltip("Angle offset to adjust the vertical position of the lock target on screen")]
+    [Range(-90, 90)]
+    public float lockAngleAdjust = 20.0f;
 
     private Transform m_player;
-    private Transform m_lockTarget;
     private TransformInterpolator m_transformInterpolator;
     private TransformInterpolator m_pivotInterpolator;
     private Interpolator<float> m_zoomInterpolator;
     private float m_elevation = 0;
     private float m_zoom;
     private float m_zoomTarget;
+    private bool m_alreadyChangedLock = false;
+
+    private Transform m_lockTarget;
+    public Transform LockTarget
+    {
+        get { return m_lockTarget; }
+    }
 
     void Start()
     {
@@ -121,26 +142,46 @@ public class CameraRig : MonoBehaviour
         {
             transform.position = m_player.position;
 
+            // aquire new lock
+            if (Controls.JustDown(GameButton.Lock))
+            {
+                if (m_lockTarget)
+                {
+                    m_lockTarget = null;
+                }
+                else
+                {
+                    m_lockTarget = GetLockTarget();
+                }
+            }
+
             float rotateX = 0;
             if (MainUI.IsCursorLocked)
             {
-                rotateX = Mathf.Clamp(Controls.AverageValue(GameAxis.LookX) * lookXSensitivity, -lookXRateCap, lookXRateCap);
-                m_elevation += Mathf.Clamp(-Controls.AverageValue(GameAxis.LookY) * lookYSensitivity, -lookYRateCap, lookYRateCap);
+                if (m_lockTarget == null)
+                {
+                    rotateX = Mathf.Clamp(Controls.AverageValue(GameAxis.LookX) * lookXSensitivity, -lookXRateCap, lookXRateCap);
+                    m_elevation += Mathf.Clamp(-Controls.AverageValue(GameAxis.LookY) * lookYSensitivity, -lookYRateCap, lookYRateCap);
+                }
                 m_zoomTarget = Mathf.Clamp(m_zoomTarget + -Controls.AverageValue(GameAxis.Zoom) * scrollZoomSensitivity, minZoom, maxZoom);
+
+
+                Vector2 lockSearchDir = new Vector2(Controls.AverageValue(GameAxis.LockX), Controls.AverageValue(GameAxis.LockY));
+                if (lockSearchDir.magnitude > 0 && !m_alreadyChangedLock)
+                {
+                    Transform newTarget = ChangeLockTarget(lockSearchDir);
+                    m_alreadyChangedLock = (newTarget != m_lockTarget);
+                    m_lockTarget = newTarget;
+                }
+                if (lockSearchDir.magnitude == 0)
+                {
+                    m_alreadyChangedLock = false;
+                }
             }
             transform.Rotate(0, rotateX, 0, Space.Self);
             m_zoom = Mathf.Lerp(m_zoom, m_zoomTarget, Time.deltaTime * zoomSmoothing);
             m_elevation = Mathf.Clamp(m_elevation, minElevation, maxElevation);
-
-            // aquire new lock
-            bool changedLock = false;
-            if (Controls.JustDown(GameButton.Lock))
-            {
-                Transform newTarget = GetLockTarget();
-                changedLock = newTarget != m_lockTarget;
-                m_lockTarget = m_lockTarget == null ? newTarget : null;
-            }
-
+            
             // unlock if the current target is too far
             if (m_lockTarget && (m_lockTarget.position - m_player.position).magnitude > lockLoseRange)
             {
@@ -149,18 +190,16 @@ public class CameraRig : MonoBehaviour
 
             if (m_lockTarget)
             {
-                Vector3 dir = Vector3.ProjectOnPlane(m_lockTarget.position - transform.position, Vector3.up);
+                Vector3 disp = m_lockTarget.position - transform.position;
+                Vector3 dir = Vector3.ProjectOnPlane(disp, Vector3.up);
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir, Vector3.up), lockSmoothing * Time.deltaTime);
-                m_elevation = Mathf.Lerp(m_elevation, 0, lockSmoothing * Time.deltaTime);
+                Vector3 referencePoint = m_lockTarget.position - (pivot.position + transform.position) / 2;
+                float targetElevation = (Mathf.Acos(referencePoint.y / referencePoint.magnitude) * Mathf.Rad2Deg - 90);
+                float adjustFactor = 1 - (disp.magnitude / lockLoseRange);
+                m_elevation = Mathf.Lerp(m_elevation, targetElevation + lockAngleAdjust * adjustFactor, lockSmoothing * Time.deltaTime);
             }
 
             pivot.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
-
-            if (changedLock)
-            {
-                m_transformInterpolator.ForgetPreviousValues();
-                m_pivotInterpolator.ForgetPreviousValues();
-            }
         }
     }
 
@@ -168,49 +207,98 @@ public class CameraRig : MonoBehaviour
     {
         float zoomFactor = (1 - Mathf.Clamp01((m_zoom - minZoom) / (maxZoom - minZoom)));
 
-        Vector3 camPos = posTarget.position - transform.up * zoomFactor * 0.6f * zoomLowerHeight;
-        Vector3 lookPos = rotTarget.position - transform.up * zoomFactor * 0.15f * zoomLowerHeight;
+        Vector3 heightAdjust = transform.up * zoomFactor * zoomLowerHeight;
+        Vector3 camPos = posTarget.position - heightAdjust;
+        Vector3 lookPos = rotTarget.position - heightAdjust * 0.5f;
 
         Vector3 disp = (camPos - lookPos).normalized * m_zoom;
         float camDist = disp.magnitude;
 
         RaycastHit hit;
-        if (Physics.SphereCast(lookPos, radius, disp, out hit, m_zoom, layers))
+        if (Physics.SphereCast(lookPos, radius, disp, out hit, m_zoom, cameraBlockLayers))
         {
             camDist = Vector3.Distance(hit.point + hit.normal * radius, lookPos);
         }
 
-        Camera.main.transform.position = pivot.position + disp.normalized * camDist;
-
-        if (m_lockTarget)
-        {
-            Camera.main.transform.LookAt(m_lockTarget.position);
-        }
-        else
-        {
-            Camera.main.transform.LookAt(lookPos);
-        }
-
+        Camera.main.transform.position = lookPos + disp.normalized * camDist;
         Camera.main.transform.LookAt(lookPos);
 
         Debug.DrawLine(lookPos, Camera.main.transform.position, Color.red);
+        Debug.DrawLine(posTarget.position, camPos, Color.cyan);
+        Debug.DrawLine(rotTarget.position, lookPos, Color.cyan);
     }
 
     private Transform GetLockTarget()
     {
+        Transform cam = Camera.main.transform;
         Transform mostSuitable = null;
         float mostSuitableCenterness = minimumLockCenterness;
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Lockable"))
         {
-            Vector3 dir = (go.transform.position - Camera.main.transform.position).normalized;
-            float centerness = Vector3.Dot(Camera.main.transform.forward, dir);
+            Vector3 dir = (go.transform.position - cam.position).normalized;
+            float centerness = Vector3.Dot(cam.forward, dir);
             float distance = (go.transform.position - m_player.position).magnitude;
-            if (centerness > mostSuitableCenterness && distance < lockAquireRange)
+            if (centerness > mostSuitableCenterness && distance < lockAquireRange && IsTargetLockable(go.transform, cam))
             {
                 mostSuitable = go.transform;
                 mostSuitableCenterness = centerness;
             }
         }
         return mostSuitable;
+    }
+
+    private Transform ChangeLockTarget(Vector2 searchDir)
+    {
+        if (m_lockTarget == null)
+        {
+            return null;
+        }
+        Transform cam = Camera.main.transform;
+        Transform mostSuitable = m_lockTarget;
+        float bestKiteNearness = float.MaxValue;
+        
+        Vector2 lockedEquirect = Utils.CartisianToEquirectangular(Utils.SwizzleXZY((m_lockTarget.position - cam.position).normalized));
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Lockable"))
+        {
+            Vector2 goEquirect = Utils.CartisianToEquirectangular(Utils.SwizzleXZY((go.transform.position - cam.position).normalized));
+
+            for (int i = -1; i <= 1; i++)
+            {
+                Vector2 goEquirectTransformed = goEquirect + new Vector2(Mathf.PI * 2  * i, 0);
+                Vector2 disp = goEquirectTransformed - lockedEquirect;
+                float angle = Vector2.Angle(disp, searchDir);
+                float kiteSlope = lockDirectioness;
+                Vector2 rotatedDisp = Utils.Rotate(disp, -Mathf.Atan2(searchDir.y, searchDir.x));
+                float kiteMagnitude;
+                if (angle < lockChangeBearingMax)
+                {
+                    kiteMagnitude = rotatedDisp.x + Mathf.Abs(kiteSlope * rotatedDisp.y);
+                }
+                else
+                {
+                    kiteMagnitude = float.MaxValue;
+                }
+
+                float distance = (go.transform.position - m_player.position).magnitude;
+                if (kiteMagnitude < bestKiteNearness &&
+                    angle < lockChangeBearingMax &&
+                    distance < lockAquireRange &&
+                    go.transform != m_lockTarget &&
+                    IsTargetLockable(go.transform, cam))
+                {
+                    mostSuitable = go.transform;
+                    bestKiteNearness = kiteMagnitude;
+                }
+            }
+        }
+        return mostSuitable;
+    }
+
+    private bool IsTargetLockable(Transform target, Transform camera)
+    {
+        Vector3 screenPos = camera.GetComponent<Camera>().WorldToViewportPoint(target.position);
+        bool onScreen = screenPos.z > 0 && screenPos.x > 0 && screenPos.x < 1 && screenPos.y > 0 && screenPos.y < 1;
+        return (!onlyLockOnScreen || onScreen) && !Physics.Linecast(camera.position, target.position, lineOfSightBlocking);
     }
 }

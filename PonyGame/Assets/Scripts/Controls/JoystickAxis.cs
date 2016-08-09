@@ -7,25 +7,25 @@ namespace InputController
      */
     public class JoystickAxis : AxisSource
     {
-        public GamepadAxis axis;
-        public float exponent;
-        public float multiplier;
+        private GamepadAxis m_axis;
+        private float m_exponent;
+        private float m_multiplier;
 
         public JoystickAxis(GamepadAxis axis, float exponent, float multiplier)
         {
-            this.axis = axis;
-            this.exponent = exponent;
-            this.multiplier = multiplier;
+            m_axis = axis;
+            m_exponent = exponent;
+            m_multiplier = multiplier;
         }
 
         // returns the value of the relevant axis, and applies an exponent while preserving the +/-
         public float GetValue()
         {
-            float value = GetAxis(axis);
-            return Mathf.Sign(value) * Mathf.Pow(Mathf.Abs(value), exponent) * multiplier;
+            float value = GetAxisValue(m_axis);
+            return Mathf.Sign(value) * Mathf.Pow(Mathf.Abs(value), m_exponent) * m_multiplier;
         }
 
-        public static float GetAxis(GamepadAxis axis)
+        public static float GetAxisValue(GamepadAxis axis)
         {
             switch (axis)
             {

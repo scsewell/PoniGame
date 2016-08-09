@@ -10,6 +10,7 @@ public class Settings : MonoBehaviour
     public enum VideoQ
     {
         Low,
+        Medium,
         High,
     }
 
@@ -33,6 +34,10 @@ public class Settings : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F2))
         {
+            SetVideoQuality(VideoQ.Medium);
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
             SetVideoQuality(VideoQ.High);
         }
     }
@@ -45,21 +50,31 @@ public class Settings : MonoBehaviour
         m_videoQuality = quality;
 
         QualitySettings.SetQualityLevel((int)quality);
-        Application.targetFrameRate = quality == VideoQ.High ? 999 : 30;
+        Application.targetFrameRate = quality == VideoQ.High ? 999 : 999;
 
-        if (Camera.main.GetComponent<AntiAliasing>())
+        Camera cam = Camera.main;
+        SunShafts sunShafts = cam.GetComponent<SunShafts>();
+        Bloom bloom = cam.GetComponent<Bloom>();
+        CameraMotionBlur motionBlur = cam.GetComponent<CameraMotionBlur>();
+        AntiAliasing antiAliasing = cam.GetComponent<AntiAliasing>();
+
+        if (sunShafts)
         {
-            Camera.main.GetComponent<AntiAliasing>().enabled = quality == VideoQ.Low;
+            sunShafts.enabled = quality != VideoQ.Low;
         }
-
-        if (Camera.main.GetComponent<SunShafts>())
+        if (bloom)
         {
-            Camera.main.GetComponent<SunShafts>().enabled = quality == VideoQ.High;
+            bloom.enabled = quality != VideoQ.Low;
+            bloom.settings.highQuality = quality == VideoQ.High;
         }
-
-        if (Camera.main.GetComponent<UnityStandardAssets.CinematicEffects.Bloom>())
+        if (motionBlur)
         {
-            Camera.main.GetComponent<UnityStandardAssets.CinematicEffects.Bloom>().enabled = quality == VideoQ.High;
+            motionBlur.enabled = quality != VideoQ.Low;
+            motionBlur.velocityDownsample = quality == VideoQ.High ? 1 : 2;
+        }
+        if (antiAliasing)
+        {
+            antiAliasing.enabled = quality == VideoQ.Low;
         }
     }
 }

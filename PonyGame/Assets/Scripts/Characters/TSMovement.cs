@@ -105,8 +105,8 @@ public class TSMovement : MonoBehaviour
         {
             MoveInputs inputs = new MoveInputs();
 
-            float x = Controls.AverageValue(GameAxis.MoveX) + (Controls.IsDown(GameButton.MoveLeft) ? -1 : 0) + (Controls.IsDown(GameButton.MoveRight) ? 1 : 0);
-            float y = Controls.AverageValue(GameAxis.MoveY) + (Controls.IsDown(GameButton.MoveBackward) ? -1 : 0) + (Controls.IsDown(GameButton.MoveForward) ? 1 : 0);
+            float x = Controls.AverageValue(GameAxis.MoveX);
+            float y = Controls.AverageValue(GameAxis.MoveY);
             Vector3 raw = Vector3.ClampMagnitude(new Vector3(x, 0, y), 1);
 
             if (raw.magnitude > 0)

@@ -4,22 +4,22 @@ namespace InputController
 {
     public class JoystickButton : ButtonSource
     {
-        public const float MAIN_THRESHOLD = 0.5f;
-        public const float TRIGGER_THRESHOLD = 0.3f;
+        private const float MAIN_THRESHOLD = 0.5f;
+        private const float TRIGGER_THRESHOLD = 0.3f;
 
-        public GamepadButton button;
+        public GamepadButton m_button;
 
         public JoystickButton(GamepadButton button)
         {
-            this.button = button;
+            m_button = button;
         }
     
         public bool IsDown()
         {
-            return GetButton(button);
+            return GetButtonValue(m_button);
         }
 
-        public static bool GetButton(GamepadButton button)
+        private static bool GetButtonValue(GamepadButton button)
         {
             switch (button)
             {
@@ -36,20 +36,28 @@ namespace InputController
             
                 case GamepadButton.LTrigger:       return Input.GetAxis("TriggersL") > TRIGGER_THRESHOLD;
                 case GamepadButton.RTrigger:       return Input.GetAxis("TriggersR") > TRIGGER_THRESHOLD;
-                case GamepadButton.DpadUp:         return JoystickAxis.GetAxis(GamepadAxis.DpadY) > MAIN_THRESHOLD;
-                case GamepadButton.DpadDown:       return JoystickAxis.GetAxis(GamepadAxis.DpadY) < -MAIN_THRESHOLD;
-                case GamepadButton.DpadLeft:       return JoystickAxis.GetAxis(GamepadAxis.DpadX) < -MAIN_THRESHOLD;
-                case GamepadButton.DpadRight:      return JoystickAxis.GetAxis(GamepadAxis.DpadX) > MAIN_THRESHOLD;
-                case GamepadButton.LStickUp:       return JoystickAxis.GetAxis(GamepadAxis.LStickY) < -MAIN_THRESHOLD;
-                case GamepadButton.LStickDown:     return JoystickAxis.GetAxis(GamepadAxis.LStickY) > MAIN_THRESHOLD;
-                case GamepadButton.LStickLeft:     return JoystickAxis.GetAxis(GamepadAxis.LStickX) < -MAIN_THRESHOLD;
-                case GamepadButton.LStickRight:    return JoystickAxis.GetAxis(GamepadAxis.LStickX) > MAIN_THRESHOLD;
-                case GamepadButton.RStickUp:       return JoystickAxis.GetAxis(GamepadAxis.RStickY) < -MAIN_THRESHOLD;
-                case GamepadButton.RStickDown:     return JoystickAxis.GetAxis(GamepadAxis.RStickY) > MAIN_THRESHOLD;
-                case GamepadButton.RStickLeft:     return JoystickAxis.GetAxis(GamepadAxis.RStickX) < -MAIN_THRESHOLD;
-                case GamepadButton.RStickRight:    return JoystickAxis.GetAxis(GamepadAxis.RStickX) > MAIN_THRESHOLD;
+
+                case GamepadButton.DpadLeft:       return OverThreshold(GamepadAxis.DpadX, -MAIN_THRESHOLD);
+                case GamepadButton.DpadRight:      return OverThreshold(GamepadAxis.DpadX, MAIN_THRESHOLD);
+                case GamepadButton.DpadUp:         return OverThreshold(GamepadAxis.DpadY, MAIN_THRESHOLD);
+                case GamepadButton.DpadDown:       return OverThreshold(GamepadAxis.DpadY, -MAIN_THRESHOLD);
+
+                case GamepadButton.LStickLeft:     return OverThreshold(GamepadAxis.LStickX, -MAIN_THRESHOLD);
+                case GamepadButton.LStickRight:    return OverThreshold(GamepadAxis.LStickX, MAIN_THRESHOLD);
+                case GamepadButton.LStickUp:       return OverThreshold(GamepadAxis.LStickY, MAIN_THRESHOLD);
+                case GamepadButton.LStickDown:     return OverThreshold(GamepadAxis.LStickY, -MAIN_THRESHOLD);
+
+                case GamepadButton.RStickLeft:     return OverThreshold(GamepadAxis.RStickX, -MAIN_THRESHOLD);
+                case GamepadButton.RStickRight:    return OverThreshold(GamepadAxis.RStickX, MAIN_THRESHOLD);
+                case GamepadButton.RStickUp:       return OverThreshold(GamepadAxis.RStickY, MAIN_THRESHOLD);
+                case GamepadButton.RStickDown:     return OverThreshold(GamepadAxis.RStickY, -MAIN_THRESHOLD);
             }
             return false;
+        }
+
+        private static bool OverThreshold(GamepadAxis axis, float threshold)
+        {
+            return JoystickAxis.GetAxisValue(axis) / threshold > 1;
         }
     }
 }

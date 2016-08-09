@@ -4,16 +4,16 @@ namespace InputController
 {
     class KeyButton : ButtonSource
     {
-        public KeyCode button;
+        private KeyCode m_button;
 
         public KeyButton(KeyCode button)
         {
-            this.button = button;
+            m_button = button;
         }
 
         public bool IsDown()
         {
-            return Input.GetKey(button);
+            return Input.GetKey(m_button);
         }
     }
 }
