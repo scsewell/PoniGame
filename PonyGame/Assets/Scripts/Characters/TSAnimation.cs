@@ -55,7 +55,7 @@ public class TSAnimation : MonoBehaviour
     public AudioSource backLeftHoof;
     public AudioSource backRightHoof;
     public AudioClip[] hoofsteps;
-
+    
     private Animator m_animator;
     private TSMovement m_movement;
     private CameraRig m_camRig;

@@ -9,15 +9,15 @@ public class TSMovement : MonoBehaviour
     public bool debugView = true;
 
     [Tooltip("How fast the character may walk (Units / Second)")]
-    [Range(0.5f, 2.0f)]
+    [Range(0, 2.0f)]
     public float walkSpeed = 1.0f;
 
     [Tooltip("How fast the character may run (Units / Second)")]
-    [Range(1.0f, 4.0f)]
+    [Range(0, 4.0f)]
     public float runSpeed = 2.0f;
     
     [Tooltip("How fast the character accelerates forward (Units / Second^2)")]
-    [Range(1.0f, 10.0f)]
+    [Range(0, 10.0f)]
     public float acceleration = 5.0f;
 
     [Tooltip("How fast the character may rotate (Degrees / Second)")]
