@@ -56,17 +56,15 @@ public class GameController : MonoBehaviour
         m_player = newPlayer;
         newPlayer.tag = "Player";
         newPlayer.GetComponent<TSAI>().enabled = false;
-        InvokePlayerChanged();
+        if (CharacterChanged != null)
+        {
+            CharacterChanged(m_player);
+        }
     }
 
     private void ResetPlayer(Transform oldPlayer)
     {
         oldPlayer.tag = "Untagged";
         oldPlayer.GetComponent<TSAI>().enabled = true;
-    }
-
-    private void InvokePlayerChanged()
-    {
-        CharacterChanged(m_player);
     }
 }

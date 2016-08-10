@@ -88,8 +88,23 @@ public class CameraRig : MonoBehaviour
     [Tooltip("Angle offset to adjust the vertical position of the lock target on screen")]
     [Range(-90, 90)]
     public float lockAngleAdjust = 20.0f;
+    
+    [Tooltip("How quicly the camera will follow the dead character")]
+    [SerializeField] [Range(0, 16)]
+    private float m_deathSmoothing = 2.0f;
+
+    [Tooltip("The offset to the elevation when the character is dead")]
+    [SerializeField] [Range(-90, 90)]
+    private float m_deathElevation = 15.0f;
+
+    [Tooltip("How quickly the camera will orbit the dead character")]
+    [SerializeField] [Range(-90, 90)]
+    private float m_deathRotateSpeed = 20.0f;
+
 
     private Transform m_player;
+    private Health m_playerHealth;
+    private RagdollCamera m_playerRagdoll;
     private TransformInterpolator m_transformInterpolator;
     private TransformInterpolator m_pivotInterpolator;
     private Interpolator<float> m_zoomInterpolator;
@@ -123,6 +138,9 @@ public class CameraRig : MonoBehaviour
     void Initialize(Transform player)
     {
         m_player = player;
+        m_playerHealth = m_player.GetComponent<Health>();
+        m_playerRagdoll = m_player.GetComponent<RagdollCamera>();
+
         transform.position = player.position;
         transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.forward, Vector3.up), Vector3.up);
         Camera.main.transform.position = posTarget.position;
@@ -138,7 +156,7 @@ public class CameraRig : MonoBehaviour
 	
 	void FixedUpdate() 
 	{
-        if (m_player)
+        if (m_player && m_playerHealth.IsAlive)
         {
             transform.position = m_player.position;
 
@@ -201,6 +219,15 @@ public class CameraRig : MonoBehaviour
 
             pivot.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
         }
+        else if (m_player)
+        {
+            m_lockTarget = null;
+            transform.position = Vector3.Lerp(transform.position, m_playerRagdoll.CenterOfMass.position, m_deathSmoothing * Time.deltaTime);
+            transform.Rotate(0, m_deathRotateSpeed * Time.deltaTime, 0);
+            m_elevation = Mathf.Lerp(m_elevation, m_deathElevation, m_deathSmoothing * 2 * Time.deltaTime);
+            pivot.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
+            m_zoom = Mathf.Lerp(m_zoom, (minZoom + maxZoom) / 2, m_deathSmoothing * 0.5f * Time.deltaTime);
+        }
     }
 
     void Update()
@@ -210,6 +237,11 @@ public class CameraRig : MonoBehaviour
         Vector3 heightAdjust = transform.up * zoomFactor * zoomLowerHeight;
         Vector3 camPos = posTarget.position - heightAdjust;
         Vector3 lookPos = rotTarget.position - heightAdjust * 0.5f;
+
+        if (m_playerRagdoll)
+        {
+            lookPos = m_playerRagdoll.CenterOfMass.position;
+        }
 
         Vector3 disp = (camPos - lookPos).normalized * m_zoom;
         float camDist = disp.magnitude;

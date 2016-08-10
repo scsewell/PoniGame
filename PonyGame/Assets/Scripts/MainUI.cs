@@ -4,10 +4,9 @@ using System.Collections;
 
 public class MainUI : MonoBehaviour
 {
-    public CameraRig cameraRig;
-    public Canvas canvas;
-    public RectTransform lockSprite;
-
+    [SerializeField] private CameraRig m_cameraRig;
+    [SerializeField] private Canvas m_canvas;
+    [SerializeField] private RectTransform m_lockSprite;
 
     [Tooltip("The angle new lock targets must be within from the input direction to be considered")]
     [SerializeField] [Range(-720, 720)]
@@ -20,37 +19,41 @@ public class MainUI : MonoBehaviour
         get { return m_lockCursor; }
     }
 
-	void Start()
+    private static bool m_isMenuOpen = false;
+    public static bool IsMenuOpen
+    {
+        get { return m_lockCursor; }
+    }
+
+    void Start()
     {
         SetCusorLock(m_lockCursor);
     }
 	
 	void Update()
     {
-        lockSprite.GetComponent<Image>().enabled = false;
-        if (cameraRig.LockTarget)
+        if (Controls.VisualJustDown(GameButton.Menu))
         {
-            Vector3 screenPos = Camera.main.WorldToViewportPoint(cameraRig.LockTarget.position);
-            lockSprite.anchorMin = screenPos;
-            lockSprite.anchorMax = screenPos;
-            if (screenPos.z > 0)
-            {
-                lockSprite.GetComponent<Image>().enabled = true;
-            }
-        }
-        lockSprite.Rotate(Vector3.forward, m_lockRotateSpeed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            m_lockCursor = !m_lockCursor;
+            m_isMenuOpen = !m_isMenuOpen;
+            m_lockCursor = m_isMenuOpen;
         }
 
         SetCusorLock(m_lockCursor);
-    }
 
-    /*
-     * Sets the lock state of the mouse cursor
-     */
+        m_lockSprite.GetComponent<Image>().enabled = false;
+        if (m_cameraRig.LockTarget)
+        {
+            Vector3 screenPos = Camera.main.WorldToViewportPoint(m_cameraRig.LockTarget.position);
+            m_lockSprite.anchorMin = screenPos;
+            m_lockSprite.anchorMax = screenPos;
+            if (screenPos.z > 0)
+            {
+                m_lockSprite.GetComponent<Image>().enabled = true;
+            }
+        }
+        m_lockSprite.Rotate(Vector3.forward, m_lockRotateSpeed * Time.deltaTime);
+    }
+    
     void SetCusorLock(bool locked)
     {
         Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;

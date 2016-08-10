@@ -8,7 +8,7 @@ using InputController;
 // Actions needing a key binding.
 public enum GameButton
 {
-    Walk, WalkToggle, Jump, Lock,
+    Menu, Walk, WalkToggle, Jump, Lock,
 }
 
 // Actions needing an axis binding.
@@ -78,7 +78,7 @@ public class Controls : MonoBehaviour
     {
         m_buttons = new Dictionary<GameButton, BufferedButton>();
         
-        //m_buttons.Add(GameButton.Menu,          new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.Escape),        new JoystickButton(GamepadButton.Start)     }));
+        m_buttons.Add(GameButton.Menu,          new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.Escape),          new JoystickButton(GamepadButton.Start)     }));
         m_buttons.Add(GameButton.Walk,          new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.LeftShift),       }));
         m_buttons.Add(GameButton.WalkToggle,    new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.LeftControl),     }));
         m_buttons.Add(GameButton.Jump,          new BufferedButton(new List<ButtonSource> { new KeyButton(KeyCode.Space),           new JoystickButton(GamepadButton.A)             }));
