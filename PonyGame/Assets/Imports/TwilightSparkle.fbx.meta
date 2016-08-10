@@ -219,6 +219,7 @@ ModelImporter:
     7400016: TS_Rig|TS_Trot
     7400018: TS_Rig|TS_TrotReverse
     7400020: TS_Rig|TS_Blank
+    7400022: TS_Rig|TS_LookLeftRun
     9500000: //RootNode
     13700000: Base_Body
     13700002: Base_Horn
@@ -332,13 +333,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
         weight: 1
@@ -346,15 +343,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3/DEF_Hair2-3_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3/DEF_Hair4-3_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -368,13 +361,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2/DEF_Mane3-2_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/TS_EyelashesLower
         weight: 1
@@ -388,8 +377,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
@@ -397,8 +384,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
         weight: 1
@@ -414,11 +399,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7/DEF_Tail1-7_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4/DEF_Tail4_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
         weight: 1
@@ -428,8 +409,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
@@ -437,8 +416,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -500,13 +477,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
         weight: 1
@@ -514,15 +487,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3/DEF_Hair2-3_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3/DEF_Hair4-3_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -536,13 +505,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2/DEF_Mane3-2_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/TS_EyelashesLower
         weight: 1
@@ -556,8 +521,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
@@ -565,8 +528,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
         weight: 1
@@ -582,11 +543,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7/DEF_Tail1-7_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4/DEF_Tail4_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
         weight: 1
@@ -596,8 +553,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
@@ -605,8 +560,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -668,13 +621,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
         weight: 1
@@ -682,15 +631,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3/DEF_Hair2-3_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3/DEF_Hair4-3_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -704,13 +649,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2/DEF_Mane3-2_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/TS_EyelashesLower
         weight: 1
@@ -724,8 +665,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
@@ -733,8 +672,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
         weight: 1
@@ -750,11 +687,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7/DEF_Tail1-7_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4/DEF_Tail4_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
         weight: 1
@@ -764,8 +697,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
@@ -773,8 +704,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -836,13 +765,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
         weight: 1
@@ -850,15 +775,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3/DEF_Hair2-3_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3/DEF_Hair4-3_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -872,13 +793,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2/DEF_Mane3-2_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/TS_EyelashesLower
         weight: 1
@@ -892,8 +809,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
@@ -901,8 +816,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
         weight: 1
@@ -918,11 +831,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7/DEF_Tail1-7_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4/DEF_Tail4_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
         weight: 1
@@ -932,8 +841,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
@@ -941,8 +848,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -976,8 +881,6 @@ ModelImporter:
         weight: 1
       - path: Base_Body
         weight: 1
-      - path: Base_Mouth
-        weight: 1
       - path: TS_Hair
         weight: 1
       - path: TS_Rig
@@ -996,11 +899,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eyes
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Horn
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Mouth
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
         weight: 1
@@ -1021,12 +924,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -1064,31 +961,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L/DEF_Wing1-4.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R/DEF_Wing1-4.R
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
         weight: 1
@@ -1152,8 +1025,6 @@ ModelImporter:
         weight: 1
       - path: Base_Body
         weight: 1
-      - path: Base_Mouth
-        weight: 1
       - path: TS_Hair
         weight: 1
       - path: TS_Rig
@@ -1172,11 +1043,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eyes
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Horn
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Mouth
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
         weight: 1
@@ -1197,12 +1068,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -1240,31 +1105,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L/DEF_Wing1-4.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R/DEF_Wing1-4.R
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
         weight: 1
@@ -1328,8 +1169,6 @@ ModelImporter:
         weight: 1
       - path: Base_Body
         weight: 1
-      - path: Base_Mouth
-        weight: 1
       - path: TS_Hair
         weight: 1
       - path: TS_Rig
@@ -1348,11 +1187,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eyes
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Horn
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Mouth
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
         weight: 1
@@ -1373,12 +1212,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -1416,31 +1249,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L/DEF_Wing1-4.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R/DEF_Wing1-4.R
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
         weight: 1
@@ -1504,8 +1313,6 @@ ModelImporter:
         weight: 1
       - path: Base_Body
         weight: 1
-      - path: Base_Mouth
-        weight: 1
       - path: TS_Hair
         weight: 1
       - path: TS_Rig
@@ -1524,11 +1331,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eye.R
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eyes
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Horn
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Mouth
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
         weight: 1
@@ -1549,12 +1356,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Jaw/DEF_Tongue1/DEF_Tongue2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -1592,31 +1393,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.L/DEF_Wing1-1.L/DEF_Wing1-2.L/DEF_Wing1-3.L/DEF_Wing1-4.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_WingBase.R/DEF_Wing1-1.R/DEF_Wing1-2.R/DEF_Wing1-3.R/DEF_Wing1-4.R
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.L
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_FoldedWing.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
         weight: 1
@@ -1736,13 +1513,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L/DEF_Ear2.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R/DEF_Ear2.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
         weight: 1
@@ -1750,15 +1523,11 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3/DEF_Hair2-3_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3/DEF_Hair4-3_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
         weight: 1
@@ -1772,13 +1541,9 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6/DEF_Mane1-6_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2/DEF_Mane3-2_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/TS_EyelashesLower
         weight: 1
@@ -1792,8 +1557,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L/DEF_FrontHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
@@ -1801,8 +1564,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R/DEF_FrontHoof.R_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
         weight: 1
@@ -1818,11 +1579,7 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7/DEF_Tail1-7_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4/DEF_Tail4_end
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
         weight: 1
@@ -1832,8 +1589,6 @@ ModelImporter:
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
         weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L/DEF_RearHoof.L_end
-        weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
@@ -1841,8 +1596,6 @@ ModelImporter:
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
         weight: 1
       - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
-        weight: 1
-      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R/DEF_RearHoof.R_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -1860,6 +1613,150 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base_Body
+        weight: 1
+      - path: TS_Hair
+        weight: 1
+      - path: TS_Rig
+        weight: 1
+      - path: TS_Rig/CON_Root
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Eyes
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Horn
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/Base_Mouth
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.L/DEF_Ear2.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Ear1.R/DEF_Ear2.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair2-1/DEF_Hair2-2/DEF_Hair2-3
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Hair4-1/DEF_Hair4-2/DEF_Hair4-3
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane1-6
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/DEF_Mane1-1/DEF_Mane1-2/DEF_Mane1-3/DEF_Mane1-4/DEF_Mane1-5/DEF_Mane3-1/DEF_Mane3-2
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/TS_EyelashesLower
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Neck1/DEF_Neck2/DEF_Head/TS_EyelashesUpper
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.L/DEF_FrontUpperLeg.L/DEF_LowerFrontLeg.L/DEF_FrontHoof.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Chest1/DEF_Chest2/DEF_Shoulder.R/DEF_FrontUpperLeg.R/DEF_LowerFrontLeg.R/DEF_FrontHoof.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail1-6/DEF_Tail1-7
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Tail1-1/DEF_Tail1-2/DEF_Tail1-4/DEF_Tail1-5/DEF_Tail4
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.L/DEF_RearUpperLeg.L/DEF_RearLowerLeg.L/DEF_RearHoof.L
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R
+        weight: 1
+      - path: TS_Rig/CON_Root/CON_Belly/DEF_Hip/DEF_Thigh.R/DEF_RearUpperLeg.R/DEF_RearLowerLeg.R/DEF_RearHoof.R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: TS_Rig|TS_LookLeftRun
+      takeName: TS_Rig|TS_LookLeftRun
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
