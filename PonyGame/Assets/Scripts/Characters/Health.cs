@@ -21,6 +21,11 @@ public class Health : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Input.GetKey(KeyCode.K))
+        {
+            ApplyDamage(m_maxHealth);
+        }
+
         if (!IsAlive && !m_resolvedDeath)
         {
             OnDie();

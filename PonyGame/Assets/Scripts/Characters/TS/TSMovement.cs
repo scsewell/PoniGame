@@ -105,7 +105,6 @@ public class TSMovement : MonoBehaviour
      */
 	void FixedUpdate()
     {
-        m_health.ApplyDamage(25 * Time.deltaTime);
         if (!m_health.IsAlive)
         {
             m_controller.enabled = false;

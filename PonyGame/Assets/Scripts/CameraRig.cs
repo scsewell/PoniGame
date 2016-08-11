@@ -108,10 +108,13 @@ public class CameraRig : MonoBehaviour
     private TransformInterpolator m_transformInterpolator;
     private TransformInterpolator m_pivotInterpolator;
     private Interpolator<float> m_zoomInterpolator;
-    private float m_elevation = 0;
+    private float m_elevation;
     private float m_zoom;
     private float m_zoomTarget;
     private bool m_alreadyChangedLock = false;
+    private Vector3 m_lastLookPos = Vector3.zero;
+    private float m_lastRotateSpeed = 0;
+
 
     private Transform m_lockTarget;
     public Transform LockTarget
@@ -141,11 +144,14 @@ public class CameraRig : MonoBehaviour
         m_playerHealth = m_player.GetComponent<Health>();
         m_playerRagdoll = m_player.GetComponent<RagdollCamera>();
 
+        m_lockTarget = null;
+
         transform.position = player.position;
         transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.forward, Vector3.up), Vector3.up);
         Camera.main.transform.position = posTarget.position;
         Camera.main.transform.LookAt(rotTarget);
 
+        m_elevation = 0;
         m_zoom = Vector3.Distance(rotTarget.position, posTarget.position);
         m_zoomTarget = Vector3.Distance(rotTarget.position, posTarget.position);
 
@@ -223,10 +229,13 @@ public class CameraRig : MonoBehaviour
         {
             m_lockTarget = null;
             transform.position = Vector3.Lerp(transform.position, m_playerRagdoll.CenterOfMass.position, m_deathSmoothing * Time.deltaTime);
+
+            m_lastRotateSpeed = Mathf.Lerp(m_lastRotateSpeed, m_deathRotateSpeed, m_deathSmoothing * Time.deltaTime);
+            m_elevation = Mathf.Lerp(m_elevation, m_deathElevation, m_deathSmoothing * Time.deltaTime);
+            m_zoom = Mathf.Lerp(m_zoom, (minZoom + maxZoom) / 2, m_deathSmoothing * 0.25f * Time.deltaTime);
+
             transform.Rotate(0, m_deathRotateSpeed * Time.deltaTime, 0);
-            m_elevation = Mathf.Lerp(m_elevation, m_deathElevation, m_deathSmoothing * 2 * Time.deltaTime);
             pivot.rotation = transform.rotation * Quaternion.Euler(m_elevation, 0, 0);
-            m_zoom = Mathf.Lerp(m_zoom, (minZoom + maxZoom) / 2, m_deathSmoothing * 0.5f * Time.deltaTime);
         }
     }
 
@@ -238,10 +247,11 @@ public class CameraRig : MonoBehaviour
         Vector3 camPos = posTarget.position - heightAdjust;
         Vector3 lookPos = rotTarget.position - heightAdjust * 0.5f;
 
-        if (m_playerRagdoll)
+        if (m_player && !m_playerHealth.IsAlive)
         {
-            lookPos = m_playerRagdoll.CenterOfMass.position;
+            lookPos = Vector3.Lerp(m_lastLookPos, m_playerRagdoll.CenterOfMass.position, m_deathSmoothing * Time.deltaTime);
         }
+        m_lastLookPos = lookPos;
 
         Vector3 disp = (camPos - lookPos).normalized * m_zoom;
         float camDist = disp.magnitude;

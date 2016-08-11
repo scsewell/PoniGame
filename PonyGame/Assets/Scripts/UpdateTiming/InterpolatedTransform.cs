@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class InterpolatedTransform : IInterpolated<TransformData>
 {
     private Transform m_transform;
