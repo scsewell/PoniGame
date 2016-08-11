@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(InterpolatorUpdater))]
-
 class TransformInterpolator : MonoBehaviour
 {
     private Interpolator<TransformData> m_interpolator;
@@ -15,11 +13,6 @@ class TransformInterpolator : MonoBehaviour
     private void FixedUpdate()
     {
         m_interpolator.FixedUpdate();
-    }
-
-    public void LateFixedUpdate()
-    {
-        m_interpolator.LateFixedUpdate();
     }
 
     public void ForgetPreviousValues()

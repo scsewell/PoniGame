@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(InterpolatorUpdater))]
-
 class FloatInterpolator : MonoBehaviour
 {
     private Interpolator<float> m_interpolator;
@@ -30,11 +28,6 @@ class FloatInterpolator : MonoBehaviour
     private void FixedUpdate()
     {
         m_interpolator.FixedUpdate();
-    }
-
-    public void LateFixedUpdate()
-    {
-        m_interpolator.LateFixedUpdate();
     }
 
     private void Update()

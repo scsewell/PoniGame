@@ -6,7 +6,6 @@ public class Health : MonoBehaviour
     [SerializeField] private float m_maxHealth = 100;
 
     private float m_currentHealth;
-    private bool m_resolvedDeath = false;
 
     public delegate void DeathHandler();
     public event DeathHandler OnDie;
@@ -21,15 +20,9 @@ public class Health : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.K))
+        if (Controls.JustDown(GameButton.ConsiderSuicide))
         {
             ApplyDamage(m_maxHealth);
-        }
-
-        if (!IsAlive && !m_resolvedDeath)
-        {
-            OnDie();
-            m_resolvedDeath = true;
         }
     }
 
@@ -63,6 +56,10 @@ public class Health : MonoBehaviour
         if (OnHurt != null)
         {
             OnHurt();
+        }
+        if (OnDie != null && !IsAlive)
+        {
+            OnDie();
         }
     }
 

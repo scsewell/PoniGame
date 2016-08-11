@@ -68,6 +68,8 @@ public class TSAnimation : MonoBehaviour
     private bool m_lookAtCamera = false;
     private float m_currentBlinkTime = 0;
     private Dictionary<Transform, TransformData> m_basePose;
+    private float m_deathTime = float.NegativeInfinity;
+    private bool m_basePoseApplied = false;
     
     void Start() 
     {
@@ -83,7 +85,7 @@ public class TSAnimation : MonoBehaviour
         m_basePose = new Dictionary<Transform, TransformData>();
         foreach (Transform child in GetComponentsInChildren<Transform>())
         {
-            if (child != transform && !child.GetComponent<Rigidbody>())
+            if (!child.GetComponent<Rigidbody>() && (child.name.Contains("DEF_") || child.name.Contains("CON_")))
             {
                 m_basePose.Add(child, new TransformData(child.localPosition, child.localRotation, child.localScale));
             }
@@ -126,12 +128,21 @@ public class TSAnimation : MonoBehaviour
             m_animator.enabled = false;
             SetBlink(Mathf.Lerp(GetBlink(), 1, 1.5f * Time.deltaTime));
 
-            foreach (Transform child in m_basePose.Keys)
+            if (!m_basePoseApplied)
             {
-                TransformData basePose = m_basePose[child];
-                child.localPosition = Vector3.Lerp(child.localPosition, basePose.position, 4.0f * Time.deltaTime);
-                child.localRotation = Quaternion.Slerp(child.localRotation, basePose.rotation, 4.0f * Time.deltaTime);
-                child.localScale = Vector3.Lerp(child.localScale, basePose.scale, 4.0f * Time.deltaTime);
+                float lerpFac = (Time.time - m_deathTime);
+                if (lerpFac > 1)
+                {
+                    lerpFac = 1;
+                    m_basePoseApplied = true;
+                }
+                foreach (Transform child in m_basePose.Keys)
+                {
+                    TransformData basePose = m_basePose[child];
+                    child.localPosition = Vector3.Lerp(child.localPosition, basePose.position, lerpFac);
+                    child.localRotation = Quaternion.Slerp(child.localRotation, basePose.rotation, lerpFac);
+                    child.localScale = Vector3.Lerp(child.localScale, basePose.scale, lerpFac);
+                }
             }
             return;
         }
@@ -186,6 +197,7 @@ public class TSAnimation : MonoBehaviour
     private void OnDie()
     {
         SetRagdoll(true);
+        m_deathTime = Time.time;
     }
 
     private void SetRagdoll(bool activated)
@@ -198,6 +210,10 @@ public class TSAnimation : MonoBehaviour
                 if (activated)
                 {
                     body.velocity = m_movement.Velocity;
+                    if (!body.GetComponent<TransformInterpolator>())
+                    {
+                        body.gameObject.AddComponent<TransformInterpolator>();
+                    }
                 }
             }
         }

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
-public class Interpolator<T> : IInterpolator
+public class Interpolator<T>
 {
     private IInterpolated<T> m_interpolated;
     private T[] m_latestValues;
     private int m_newestValueIndex;
+
+    private bool m_firstFixedLoop = true;
+    private bool m_firstUpdateLoop = true;
 
     public Interpolator(IInterpolated<T> interpolated)
     {
@@ -20,10 +23,17 @@ public class Interpolator<T> : IInterpolator
 
     public void FixedUpdate()
     {
+        if (!m_firstFixedLoop)
+        {
+            StoreCurrentValue();
+            m_firstFixedLoop = false;
+        }
         m_interpolated.AffectOriginal(m_latestValues[m_newestValueIndex]);
+
+        m_firstUpdateLoop = true;
     }
 
-    public void LateFixedUpdate()
+    public void StoreCurrentValue()
     {
         m_newestValueIndex = GetOlderValueIndex();
         m_latestValues[m_newestValueIndex] = m_interpolated.ReadOriginal();
@@ -38,9 +48,16 @@ public class Interpolator<T> : IInterpolator
 
     public void Update()
     {
+        if (m_firstUpdateLoop)
+        {
+            StoreCurrentValue();
+            m_firstUpdateLoop = false;
+        }
         T newer = m_latestValues[m_newestValueIndex];
         T older = m_latestValues[GetOlderValueIndex()];
         m_interpolated.AffectOriginal(m_interpolated.GetInterpolatedValue(older, newer, InterpolationController.InterpolationFactor));
+
+        m_firstFixedLoop = true;
     }
 
     private int GetOlderValueIndex()

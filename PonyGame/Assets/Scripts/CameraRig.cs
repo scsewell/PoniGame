@@ -189,7 +189,6 @@ public class CameraRig : MonoBehaviour
                 }
                 m_zoomTarget = Mathf.Clamp(m_zoomTarget + -Controls.AverageValue(GameAxis.Zoom) * scrollZoomSensitivity, minZoom, maxZoom);
 
-
                 Vector2 lockSearchDir = new Vector2(Controls.AverageValue(GameAxis.LockX), Controls.AverageValue(GameAxis.LockY));
                 if (lockSearchDir.magnitude > 0 && !m_alreadyChangedLock)
                 {
@@ -249,7 +248,7 @@ public class CameraRig : MonoBehaviour
 
         if (m_player && !m_playerHealth.IsAlive)
         {
-            lookPos = Vector3.Lerp(m_lastLookPos, m_playerRagdoll.CenterOfMass.position, m_deathSmoothing * Time.deltaTime);
+            lookPos = Vector3.Lerp(m_lastLookPos, m_playerRagdoll.CenterOfMass.position, m_deathSmoothing * 2 * Time.deltaTime);
         }
         m_lastLookPos = lookPos;
 

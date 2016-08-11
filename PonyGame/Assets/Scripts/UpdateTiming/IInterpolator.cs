@@ -1,4 +1,0 @@
-﻿interface IInterpolator
-{
-    void LateFixedUpdate();
-}
