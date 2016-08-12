@@ -21,9 +21,10 @@ public class TSAI : MonoBehaviour
     [Tooltip("Run towards the objective if it is futher then this.")]
     [Range(0.5f, 5.0f)]
     public float runDistance = 1.5f;
+    
 
-    private Health m_health;
     private NavMeshAgent m_agent;
+
     private List<Vector3> m_path;
     private Transform m_player;
     private Vector3 m_destination;
@@ -32,7 +33,6 @@ public class TSAI : MonoBehaviour
 
 	void Start()
     {
-        m_health = GetComponent<Health>();
         m_agent = GetComponent<NavMeshAgent>();
 
         GameController.CharacterChanged += SetPlayer;
@@ -50,13 +50,8 @@ public class TSAI : MonoBehaviour
         m_player = player;
     }
 
-    void FixedUpdate()
+    public void UpdateAI()
     {
-        if (!m_health.IsAlive)
-        {
-            return;
-        }
-
         // if we are following the player but don't have a path or the player has strayed from where we last generated at path to the player, find an updated path to the player
         if (followPlayer)
         {
@@ -120,7 +115,7 @@ public class TSAI : MonoBehaviour
         }
     }
 
-    public MoveInputs GetMovement()
+    public MoveInputs GetInputs()
     {
         MoveInputs moveInput = new MoveInputs();
         
@@ -134,10 +129,10 @@ public class TSAI : MonoBehaviour
 
         Debug.DrawLine(transform.position, m_destination);
         
-        moveInput.forward = disp.magnitude > 0.2f ? 1 : 0;
-        moveInput.turn = -bearing;
-        moveInput.run = m_run;
-        moveInput.jump = false;
+        moveInput.Forward = disp.magnitude > 0.2f ? 1 : 0;
+        moveInput.Turn = -bearing;
+        moveInput.Run = m_run;
+        moveInput.Jump = false;
 
         return moveInput;
     }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class TSAnimation : MonoBehaviour 
 {
@@ -58,12 +59,15 @@ public class TSAnimation : MonoBehaviour
     public AudioSource backRightHoof;
     public AudioClip[] hoofsteps;
     
-    private Animator m_animator;
     private TSMovement m_movement;
     private Health m_health;
+    private Animator m_animator;
     private CameraRig m_camRig;
+
     private float m_lookH = 0;
     private float m_lookV = 0;
+    private Interpolator<float> m_velocityInterpolator;
+    private float m_forwardVelocity = 0;
     private Quaternion m_lastHeadRot;
     private bool m_lookAtCamera = false;
     private float m_currentBlinkTime = 0;
@@ -71,82 +75,91 @@ public class TSAnimation : MonoBehaviour
     private float m_deathTime = float.NegativeInfinity;
     private bool m_basePoseApplied = false;
     
-    void Start() 
+    void Start()
     {
-		m_animator = GetComponent<Animator>();
         m_movement = GetComponent<TSMovement>();
         m_health = GetComponent<Health>();
+        m_animator = GetComponent<Animator>();
         m_camRig = FindObjectOfType<CameraRig>();
+
+        m_velocityInterpolator = new Interpolator<float>(new InterpolatedFloat(() => (m_forwardVelocity), (val) => { m_forwardVelocity = val; }));
+        gameObject.AddComponent<FloatInterpolator>().Initialize(m_velocityInterpolator);
 
         m_health.OnDie += OnDie;
 
         SetRagdoll(false);
-
-        m_basePose = new Dictionary<Transform, TransformData>();
-        foreach (Transform child in GetComponentsInChildren<Transform>())
-        {
-            if (!child.GetComponent<Rigidbody>() && (child.name.Contains("DEF_") || child.name.Contains("CON_")))
-            {
-                m_basePose.Add(child, new TransformData(child.localPosition, child.localRotation, child.localScale));
-            }
-        }
+        StoreBasePose();
     }
 
     void OnDestroy()
     {
         m_health.OnDie -= OnDie;
     }
-    
-    void Update()
+
+    private void OnDie()
     {
-        bool isPlayer = gameObject.tag == "Player";
-
-        float lookBearingH = Utils.GetBearing(transform.forward, Camera.main.transform.forward, Vector3.up);
-
-        m_lookAtCamera = Mathf.Abs(lookBearingH) > (m_lookAtCamera ? headLookEndAng : headLookBeginAng);
-
-        float targetBearingH = m_lookAtCamera ? -Mathf.Sign(lookBearingH) * (180 - Mathf.Abs(lookBearingH)) : lookBearingH;
-        float targetH = Mathf.Clamp(targetBearingH / headHorizontalAng, -1, 1);
-        
-        float lookBearingV = Mathf.DeltaAngle(0, (Quaternion.Inverse(transform.rotation) * m_camRig.pivot.rotation).eulerAngles.x);
-        float targetBearingV = m_lookAtCamera ? lookBearingV + 20 : -lookBearingV;
-        float targetV = Mathf.Clamp(targetBearingV / 40, -1, 1);
-
-        m_lookH = Mathf.Lerp(m_lookH, isPlayer ? targetH : 0, Time.deltaTime * headRotateSpeed);
-        m_lookV = Mathf.Lerp(m_lookV, isPlayer ? targetV : 0, Time.deltaTime * headRotateSpeed);
-
-        m_animator.SetFloat("Forward", m_movement.Velocity.magnitude);
-        m_animator.SetFloat("LookHorizontal", m_lookH);
-        m_animator.SetFloat("LookVertical", m_lookV);
-        m_animator.SetBool("MidAir", !GetComponent<CharacterController>().isGrounded);
+        SetRagdoll(true);
+        m_deathTime = Time.time;
     }
 
-    void LateUpdate()
+    public void FixedUpdate()
     {
-        if (!m_health.IsAlive)
-        {
-            m_animator.enabled = false;
-            SetBlink(Mathf.Lerp(GetBlink(), 1, 1.5f * Time.deltaTime));
+        m_forwardVelocity = m_movement.Velocity.magnitude;
+    }
 
-            if (!m_basePoseApplied)
-            {
-                float lerpFac = (Time.time - m_deathTime);
-                if (lerpFac > 1)
-                {
-                    lerpFac = 1;
-                    m_basePoseApplied = true;
-                }
-                foreach (Transform child in m_basePose.Keys)
-                {
-                    TransformData basePose = m_basePose[child];
-                    child.localPosition = Vector3.Lerp(child.localPosition, basePose.position, lerpFac);
-                    child.localRotation = Quaternion.Slerp(child.localRotation, basePose.rotation, lerpFac);
-                    child.localScale = Vector3.Lerp(child.localScale, basePose.scale, lerpFac);
-                }
-            }
-            return;
+    public void PreAnimationUpdate(bool isPlayer)
+    {
+        m_animator.enabled = true;
+
+        float targetH = 0;
+        float targetV = 0;
+
+        if (isPlayer)
+        {
+            float lookBearingH = Utils.GetBearing(transform.forward, Camera.main.transform.forward, Vector3.up);
+
+            m_lookAtCamera = Mathf.Abs(lookBearingH) > (m_lookAtCamera ? headLookEndAng : headLookBeginAng);
+
+            float targetBearingH = m_lookAtCamera ? -Mathf.Sign(lookBearingH) * (180 - Mathf.Abs(lookBearingH)) : lookBearingH;
+            targetH = Mathf.Clamp(targetBearingH / headHorizontalAng, -1, 1);
+
+            float lookBearingV = Mathf.DeltaAngle(0, (Quaternion.Inverse(transform.rotation) * m_camRig.pivot.rotation).eulerAngles.x);
+            float targetBearingV = m_lookAtCamera ? lookBearingV + 20 : -lookBearingV;
+            targetV = Mathf.Clamp(targetBearingV / 40, -1, 1);
         }
 
+        float lerpFac = headRotateSpeed * Time.deltaTime;
+        m_lookH = Mathf.Lerp(m_lookH, targetH, lerpFac);
+        m_lookV = Mathf.Lerp(m_lookV, targetV, lerpFac);
+
+        m_animator.SetFloat("Forward", m_forwardVelocity);
+        m_animator.SetFloat("LookHorizontal", m_lookH);
+        m_animator.SetFloat("LookVertical", m_lookV);
+        m_animator.SetBool("MidAir", !m_movement.IsGrounded);
+    }
+
+    public void DeadLateUpdate()
+    {
+        m_animator.enabled = false;
+        SetBlink(Mathf.Lerp(GetBlink(), 1, 1.5f * Time.deltaTime));
+
+        if (!m_basePoseApplied)
+        {
+            float lerpFac = (Time.time - m_deathTime);
+            if (lerpFac > 1)
+            {
+                lerpFac = 1;
+                m_basePoseApplied = true;
+            }
+            foreach (Transform child in m_basePose.Keys)
+            {
+                TransformData.Apply(m_basePose[child], child);
+            }
+        }
+    }
+
+    public void AliveLateUpdate()
+    {
         // head camera tracking
         float lookAngVelocity = 0;
         if (m_lookAtCamera)
@@ -158,7 +171,7 @@ public class TSAnimation : MonoBehaviour
             Quaternion verticalSoftened = lookDir * Quaternion.AngleAxis(verticalSoftening, Vector3.right);
             Quaternion targetRot = verticalSoftened * Quaternion.AngleAxis(30.0f, Vector3.right);
 
-            Quaternion newRot = Quaternion.Slerp(m_lastHeadRot, targetRot, Time.deltaTime * headRotateSpeed);
+            Quaternion newRot = Quaternion.Slerp(m_lastHeadRot, targetRot, headRotateSpeed * Time.deltaTime);
             headBone.rotation = newRot;
             lookAngVelocity = Quaternion.Angle(newRot, m_lastHeadRot) / Time.deltaTime;
         }
@@ -194,10 +207,16 @@ public class TSAnimation : MonoBehaviour
         return Mathf.Clamp01(body.GetBlendShapeWeight(0) / 100);
     }
 
-    private void OnDie()
+    private void StoreBasePose()
     {
-        SetRagdoll(true);
-        m_deathTime = Time.time;
+        m_basePose = new Dictionary<Transform, TransformData>();
+        foreach (Transform child in GetComponentsInChildren<Transform>())
+        {
+            if (!child.GetComponent<Rigidbody>() && (child.name.Contains("DEF_") || child.name.Contains("CON_")))
+            {
+                m_basePose.Add(child, new TransformData(child));
+            }
+        }
     }
 
     private void SetRagdoll(bool activated)

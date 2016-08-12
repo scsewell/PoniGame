@@ -6,18 +6,22 @@ using System.Collections;
  */
 public class TSMovement : MonoBehaviour
 {
-    public bool debugView = true;
+    [SerializeField]
+    private bool m_debugView = true;
+
+    [SerializeField]
+    private LayerMask m_groundRaycast;
 
     [Tooltip("How fast the character may walk (Units / Second)")]
-    [Range(0, 2.0f)]
+    [Range(0, 4)]
     public float walkSpeed = 1.0f;
 
     [Tooltip("How fast the character may run (Units / Second)")]
-    [Range(0, 4.0f)]
+    [Range(0, 4)]
     public float runSpeed = 2.0f;
     
     [Tooltip("How fast the character accelerates forward (Units / Second^2)")]
-    [Range(0, 10.0f)]
+    [Range(0, 10)]
     public float acceleration = 5.0f;
 
     [Tooltip("How fast the character may rotate (Degrees / Second)")]
@@ -41,110 +45,70 @@ public class TSMovement : MonoBehaviour
     public float maxTorque = 100.0f;
 
     [Tooltip("How fast the character begins moving on jumping (Units / Second)")]
-    [Range(0.0f, 6.0f)]
+    [Range(0, 6)]
     public float jumpSpeed = 1.0f;
 
     [Tooltip("Fraction of the world's gravity is applied when in the air")]
-    [Range(0.25f, 2.5f)]
+    [Range(0, 5)]
     public float gravityFraction = 1.0f;
 
     [Tooltip("The number of raycasts done in a circle around the character to get an average ground normal")]
     [Range(0, 21)]
-    public int normalSamples = 4;
+    public int normalSamples = 7;
 
     [Tooltip("The radius of the raycast circle around the character to get an average ground normal (Units)")]
-    [Range(0.0f, 1.0f)]
+    [Range(0, 1)]
     public float groundSmoothRadius = 0.1f;
 
     [Tooltip("The higher this value, the faster the character will align to the ground normal when on terrain")]
-    [Range(1.0f, 24.0f)]
+    [Range(0, 24)]
     public float groundAlignSpeed = 10.0f;
 
     [Tooltip("The higher this value, the faster the character will align upwards when midair")]
-    [Range(0.25f, 24.0f)]
+    [Range(0, 24)]
     public float airAlignSpeed = 1.5f;
 
     [Tooltip("Higher values allow the character to push rigidbodies faster")]
-    [Range(0.0f, 5.0f)]
+    [Range(0, 5)]
     public float pushStrength = 0.5f;
+    
 
-    private Health m_health;
-    private TSAI m_AI;
     private CharacterController m_controller;
     private TransformInterpolator m_transformInterpolator;
+
     private CollisionFlags m_collisionFlags;
     private float m_forwardVelocity = 0;
     private float m_angVelocity = 0;
     private float m_velocityY = 0;
-    private bool m_walk = false;
     
+
     private Vector3 m_lastVelocity = Vector3.zero;
     public Vector3 Velocity
     {
         get { return m_lastVelocity; }
     }
 
+    public bool IsGrounded
+    {
+        get { return m_controller.isGrounded; }
+    }
+
+
     void Start()
     {
-        m_health = GetComponent<Health>();
-        m_AI = GetComponent<TSAI>();
         m_controller = GetComponent<CharacterController>();
         m_transformInterpolator = GetComponent<TransformInterpolator>();
 
         m_transformInterpolator.ForgetPreviousValues();
-        GameController.AddCharacter(transform);
-    }
-
-    void OnDestroy()
-    {
-        GameController.RemoveCharacter(transform);
-    }
-	
-    /*
-     * Executes the player's or AI's commands
-     */
-	void FixedUpdate()
-    {
-        if (!m_health.IsAlive)
-        {
-            m_controller.enabled = false;
-            return;
-        }
-
-        if (tag == "Player")
-        {
-            MoveInputs inputs = new MoveInputs();
-
-            float x = Controls.AverageValue(GameAxis.MoveX);
-            float y = Controls.AverageValue(GameAxis.MoveY);
-            Vector3 raw = Vector3.ClampMagnitude(new Vector3(x, 0, y), 1);
-
-            if (raw.magnitude > 0)
-            {
-                inputs.turn = Utils.GetBearing(transform.forward, Camera.main.transform.rotation * raw, Vector3.up);
-                inputs.forward = 1;
-            }
-
-            m_walk = Controls.JustDown(GameButton.WalkToggle) ? !m_walk : m_walk;
-            
-            inputs.run = raw.magnitude > 0.75f && m_walk == Controls.IsDown(GameButton.Walk);
-            inputs.jump = Controls.JustDown(GameButton.Jump);
-
-            ExecuteMovement(inputs);
-        }
-        else
-        {
-            ExecuteMovement(m_AI.GetMovement());
-        }
     }
 
     /*
      * Moves the character based on the provided input
      */
-    private void ExecuteMovement(MoveInputs inputs)
+    public void ExecuteMovement(MoveInputs inputs)
     {
         // linearly accelerate towards some target velocity
-        m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.forward * (inputs.run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
+        m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.Forward * (inputs.Run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
         Vector3 moveVelocity = transform.forward * m_forwardVelocity;
         m_lastVelocity = moveVelocity;
 
@@ -153,9 +117,12 @@ public class TSMovement : MonoBehaviour
             // align the character to the ground being stood on
             Vector3 normal = GetGroundNormal(normalSamples, groundSmoothRadius);
             Quaternion targetRot = Quaternion.LookRotation(Vector3.Cross(transform.right, normal), normal);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * groundAlignSpeed);
+            if (Quaternion.Angle(transform.rotation, targetRot) > 2.0f)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * groundAlignSpeed);
+            }
 
-            if (inputs.jump)
+            if (inputs.Jump)
             {
                 // jumping
                 m_velocityY = jumpSpeed;
@@ -182,13 +149,13 @@ public class TSMovement : MonoBehaviour
         m_collisionFlags = m_controller.Move(move);
 
         float maxTurnSpeed = m_controller.isGrounded ? rotSpeed : airRotSpeed;
-        float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.turn / 180);
+        float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.Turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.Turn / 180);
         m_angVelocity = Mathf.Clamp(Mathf.MoveTowards(m_angVelocity, targetAngVelocity, maxTorque * Time.deltaTime), -maxTurnSpeed, maxTurnSpeed);
 
         float deltaRotation = m_angVelocity * Time.deltaTime;
-        if (Mathf.Abs(inputs.turn) < Mathf.Abs(deltaRotation))
+        if (Mathf.Abs(inputs.Turn) < Mathf.Abs(deltaRotation))
         {
-            deltaRotation = inputs.turn;
+            deltaRotation = inputs.Turn;
             m_angVelocity = 0;
         }
 
@@ -238,13 +205,15 @@ public class TSMovement : MonoBehaviour
             Vector3 sampleDir = transform.TransformPoint(offset + Vector3.down * 0.05f);
            
             RaycastHit hit;
-            if (Physics.Linecast(samplePos, sampleDir, out hit) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground") && Vector3.Dot(hit.normal, Vector3.up) > 0.75f)
+            if (Physics.Linecast(samplePos, sampleDir, out hit, m_groundRaycast) &&
+                hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground") &&
+                Vector3.Dot(hit.normal, Vector3.up) >  Mathf.Cos(m_controller.slopeLimit * Mathf.Deg2Rad))
             {
                 normal += hit.normal;
 
-                if (debugView)
+                if (m_debugView)
                 {
-                    Debug.DrawLine(samplePos, hit.point, Color.cyan);
+                    Debug.DrawLine(samplePos, sampleDir, Color.cyan);
                     Debug.DrawLine(hit.point, hit.point + hit.normal * 0.25f, Color.yellow);
                 }
             }
@@ -252,9 +221,9 @@ public class TSMovement : MonoBehaviour
 
         if (normal != Vector3.zero)
         {
-            if (debugView)
+            if (m_debugView)
             {
-                Debug.DrawLine(transform.position, transform.position + normal.normalized * 0.35f, Color.red);
+                Debug.DrawLine(transform.position, transform.position + normal.normalized * 0.5f, Color.red);
             }
             return normal.normalized;
         }
@@ -263,12 +232,4 @@ public class TSMovement : MonoBehaviour
             return Vector3.up;
         }
     }
-}
-
-public class MoveInputs
-{
-    public float    turn        = 0;
-    public float    forward     = 0;
-    public bool     run         = false;
-    public bool     jump        = false;
 }

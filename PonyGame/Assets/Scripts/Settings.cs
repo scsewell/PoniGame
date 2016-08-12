@@ -1,80 +1,58 @@
 ﻿using UnityEngine;
-using UnityStandardAssets.ImageEffects;
-using UnityStandardAssets.CinematicEffects;
 
 /*
  * Manages settings for the game
  */
 public class Settings : MonoBehaviour
 {
-    public enum VideoQ
-    {
-        Low,
-        Medium,
-        High,
-    }
+    public static Resolution resolution;
+    public static bool fullscreen;
 
-    private VideoQ m_videoQuality = VideoQ.High;
-    public VideoQ VideoQuality
-    {
-        get { return m_videoQuality; }
-    }
+    public enum Antialiasing { Off, Low, Medium, High, Ultra }
+    public static Antialiasing antialiasing;
 
+    public enum Shadows { Off, Low, High }
+    public static Shadows shadows;
 
-    void Start()
-    {
-        SetVideoQuality(m_videoQuality);
-	}
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            SetVideoQuality(VideoQ.Low);
-        }
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            SetVideoQuality(VideoQ.Medium);
-        }
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            SetVideoQuality(VideoQ.High);
-        }
-    }
+    public enum Bloom { Off, Low, High }
+    public static Bloom bloom;
     
-    /*
-     * Sets the graphics quality for the game and applies them
-     */
-    private void SetVideoQuality(VideoQ quality)
+    public enum MotionBlur { Off, Low, High }
+    public static MotionBlur motionBlur;
+    
+    private void Awake()
     {
-        m_videoQuality = quality;
+        LoadDefaults();
+        ApplySettings();
+    }
 
-        QualitySettings.SetQualityLevel((int)quality);
-        Application.targetFrameRate = quality == VideoQ.High ? 999 : 999;
+    private static void LoadDefaults()
+    {
+        resolution = Screen.currentResolution;
+        fullscreen = Screen.fullScreen;
+        antialiasing = Antialiasing.Ultra;
+        shadows = Shadows.High;
+        bloom = Bloom.High;
+        motionBlur = MotionBlur.High;
+    }
 
-        Camera cam = Camera.main;
-        SunShafts sunShafts = cam.GetComponent<SunShafts>();
-        Bloom bloom = cam.GetComponent<Bloom>();
-        CameraMotionBlur motionBlur = cam.GetComponent<CameraMotionBlur>();
-        AntiAliasing antiAliasing = cam.GetComponent<AntiAliasing>();
+    private static void ApplySettings()
+    {
+        Resolution current = Screen.currentResolution;
+        if (resolution.width != current.width || resolution.height != current.height || fullscreen != Screen.fullScreen)
+        {
+            Screen.SetResolution(resolution.width, resolution.height, fullscreen);
+        }
+        //Application.targetFrameRate = 30;
 
-        if (sunShafts)
+        QualitySettings.SetQualityLevel((int)shadows);
+
+        switch (antialiasing)
         {
-            sunShafts.enabled = quality != VideoQ.Low;
-        }
-        if (bloom)
-        {
-            bloom.enabled = quality != VideoQ.Low;
-            bloom.settings.highQuality = quality == VideoQ.High;
-        }
-        if (motionBlur)
-        {
-            motionBlur.enabled = quality != VideoQ.Low;
-            motionBlur.velocityDownsample = quality == VideoQ.High ? 1 : 2;
-        }
-        if (antiAliasing)
-        {
-            antiAliasing.enabled = quality == VideoQ.Low;
+            case Antialiasing.Ultra:    QualitySettings.antiAliasing = 8; break;
+            case Antialiasing.High:     QualitySettings.antiAliasing = 4; break;
+            case Antialiasing.Medium:   QualitySettings.antiAliasing = 2; break;
+            default:                    QualitySettings.antiAliasing = 0; break;
         }
     }
 }

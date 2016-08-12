@@ -11,22 +11,16 @@ public class InterpolatedTransform : IInterpolated<TransformData>
 
     public TransformData GetInterpolatedValue(TransformData older, TransformData newer, float interpolationFactor)
     {
-        return new TransformData(
-            Vector3.Lerp(older.position, newer.position, interpolationFactor),
-            Quaternion.Slerp(older.rotation, newer.rotation, interpolationFactor),
-            Vector3.Lerp(older.scale, newer.scale, interpolationFactor)
-        );
+        return TransformData.Interpolate(older, newer, interpolationFactor);
     }
 
     public TransformData ReadOriginal()
     {
-        return new TransformData(m_transform.localPosition, m_transform.localRotation, m_transform.localScale);
+        return new TransformData(m_transform);
     }
 
     public void AffectOriginal(TransformData transformData)
     {
-        m_transform.localPosition = transformData.position;
-        m_transform.localRotation = transformData.rotation;
-        m_transform.localScale = transformData.scale;
+        TransformData.Apply(transformData, m_transform);
     }
 }

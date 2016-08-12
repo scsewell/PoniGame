@@ -24,12 +24,24 @@ public class GameController : MonoBehaviour
 
     public static void AddCharacter(Transform transform)
     {
-        m_characters.Add(transform);
+        if (!m_characters.Contains(transform))
+        {
+            m_characters.Add(transform);
+        }
     }
 
     public static void RemoveCharacter(Transform transform)
     {
-        m_characters.Remove(transform);
+        if (m_characters.Contains(transform))
+        {
+            m_characters.Remove(transform);
+        }
+    }
+
+    public static void PlayerDied()
+    {
+        AudioManager.PlayDeathSound();
+        CameraManager.FadeToGrey = true;
     }
 
     private void Update()
@@ -55,7 +67,6 @@ public class GameController : MonoBehaviour
     {
         m_player = newPlayer;
         newPlayer.tag = "Player";
-        newPlayer.GetComponent<TSAI>().enabled = false;
         if (CharacterChanged != null)
         {
             CharacterChanged(m_player);
@@ -65,6 +76,5 @@ public class GameController : MonoBehaviour
     private void ResetPlayer(Transform oldPlayer)
     {
         oldPlayer.tag = "Untagged";
-        oldPlayer.GetComponent<TSAI>().enabled = true;
     }
 }
