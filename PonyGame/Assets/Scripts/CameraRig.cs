@@ -124,13 +124,13 @@ public class CameraRig : MonoBehaviour
 
     void Start()
     {
-        GameController.CharacterChanged += Initialize;
-
         m_transformInterpolator = GetComponent<TransformInterpolator>();
         m_pivotInterpolator = pivot.GetComponent<TransformInterpolator>();
 
         m_zoomInterpolator = new Interpolator<float>(new InterpolatedFloat(() => (m_zoom), (val) => { m_zoom = val; }));
         gameObject.AddComponent<FloatInterpolator>().Initialize(m_zoomInterpolator);
+
+        GameController.CharacterChanged += Initialize;
     }
 
     void OnDestroy()
@@ -244,11 +244,15 @@ public class CameraRig : MonoBehaviour
 
         Vector3 heightAdjust = transform.up * zoomFactor * zoomLowerHeight;
         Vector3 camPos = posTarget.position - heightAdjust;
-        Vector3 lookPos = rotTarget.position - heightAdjust * 0.5f;
 
+        Vector3 lookPos;
         if (m_player && !m_playerHealth.IsAlive)
         {
             lookPos = Vector3.Lerp(m_lastLookPos, m_playerRagdoll.CenterOfMass.position, m_deathSmoothing * 2 * Time.deltaTime);
+        }
+        else
+        {
+            lookPos = rotTarget.position - heightAdjust * 0.5f;
         }
         m_lastLookPos = lookPos;
 

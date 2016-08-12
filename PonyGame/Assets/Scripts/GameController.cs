@@ -10,9 +10,10 @@ public class GameController : MonoBehaviour
 {
     public Transform defaultCharacter;
     public Transform spawnPoint;
-
+    
     private static List<Transform> m_characters;
     private static Transform m_player;
+    private static CameraRig m_cameraRig;
 
     public delegate void CharacterChangeHandler(Transform newCharacter);
     public static event CharacterChangeHandler CharacterChanged;
@@ -56,7 +57,7 @@ public class GameController : MonoBehaviour
             SetPlayer(m_characters.First());
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Controls.VisualJustDown(GameButton.SwitchCharacter))
         {
             SetPlayer(m_characters[(m_characters.IndexOf(m_player) + 1) % m_characters.Count]);
             m_characters.Where(c => c != m_player).ToList().ForEach(c => ResetPlayer(c));
