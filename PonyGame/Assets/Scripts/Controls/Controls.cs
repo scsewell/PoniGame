@@ -8,7 +8,7 @@ using InputController;
 // Actions needing a key binding.
 public enum GameButton
 {
-    Menu, Walk, WalkToggle, Jump, Lock, SwitchCharacter, ConsiderSuicide
+    Menu, Walk, WalkToggle, Jump, Lock, SwitchCharacter, ConsiderSuicide, Testing,
 }
 
 // Actions needing an axis binding.
@@ -109,6 +109,10 @@ public class Controls : MonoBehaviour
         m_buttons.Add(GameButton.ConsiderSuicide, new BufferedButton(new List<ButtonSource>
         {
             new KeyButton(KeyCode.K),
+        }));
+        m_buttons.Add(GameButton.Testing, new BufferedButton(new List<ButtonSource>
+        {
+            new KeyButton(KeyCode.T),
         }));
 
         m_axis = new Dictionary<GameAxis, BufferedAxis>();

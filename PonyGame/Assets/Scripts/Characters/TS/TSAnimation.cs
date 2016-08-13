@@ -104,7 +104,7 @@ public class TSAnimation : MonoBehaviour
 
     public void FixedUpdate()
     {
-        m_forwardVelocity = m_movement.Velocity.magnitude;
+        m_forwardVelocity = m_movement.AttemptedVelocity.magnitude;
     }
 
     public void PreAnimationUpdate(bool isPlayer)
@@ -228,7 +228,7 @@ public class TSAnimation : MonoBehaviour
                 body.isKinematic = !activated;
                 if (activated)
                 {
-                    body.velocity = m_movement.Velocity;
+                    body.velocity = m_movement.ActualVelocity;
                     if (!body.GetComponent<TransformInterpolator>())
                     {
                         body.gameObject.AddComponent<TransformInterpolator>();
