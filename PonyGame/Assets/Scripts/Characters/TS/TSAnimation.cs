@@ -5,12 +5,6 @@ using System.Linq;
 
 public class TSAnimation : MonoBehaviour 
 {
-    public SkinnedMeshRenderer body;
-    public SkinnedMeshRenderer upperEyelashes;
-    public SkinnedMeshRenderer lowerEyelashes;
-    public Transform headBone;
-    public Transform chestBone;
-
     [Tooltip("The bearing between the Camera and character forward directions at which the head is at maximum rotation")]
     [Range(10, 90)]
     public float headHorizontalAng = 60.0f;
@@ -53,11 +47,16 @@ public class TSAnimation : MonoBehaviour
     [Range(0, 360)]
     public float blinkingMotionThreshold = 40.0f;
 
-    public AudioSource frontLeftHoof;
-    public AudioSource frontRightHoof;
-    public AudioSource backLeftHoof;
-    public AudioSource backRightHoof;
-    public AudioClip[] hoofsteps;
+    [SerializeField] private SkinnedMeshRenderer m_bodyMesh;
+    [SerializeField] private SkinnedMeshRenderer m_upperEyelashesMesh;
+    [SerializeField] private SkinnedMeshRenderer m_lowerEyelashesMesh;
+    [SerializeField] private SkinnedMeshRenderer m_mouthMesh;
+    [SerializeField] private Transform m_headBone;
+    [SerializeField] private AudioSource frontLeftHoof;
+    [SerializeField] private AudioSource frontRightHoof;
+    [SerializeField] private AudioSource backLeftHoof;
+    [SerializeField] private AudioSource backRightHoof;
+    [SerializeField] private AudioClip[] hoofsteps;
     
     private TSMovement m_movement;
     private Health m_health;
@@ -66,7 +65,6 @@ public class TSAnimation : MonoBehaviour
 
     private float m_lookH = 0;
     private float m_lookV = 0;
-    private Interpolator<float> m_speedInterpolator;
     private float m_forwardSpeed = 0;
     private Quaternion m_lastHeadRot;
     private bool m_lookAtCamera = false;
@@ -82,9 +80,9 @@ public class TSAnimation : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_camRig = FindObjectOfType<CameraRig>();
 
-        m_speedInterpolator = new Interpolator<float>(new InterpolatedFloat(() => (m_forwardSpeed), (val) => { m_forwardSpeed = val; }));
-        gameObject.AddComponent<FloatInterpolator>().Initialize(m_speedInterpolator);
-
+        InterpolatedFloat speed = new InterpolatedFloat(() => (m_forwardSpeed), (val) => { m_forwardSpeed = val; });
+        gameObject.AddComponent<FloatInterpolator>().Initialize(speed);
+        
         m_health.OnDie += OnDie;
 
         SetRagdoll(false);
@@ -164,7 +162,7 @@ public class TSAnimation : MonoBehaviour
         float lookAngVelocity = 0;
         if (m_lookAtCamera)
         {
-            Vector3 disp = Camera.main.transform.position - headBone.position;
+            Vector3 disp = Camera.main.transform.position - m_headBone.position;
             Quaternion lookDir = Quaternion.LookRotation(disp, transform.up);
             float vertLookAng = 90 - Vector3.Angle(lookDir * Vector3.forward, transform.up);
             float verticalSoftening = Mathf.Max(Mathf.Abs(vertLookAng) - headVerticalAngSoft, 0) * headVerticalSoftFactor;
@@ -172,12 +170,12 @@ public class TSAnimation : MonoBehaviour
             Quaternion targetRot = verticalSoftened * Quaternion.AngleAxis(30.0f, Vector3.right);
 
             Quaternion newRot = Quaternion.Slerp(m_lastHeadRot, targetRot, headRotateSpeed * Time.deltaTime);
-            headBone.rotation = newRot;
+            m_headBone.rotation = newRot;
             lookAngVelocity = Quaternion.Angle(newRot, m_lastHeadRot) / Time.deltaTime;
         }
-        m_lastHeadRot = headBone.rotation;
+        m_lastHeadRot = m_headBone.rotation;
 
-        // blinking
+        // random blinking
         if (m_currentBlinkTime == 0 && (Random.value * blinkChance < Time.deltaTime || lookAngVelocity > blinkingMotionThreshold))
         {
             m_currentBlinkTime += Time.deltaTime;
@@ -192,19 +190,6 @@ public class TSAnimation : MonoBehaviour
                 m_currentBlinkTime = 0;
             }
         }
-    }
-
-    private void SetBlink(float weight)
-    {
-        float scaledWeight = Mathf.Clamp01(weight) * 100;
-        body.SetBlendShapeWeight(0, scaledWeight);
-        upperEyelashes.SetBlendShapeWeight(0, scaledWeight);
-        lowerEyelashes.SetBlendShapeWeight(0, scaledWeight);
-    }
-
-    private float GetBlink()
-    {
-        return Mathf.Clamp01(body.GetBlendShapeWeight(0) / 100);
     }
 
     private void StoreBasePose()
@@ -223,16 +208,15 @@ public class TSAnimation : MonoBehaviour
     {
         foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
         {
-            if (rigidbody.gameObject != gameObject)
+            rigidbody.isKinematic = !activated;
+            if (activated)
             {
-                rigidbody.isKinematic = !activated;
-                if (activated)
+                rigidbody.velocity = m_movement.ActualVelocity;
+                if (!rigidbody.GetComponent<TransformInterpolator>())
                 {
-                    rigidbody.velocity = m_movement.ActualVelocity;
-                    if (!body.GetComponent<TransformInterpolator>())
-                    {
-                        body.gameObject.AddComponent<TransformInterpolator>();
-                    }
+                    TransformInterpolator interpolator = rigidbody.gameObject.AddComponent<TransformInterpolator>();
+                    interpolator.UseThresholds = true;
+                    interpolator.SetThresholds(0.005f, 0.5f, 0);
                 }
             }
         }
@@ -243,6 +227,37 @@ public class TSAnimation : MonoBehaviour
                 collider.enabled = activated;
             }
         }
+    }
+
+    private void SetBlink(float weight)
+    {
+        float scaledWeight = Mathf.Clamp01(weight) * 100;
+        m_bodyMesh.SetBlendShapeWeight(0, scaledWeight);
+        m_upperEyelashesMesh.SetBlendShapeWeight(0, scaledWeight);
+        m_lowerEyelashesMesh.SetBlendShapeWeight(0, scaledWeight);
+    }
+    private float GetBlink()
+    {
+        return Mathf.Clamp01(m_bodyMesh.GetBlendShapeWeight(0) / 100);
+    }
+    private void SetMouthOpen(float weight)
+    {
+        float scaledWeight = Mathf.Clamp01(weight) * 100;
+        m_bodyMesh.SetBlendShapeWeight(1, scaledWeight);
+        m_mouthMesh.SetBlendShapeWeight(0, scaledWeight);
+    }
+    private float GetMouthOpen()
+    {
+        return Mathf.Clamp01(m_bodyMesh.GetBlendShapeWeight(1) / 100);
+    }
+    private void SetFrown(float weight)
+    {
+        float scaledWeight = Mathf.Clamp01(weight) * 100;
+        m_bodyMesh.SetBlendShapeWeight(2, scaledWeight);
+    }
+    private float GetFrown()
+    {
+        return Mathf.Clamp01(m_bodyMesh.GetBlendShapeWeight(2) / 100);
     }
 
     public void FrontLeftHoofstep()

@@ -120,13 +120,14 @@ public class TSMovement : MonoBehaviour
         moveVelocity.y = m_actualVelocity.y;
 
         Vector3 lowerSphereCenter = transform.TransformPoint(m_controller.center) + Vector3.down * (m_controller.height * 0.5f - (m_controller.radius + 0.01f));
-        RaycastHit[] hits = Physics.SphereCastAll(lowerSphereCenter, m_controller.radius, Vector3.down, 0.02f + m_controller.skinWidth, m_groundSpherecast);
+        RaycastHit[] hits = Physics.SphereCastAll(lowerSphereCenter, m_controller.radius, Vector3.down, 0.02f + m_controller.skinWidth, m_groundSpherecast, QueryTriggerInteraction.Ignore);
         m_isGrounded = hits != null && hits.Length > 0;
 
+        // if there is only one hit, Unity doesn't always return the correct normal, using Vector3.Up instead with SphereCastAll. SphereCast works however...
         if (hits != null && hits.Length == 1)
         {
             RaycastHit hit;
-            m_isGrounded = Physics.SphereCast(lowerSphereCenter, m_controller.radius, Vector3.down, out hit, 0.02f + m_controller.skinWidth, m_groundSpherecast);
+            m_isGrounded = Physics.SphereCast(lowerSphereCenter, m_controller.radius, Vector3.down, out hit, 0.02f + m_controller.skinWidth, m_groundSpherecast, QueryTriggerInteraction.Ignore);
             hits[0] = hit;
         }
 
@@ -134,7 +135,6 @@ public class TSMovement : MonoBehaviour
         if (m_isGrounded)
         {
             RaycastHit bestHit = hits.OrderBy(h => h.point.y).First();
-            Debug.DrawLine(bestHit.point, bestHit.point + bestHit.normal, Color.magenta);
 
             NormalInfo normalInfo = GetGroundNormal(normalSamples, groundSmoothRadius, m_controller.slopeLimit, 90);
             alignNormal = normalInfo.limitedNormal ?? (normalInfo.normal ?? Vector3.up);
@@ -169,7 +169,7 @@ public class TSMovement : MonoBehaviour
         Vector3 oldPosition = transform.position;
         m_controller.Move(moveVelocity * Time.deltaTime);
         m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
-        m_actualVelocity.y = m_actualVelocity.y > 0 ? Mathf.Min(m_actualVelocity.y, moveVelocity.y) : m_actualVelocity.y;
+        m_actualVelocity.y = m_actualVelocity.y > 0 ? Mathf.Min(m_actualVelocity.y, moveVelocity.y) : Mathf.Max(m_actualVelocity.y, moveVelocity.y);
 
         float maxTurnSpeed = m_isGrounded ? rotSpeed : airRotSpeed;
         float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.Turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.Turn / 180);
@@ -190,10 +190,10 @@ public class TSMovement : MonoBehaviour
      */
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Rigidbody body = hit.collider.attachedRigidbody;
-        if (!(body == null || body.isKinematic || Vector3.Dot(hit.normal, Vector3.up) > 0.5f))
+        Rigidbody rigidbody = hit.collider.attachedRigidbody;
+        if (!(rigidbody == null || rigidbody.isKinematic || Vector3.Dot(hit.normal, Vector3.up) > 0.5f))
         {
-            body.AddForceAtPosition(m_controller.velocity * pushStrength, hit.point, ForceMode.Impulse);
+            rigidbody.AddForceAtPosition(m_controller.velocity * pushStrength, hit.point, ForceMode.Impulse);
         }
     }
     

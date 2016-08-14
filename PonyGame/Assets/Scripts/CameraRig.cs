@@ -127,9 +127,9 @@ public class CameraRig : MonoBehaviour
         m_transformInterpolator = GetComponent<TransformInterpolator>();
         m_pivotInterpolator = pivot.GetComponent<TransformInterpolator>();
 
-        m_zoomInterpolator = new Interpolator<float>(new InterpolatedFloat(() => (m_zoom), (val) => { m_zoom = val; }));
-        gameObject.AddComponent<FloatInterpolator>().Initialize(m_zoomInterpolator);
-
+        InterpolatedFloat zoom = new InterpolatedFloat(() => (m_zoom), (val) => { m_zoom = val; });
+        m_zoomInterpolator = gameObject.AddComponent<FloatInterpolator>().Initialize(zoom);
+        
         GameController.CharacterChanged += Initialize;
     }
 

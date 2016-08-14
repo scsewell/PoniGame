@@ -3,15 +3,25 @@
 public class Interpolator<T>
 {
     private IInterpolated<T> m_interpolated;
+
     private T[] m_latestValues;
     private int m_newestValueIndex;
 
     private bool m_firstFixedLoop = true;
     private bool m_firstUpdateLoop = true;
+    private bool m_interpolate = true;
+    private T m_lastVisual;
 
-    public Interpolator(IInterpolated<T> interpolated)
+    private bool m_useThreshold = false;
+    public bool UseThreshold
+    {
+        set { m_useThreshold = value; }
+    }
+
+    public Interpolator(IInterpolated<T> interpolated, bool useThreshold = false)
     {
         m_interpolated = interpolated;
+        m_useThreshold = useThreshold;
     }
 
     public void Start()
@@ -23,12 +33,22 @@ public class Interpolator<T>
 
     public void FixedUpdate()
     {
-        if (!m_firstFixedLoop)
+        if (m_firstFixedLoop)
         {
-            StoreCurrentValue();
+            if (m_useThreshold)
+            {
+                m_lastVisual = m_interpolated.ReadOriginal();
+            }
+            if (m_interpolate)
+            {
+                m_interpolated.AffectOriginal(m_latestValues[m_newestValueIndex]);
+            }
             m_firstFixedLoop = false;
         }
-        m_interpolated.AffectOriginal(m_latestValues[m_newestValueIndex]);
+        else
+        {
+            StoreCurrentValue();
+        }
 
         m_firstUpdateLoop = true;
     }
@@ -51,11 +71,15 @@ public class Interpolator<T>
         if (m_firstUpdateLoop)
         {
             StoreCurrentValue();
+            m_interpolate = !m_useThreshold || m_interpolated.AreDifferent(m_lastVisual, m_latestValues[m_newestValueIndex]);
             m_firstUpdateLoop = false;
         }
-        T newer = m_latestValues[m_newestValueIndex];
-        T older = m_latestValues[GetOlderValueIndex()];
-        m_interpolated.AffectOriginal(m_interpolated.GetInterpolatedValue(older, newer, InterpolationController.InterpolationFactor));
+        if (m_interpolate)
+        {
+            T newer = m_latestValues[m_newestValueIndex];
+            T older = m_latestValues[GetOlderValueIndex()];
+            m_interpolated.AffectOriginal(m_interpolated.GetInterpolatedValue(older, newer, InterpolationController.InterpolationFactor));
+        }
 
         m_firstFixedLoop = true;
     }
