@@ -66,8 +66,8 @@ public class TSAnimation : MonoBehaviour
 
     private float m_lookH = 0;
     private float m_lookV = 0;
-    private Interpolator<float> m_velocityInterpolator;
-    private float m_forwardVelocity = 0;
+    private Interpolator<float> m_speedInterpolator;
+    private float m_forwardSpeed = 0;
     private Quaternion m_lastHeadRot;
     private bool m_lookAtCamera = false;
     private float m_currentBlinkTime = 0;
@@ -82,8 +82,8 @@ public class TSAnimation : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_camRig = FindObjectOfType<CameraRig>();
 
-        m_velocityInterpolator = new Interpolator<float>(new InterpolatedFloat(() => (m_forwardVelocity), (val) => { m_forwardVelocity = val; }));
-        gameObject.AddComponent<FloatInterpolator>().Initialize(m_velocityInterpolator);
+        m_speedInterpolator = new Interpolator<float>(new InterpolatedFloat(() => (m_forwardSpeed), (val) => { m_forwardSpeed = val; }));
+        gameObject.AddComponent<FloatInterpolator>().Initialize(m_speedInterpolator);
 
         m_health.OnDie += OnDie;
 
@@ -104,12 +104,12 @@ public class TSAnimation : MonoBehaviour
 
     public void FixedUpdate()
     {
-        m_forwardVelocity = m_movement.AttemptedVelocity.magnitude;
+        m_forwardSpeed = m_movement.AttemptedSpeed;
     }
 
     public void PreAnimationUpdate(bool isPlayer)
     {
-        m_animator.enabled = true;
+        //m_animator.enabled = true;
 
         float targetH = 0;
         float targetV = 0;
@@ -132,7 +132,7 @@ public class TSAnimation : MonoBehaviour
         m_lookH = Mathf.Lerp(m_lookH, targetH, lerpFac);
         m_lookV = Mathf.Lerp(m_lookV, targetV, lerpFac);
 
-        m_animator.SetFloat("Forward", m_forwardVelocity);
+        m_animator.SetFloat("Forward", m_forwardSpeed);
         m_animator.SetFloat("LookHorizontal", m_lookH);
         m_animator.SetFloat("LookVertical", m_lookV);
         m_animator.SetBool("MidAir", !m_movement.IsGrounded);

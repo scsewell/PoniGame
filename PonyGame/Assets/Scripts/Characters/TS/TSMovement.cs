@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Linq;
 
 /*
  * Responsible for moving the player character
@@ -8,7 +9,13 @@ using System.Collections;
 public class TSMovement : MonoBehaviour
 {
     [SerializeField]
+    private PhysicMaterial m_rigidbodyPhysics;
+
+    [SerializeField]
     private bool m_debugView = true;
+
+    [SerializeField]
+    private LayerMask m_groundSpherecast;
 
     [SerializeField]
     private LayerMask m_groundRaycast;
@@ -78,7 +85,6 @@ public class TSMovement : MonoBehaviour
     private TransformInterpolator m_transformInterpolator;
 
     private CollisionFlags m_collisionFlags;
-    private float m_forwardVelocity = 0;
     private float m_angVelocity = 0;
     private float m_velocityY = 0;
 
@@ -89,17 +95,23 @@ public class TSMovement : MonoBehaviour
         get { return m_actualVelocity; }
     }
 
-    private Vector3 m_lastVelocity = Vector3.zero;
-    public Vector3 AttemptedVelocity
+    private float m_attemptedSpeed = 0;
+    public float AttemptedSpeed
     {
-        get { return m_lastVelocity; }
+        get { return m_attemptedSpeed; }
     }
 
+    private bool m_isGrounded = false;
     public bool IsGrounded
     {
-        get { return m_controller.isGrounded; }
+        get { return m_isGrounded; }
     }
 
+    private Rigidbody m_rigidbody;
+    private CapsuleCollider m_collider;
+    private bool m_useRigidbody = false;
+    private int m_toggleWaitFrames = 0;
+    private bool m_wasPreviousFixedUpdate = false;
 
     void Start()
     {
@@ -107,6 +119,34 @@ public class TSMovement : MonoBehaviour
         m_transformInterpolator = GetComponent<TransformInterpolator>();
 
         m_transformInterpolator.ForgetPreviousValues();
+
+        GameObject go = new GameObject();
+        go.layer = LayerMask.NameToLayer("Player");
+
+        m_collider = go.AddComponent<CapsuleCollider>();
+        m_collider.radius = m_controller.radius + m_controller.skinWidth;
+        m_collider.height = m_controller.height;
+        m_collider.material = m_rigidbodyPhysics;
+
+        m_rigidbody = go.AddComponent<Rigidbody>();
+        m_rigidbody.useGravity = false;
+        m_rigidbody.freezeRotation = true;
+        m_rigidbody.mass = 25;
+        SetRigidbody(false, Vector3.zero);
+    }
+
+    private void SetRigidbody(bool enabled, Vector3 velocity)
+    {
+        if (m_toggleWaitFrames > 0)
+        {
+            return;
+        }
+        m_useRigidbody = enabled;
+        m_collider.enabled = enabled;
+        m_rigidbody.velocity = velocity;
+        m_controller.enabled = !enabled;
+        m_toggleWaitFrames = 3;
+        //Debug.Log(enabled);
     }
 
     /*
@@ -114,166 +154,103 @@ public class TSMovement : MonoBehaviour
      */
     public void ExecuteMovement(MoveInputs inputs)
     {
-        //m_forwardVelocity = Vector3.ProjectOnPlane(m_actualVelocity, Vector3.up).magnitude;
-        m_velocityY = m_actualVelocity.y;
+        if (m_useRigidbody && m_wasPreviousFixedUpdate)
+        {
+            Vector3 oldPosition = transform.position;
+            transform.position = m_rigidbody.transform.position - (transform.TransformPoint(m_controller.center) - transform.position);
+            m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
+        }
 
-        // linearly accelerate towards some target velocity
-        m_forwardVelocity = Mathf.MoveTowards(m_forwardVelocity, inputs.Forward * (inputs.Run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
-        Vector3 moveVelocity = transform.forward * m_forwardVelocity;
-        m_lastVelocity = moveVelocity;
+        // Move to a dedicated FixedUpdate?
+        m_toggleWaitFrames--;
 
-        RaycastHit hit;
-        Vector3 lowerSphereCenter = transform.TransformPoint(m_controller.center) + Vector3.down * (m_controller.height * 0.5f - m_controller.radius);
-        bool onGround = Physics.SphereCast(lowerSphereCenter, m_controller.radius, Vector3.down, out hit, 0.01f, m_groundRaycast);
+        m_attemptedSpeed = Mathf.MoveTowards(m_attemptedSpeed, inputs.Forward * (inputs.Run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
+        Vector3 moveVelocity = transform.forward * m_attemptedSpeed;
+        Vector3 lowerSphereCenter = transform.TransformPoint(m_controller.center) + Vector3.down * (m_controller.height * 0.5f - (m_controller.radius + 0.01f));
+        RaycastHit[] hits = Physics.SphereCastAll(lowerSphereCenter, m_controller.radius, Vector3.down, 0.02f + m_controller.skinWidth, m_groundSpherecast);
+        Debug.DrawLine(lowerSphereCenter + Vector3.down * m_controller.radius, lowerSphereCenter + Vector3.down * (m_controller.radius + m_controller.skinWidth + 0.02f), Color.magenta);
+        m_isGrounded = hits != null && hits.Length > 0;
+
+        if (m_isGrounded && hits.Length == 1)
+        {
+            RaycastHit hit;
+            Physics.SphereCast(lowerSphereCenter, m_controller.radius, Vector3.down, out hit, 0.02f + m_controller.skinWidth, m_groundSpherecast);
+            hits[0] = hit;
+        }
 
         Vector3 alignNormal;
-        if (onGround)
+        if (m_isGrounded)
         {
+            RaycastHit bestHit = hits.OrderBy(h => h.point.y).First();
+            Debug.DrawLine(bestHit.point, bestHit.point + bestHit.normal, Color.magenta);
+
             NormalInfo normalInfo = GetGroundNormal(normalSamples, groundSmoothRadius, m_controller.slopeLimit, 90);
             alignNormal = normalInfo.limitedNormal ?? (normalInfo.normal ?? Vector3.up);
 
-            if (inputs.Jump && normalInfo.limitedNormal.HasValue)
-            {
-                // jumping
-                m_velocityY = jumpSpeed;
-            }
-            else
-            {
-                if (!normalInfo.limitedNormal.HasValue)
+            //if (bestHit.normal != Vector3.up)
+            //{
+                bool isSteep = Vector3.Dot(bestHit.normal, Vector3.up) < Mathf.Cos(m_controller.slopeLimit * Mathf.Deg2Rad);
+                if (isSteep && !m_useRigidbody)
                 {
-                    moveVelocity += Vector3.ProjectOnPlane(alignNormal, Vector3.up).normalized;
-                    m_actualVelocity += Vector3.ProjectOnPlane(gravityFraction * Physics.gravity * Time.deltaTime, alignNormal);
+                    Debug.Log(bestHit.transform + " : " + hits.Length + " : " + bestHit.normal.y + " : " + Vector3.Dot(bestHit.normal, Vector3.up));
+                    SetRigidbody(true, m_actualVelocity);
+                }
+                else if (!isSteep && m_useRigidbody)
+                {
+                    Debug.Log(bestHit.transform + " : " + hits.Length + " : " + bestHit.normal.y + " : " + Vector3.Dot(bestHit.normal, Vector3.up));
+                    SetRigidbody(false, m_actualVelocity);
+                }
+            //}
+
+            if (!m_useRigidbody)
+            {
+                if (inputs.Jump)
+                {
+                    m_velocityY = jumpSpeed;
+                    SetRigidbody(true, new Vector3(m_actualVelocity.x, m_velocityY, m_actualVelocity.z));
+                }
+                else if (bestHit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                {
+                    float slopeFactor = (1 - Mathf.Clamp(Vector3.Dot(bestHit.normal, Vector3.up), 0, 0.5f));
+                    m_velocityY = (-0.05f * slopeFactor + (1 - slopeFactor) * -0.01f) / Time.deltaTime;
+                }
+                else
+                {
+                    m_velocityY = -0.5f;
                 }
             }
         }
         else
         {
-            // orient the character up when in the air
             alignNormal = Vector3.up;
         }
 
         Quaternion targetRot = Quaternion.LookRotation(Vector3.Cross(transform.right, alignNormal), alignNormal);
         if (Quaternion.Angle(transform.rotation, targetRot) > 2.0f)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, (onGround ? groundAlignSpeed : airAlignSpeed) * Time.deltaTime);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, (m_isGrounded ? groundAlignSpeed : airAlignSpeed) * Time.deltaTime);
         }
 
         m_velocityY += gravityFraction * Physics.gravity.y * Time.deltaTime;
 
-        Vector3 oldPosition = transform.position;
-        Vector3 move = new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime;
-        m_collisionFlags = m_controller.Move(move);
-        //m_collisionFlags = m_controller.Move(new Vector3(gravityFraction * Physics.gravity.y * Time.deltaTime, 0, 0));
-        //m_collisionFlags = m_controller.Move(new Vector3(0, gravityFraction * Physics.gravity.y * Time.deltaTime, 0));
-        m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
-        Debug.Log(m_actualVelocity);
-
-        float maxTurnSpeed = onGround ? rotSpeed : airRotSpeed;
-        float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.Turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.Turn / 180);
-        m_angVelocity = Mathf.Clamp(Mathf.MoveTowards(m_angVelocity, targetAngVelocity, maxTorque * Time.deltaTime), -maxTurnSpeed, maxTurnSpeed);
-
-        float deltaRotation = m_angVelocity * Time.deltaTime;
-        if (Mathf.Abs(inputs.Turn) < Mathf.Abs(deltaRotation))
+        if (m_useRigidbody)
         {
-            deltaRotation = inputs.Turn;
-            m_angVelocity = 0;
-        }
-
-        transform.Rotate(0, deltaRotation, 0, Space.Self);
-    }
-
-    public void ExecuteMovementZZZ(MoveInputs inputs)
-    {
-        //m_collisionFlags = m_controller.Move(-1 * Vector3.up);
-        String toLog = "";
-
-        toLog += "  a:" + m_actualVelocity + " : " + m_actualVelocity.magnitude;
-        /*
-        Vector3 forwardVelocityVector = Vector3.ProjectOnPlane(m_actualVelocity, Vector3.up);
-        float forwardVelocity = forwardVelocityVector.magnitude;
-        forwardVelocity = Mathf.MoveTowards(forwardVelocity, inputs.Forward * (inputs.Run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
-        m_actualVelocity = forwardVelocity * Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized + (m_actualVelocity - forwardVelocityVector);
-        /**/
-
-        /*
-        Vector3 forwardVelocityVector = Vector3.ProjectOnPlane(m_actualVelocity, transform.up);
-        float forwardVelocity = forwardVelocityVector.magnitude;
-        forwardVelocity = Mathf.Clamp(Mathf.MoveTowards(forwardVelocity, inputs.Forward * (inputs.Run ? runSpeed : walkSpeed), acceleration * Time.deltaTime), -runSpeed, runSpeed);
-        m_actualVelocity = forwardVelocity * transform.forward + (m_actualVelocity - forwardVelocityVector);
-        /**/
-
-        /**/
-        Vector3 forwardVelocity = inputs.Forward * (inputs.Run ? runSpeed : walkSpeed) * transform.forward;
-        m_actualVelocity = Vector3.ClampMagnitude(Vector3.Lerp(m_actualVelocity, forwardVelocity, 0.1f), runSpeed);
-        //m_actualVelocity = Vector3.Lerp(m_actualVelocity, forwardVelocity, 0.1f);
-        /**/
-        toLog += "  b:" + m_actualVelocity + " : " + m_actualVelocity.magnitude;
-
-        RaycastHit hit;
-        Vector3 lowerSphereCenter = transform.TransformPoint(m_controller.center) + Vector3.down * (m_controller.height * 0.5f - m_controller.radius);
-        bool onGround = Physics.SphereCast(lowerSphereCenter, m_controller.radius, Vector3.down, out hit, 0.01f, m_groundRaycast);
-
-        Vector3 alignNormal;
-        if (onGround)
-        {
-            NormalInfo normalInfo = GetGroundNormal(normalSamples, groundSmoothRadius, m_controller.slopeLimit, 90);
-            alignNormal = normalInfo.limitedNormal ?? (normalInfo.normal ?? Vector3.up);
-
-            if (!normalInfo.limitedNormal.HasValue)
-            {
-                m_actualVelocity += Vector3.ProjectOnPlane(gravityFraction * Physics.gravity * Time.deltaTime, alignNormal);
-                toLog += "  c1:" + m_actualVelocity + " : " + m_actualVelocity.magnitude;
-            }
-            else if (inputs.Jump)
-            {
-                // jumping
-                m_actualVelocity.y = jumpSpeed;
-                toLog += "  c2:" + m_actualVelocity + " : " + m_actualVelocity.magnitude;
-            }
+            m_rigidbody.velocity += gravityFraction * Physics.gravity * Time.deltaTime;
         }
         else
         {
-            // orient the character up when in the air
-            alignNormal = Vector3.up;
+            Vector3 oldPosition = transform.position;
+            m_collisionFlags = m_controller.Move(new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime);
+            m_rigidbody.transform.position = transform.TransformPoint(m_controller.center);
+            m_rigidbody.velocity = Vector3.zero;
+            m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
         }
 
-        Quaternion targetRot = Quaternion.LookRotation(Vector3.Cross(transform.right, alignNormal), alignNormal);
-        if (Quaternion.Angle(transform.rotation, targetRot) > 2.0f)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, (onGround ? groundAlignSpeed : airAlignSpeed) * Time.deltaTime);
-        }
-
-        m_actualVelocity += gravityFraction * Physics.gravity * Time.deltaTime;
-        toLog += "  d:" + m_actualVelocity + " : " + m_actualVelocity.magnitude;
-
-        Vector3 oldPosition = transform.position;
-        //toLog += "  dz:" + (m_actualVelocity * Time.deltaTime) + " : " + (m_actualVelocity * Time.deltaTime).magnitude;
-        toLog += "  ein:" + Vector3.ProjectOnPlane(m_actualVelocity, Vector3.up) + " : " + Vector3.ProjectOnPlane(m_actualVelocity, Vector3.up).magnitude;
-        //m_collisionFlags = m_controller.Move(m_actualVelocity * Time.deltaTime);
-        m_collisionFlags = m_controller.Move(1 * Vector3.up);
-        m_collisionFlags = m_controller.Move(Vector3.ProjectOnPlane(m_actualVelocity, Vector3.up) * Time.deltaTime);
-        toLog += "  e:" + (transform.position - oldPosition) / Time.deltaTime + " : " + (transform.position - oldPosition).magnitude / Time.deltaTime;
-        Vector3 midPosition = transform.position;
-        toLog += "  fin:" + (m_actualVelocity.y * Vector3.up) + " : " + (m_actualVelocity.y * Vector3.up).magnitude;
-        m_collisionFlags = m_controller.Move(-1 * Vector3.up);
-        m_collisionFlags = m_controller.Move(m_actualVelocity.y * Vector3.up * Time.deltaTime);
-        //toLog += "  ez:" + (transform.position - oldPosition) + " : " + (transform.position - oldPosition).magnitude;
-        //m_collisionFlags = m_controller.Move(new Vector3(gravityFraction * Physics.gravity.y * Time.deltaTime, 0, 0));
-        //m_collisionFlags = m_controller.Move(new Vector3(0, gravityFraction * Physics.gravity.y * Time.deltaTime, 0));
-        m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
-        toLog += "  f:" + (transform.position - midPosition) / Time.deltaTime + " : " + (transform.position - midPosition).magnitude / Time.deltaTime;
-        toLog += "  g:" + m_actualVelocity + " : " + m_actualVelocity.magnitude;
-        //Debug.Log(m_actualVelocity);
-        m_lastVelocity = m_actualVelocity;
-
-        //Debug.Log(m_actualVelocity.magnitude);
-        if (m_actualVelocity.magnitude > 10)
-        {
-            int asdf = 1;
-            //int asdf2 = 0 / (1 - asdf);
-        }
-
-        float maxTurnSpeed = onGround ? rotSpeed : airRotSpeed;
+        //Vector3 oldPosition = transform.position;
+        //m_collisionFlags = m_controller.Move(new Vector3(moveVelocity.x, m_velocityY, moveVelocity.z) * Time.deltaTime);
+        //m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
+        
+        float maxTurnSpeed = m_isGrounded ? rotSpeed : airRotSpeed;
         float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.Turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.Turn / 180);
         m_angVelocity = Mathf.Clamp(Mathf.MoveTowards(m_angVelocity, targetAngVelocity, maxTorque * Time.deltaTime), -maxTurnSpeed, maxTurnSpeed);
 
@@ -285,12 +262,19 @@ public class TSMovement : MonoBehaviour
         }
 
         transform.Rotate(0, deltaRotation, 0, Space.Self);
-        if (Controls.IsDown(GameButton.Testing))
+
+        m_wasPreviousFixedUpdate = true;
+    }
+
+    public void Update()
+    {
+        if (m_useRigidbody && m_wasPreviousFixedUpdate)
         {
-            Debug.Log(toLog);
+            Vector3 oldPosition = transform.position;
+            transform.position = m_rigidbody.transform.position - (transform.TransformPoint(m_controller.center) - transform.position);
+            m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
+            m_wasPreviousFixedUpdate = false;
         }
-        //Debug.Log(toLog);
-        //m_collisionFlags = m_controller.Move(1 * Vector3.up);
     }
 
     /*
