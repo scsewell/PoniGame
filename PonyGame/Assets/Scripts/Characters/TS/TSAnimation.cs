@@ -72,6 +72,9 @@ public class TSAnimation : MonoBehaviour
     private Dictionary<Transform, TransformData> m_basePose;
     private float m_deathTime = float.NegativeInfinity;
     private bool m_basePoseApplied = false;
+    private float m_blinkWeight = 0;
+    private float m_mouthOpenWeight = 0;
+    private float m_frownWeight = 0;
     
     void Start()
     {
@@ -136,60 +139,83 @@ public class TSAnimation : MonoBehaviour
         m_animator.SetBool("MidAir", !m_movement.IsGrounded);
     }
 
-    public void DeadLateUpdate()
+    public void PostAnimationUpdate(bool isAlive)
     {
-        m_animator.enabled = false;
-        SetBlink(Mathf.Lerp(GetBlink(), 1, 1.5f * Time.deltaTime));
+        float frown = isAlive ? 1 - m_health.HealthFraction : 0.5f;
+        float mouthOpen = isAlive ? 0 : 0.2f;
 
-        if (!m_basePoseApplied)
+        m_frownWeight = Mathf.Lerp(m_frownWeight, frown, 4.0f * Time.deltaTime);
+        m_mouthOpenWeight = Mathf.Lerp(m_mouthOpenWeight, mouthOpen, 12.0f * Time.deltaTime);
+
+        if (isAlive)
         {
-            float lerpFac = (Time.time - m_deathTime);
-            if (lerpFac > 1)
+            // head camera tracking
+            float lookAngVelocity = 0;
+            if (m_lookAtCamera)
             {
-                lerpFac = 1;
-                m_basePoseApplied = true;
+                Vector3 disp = Camera.main.transform.position - m_headBone.position;
+                Quaternion lookDir = Quaternion.LookRotation(disp, transform.up);
+                float vertLookAng = 90 - Vector3.Angle(lookDir * Vector3.forward, transform.up);
+                float verticalSoftening = Mathf.Max(Mathf.Abs(vertLookAng) - headVerticalAngSoft, 0) * headVerticalSoftFactor;
+                Quaternion verticalSoftened = lookDir * Quaternion.AngleAxis(verticalSoftening, Vector3.right);
+                Quaternion targetRot = verticalSoftened * Quaternion.AngleAxis(30.0f, Vector3.right);
+
+                Quaternion newRot = Quaternion.Slerp(m_lastHeadRot, targetRot, headRotateSpeed * Time.deltaTime);
+                m_headBone.rotation = newRot;
+                lookAngVelocity = Quaternion.Angle(newRot, m_lastHeadRot) / Time.deltaTime;
             }
-            foreach (Transform child in m_basePose.Keys)
+            m_lastHeadRot = m_headBone.rotation;
+
+            // random blinking
+            if (m_currentBlinkTime == 0 && (Random.value * blinkChance < Time.deltaTime || lookAngVelocity > blinkingMotionThreshold))
             {
-                TransformData.Apply(m_basePose[child], child);
+                m_currentBlinkTime += Time.deltaTime;
             }
-        }
-    }
 
-    public void AliveLateUpdate()
-    {
-        // head camera tracking
-        float lookAngVelocity = 0;
-        if (m_lookAtCamera)
-        {
-            Vector3 disp = Camera.main.transform.position - m_headBone.position;
-            Quaternion lookDir = Quaternion.LookRotation(disp, transform.up);
-            float vertLookAng = 90 - Vector3.Angle(lookDir * Vector3.forward, transform.up);
-            float verticalSoftening = Mathf.Max(Mathf.Abs(vertLookAng) - headVerticalAngSoft, 0) * headVerticalSoftFactor;
-            Quaternion verticalSoftened = lookDir * Quaternion.AngleAxis(verticalSoftening, Vector3.right);
-            Quaternion targetRot = verticalSoftened * Quaternion.AngleAxis(30.0f, Vector3.right);
-
-            Quaternion newRot = Quaternion.Slerp(m_lastHeadRot, targetRot, headRotateSpeed * Time.deltaTime);
-            m_headBone.rotation = newRot;
-            lookAngVelocity = Quaternion.Angle(newRot, m_lastHeadRot) / Time.deltaTime;
-        }
-        m_lastHeadRot = m_headBone.rotation;
-
-        // random blinking
-        if (m_currentBlinkTime == 0 && (Random.value * blinkChance < Time.deltaTime || lookAngVelocity > blinkingMotionThreshold))
-        {
-            m_currentBlinkTime += Time.deltaTime;
-        }
-
-        if (m_currentBlinkTime > 0)
-        {
-            SetBlink(blinkCurve.Evaluate(m_currentBlinkTime * blinkSpeedScale));
-            m_currentBlinkTime += Time.deltaTime;
-            if (m_currentBlinkTime > blinkTime)
+            if (m_currentBlinkTime > 0)
             {
-                m_currentBlinkTime = 0;
+                m_blinkWeight = blinkCurve.Evaluate(m_currentBlinkTime * blinkSpeedScale);
+                m_currentBlinkTime += Time.deltaTime;
+                if (m_currentBlinkTime > blinkTime)
+                {
+                    m_currentBlinkTime = 0;
+                }
             }
         }
+        else
+        {
+            m_animator.enabled = false;
+            m_blinkWeight = (Mathf.Lerp(m_blinkWeight, 1, 1.5f * Time.deltaTime));
+
+            if (!m_basePoseApplied)
+            {
+                float lerpFac = (Time.time - m_deathTime);
+                if (lerpFac > 1)
+                {
+                    lerpFac = 1;
+                    m_basePoseApplied = true;
+                }
+                foreach (Transform child in m_basePose.Keys)
+                {
+                    TransformData.Apply(m_basePose[child], child);
+                }
+            }
+        }
+        
+        // blink shape keys
+        float blinkWeight = Mathf.Clamp01(m_blinkWeight) * 100;
+        m_bodyMesh.SetBlendShapeWeight(0, blinkWeight);
+        m_upperEyelashesMesh.SetBlendShapeWeight(0, blinkWeight);
+        m_lowerEyelashesMesh.SetBlendShapeWeight(0, blinkWeight);
+
+        // mouth open shape keys
+        float mouthOpenWeight = Mathf.Clamp01(m_mouthOpenWeight) * 100;
+        m_bodyMesh.SetBlendShapeWeight(1, mouthOpenWeight);
+        m_mouthMesh.SetBlendShapeWeight(0, mouthOpenWeight);
+        
+        // frown shape keys
+        float frownWeight = Mathf.Clamp01(m_frownWeight) * 100;
+        m_bodyMesh.SetBlendShapeWeight(2, frownWeight);
     }
 
     private void StoreBasePose()
@@ -215,8 +241,7 @@ public class TSAnimation : MonoBehaviour
                 if (!rigidbody.GetComponent<TransformInterpolator>())
                 {
                     TransformInterpolator interpolator = rigidbody.gameObject.AddComponent<TransformInterpolator>();
-                    interpolator.UseThresholds = true;
-                    interpolator.SetThresholds(0.005f, 0.5f, 0);
+                    interpolator.SetThresholds(true, 0.005f, 0.5f, 0.01f);
                 }
             }
         }
@@ -227,37 +252,6 @@ public class TSAnimation : MonoBehaviour
                 collider.enabled = activated;
             }
         }
-    }
-
-    private void SetBlink(float weight)
-    {
-        float scaledWeight = Mathf.Clamp01(weight) * 100;
-        m_bodyMesh.SetBlendShapeWeight(0, scaledWeight);
-        m_upperEyelashesMesh.SetBlendShapeWeight(0, scaledWeight);
-        m_lowerEyelashesMesh.SetBlendShapeWeight(0, scaledWeight);
-    }
-    private float GetBlink()
-    {
-        return Mathf.Clamp01(m_bodyMesh.GetBlendShapeWeight(0) / 100);
-    }
-    private void SetMouthOpen(float weight)
-    {
-        float scaledWeight = Mathf.Clamp01(weight) * 100;
-        m_bodyMesh.SetBlendShapeWeight(1, scaledWeight);
-        m_mouthMesh.SetBlendShapeWeight(0, scaledWeight);
-    }
-    private float GetMouthOpen()
-    {
-        return Mathf.Clamp01(m_bodyMesh.GetBlendShapeWeight(1) / 100);
-    }
-    private void SetFrown(float weight)
-    {
-        float scaledWeight = Mathf.Clamp01(weight) * 100;
-        m_bodyMesh.SetBlendShapeWeight(2, scaledWeight);
-    }
-    private float GetFrown()
-    {
-        return Mathf.Clamp01(m_bodyMesh.GetBlendShapeWeight(2) / 100);
     }
 
     public void FrontLeftHoofstep()

@@ -18,14 +18,6 @@ public class Health : MonoBehaviour
         m_currentHealth = m_maxHealth;
     }
 
-    private void FixedUpdate()
-    {
-        if (Controls.JustDown(GameButton.ConsiderSuicide))
-        {
-            ApplyDamage(m_maxHealth);
-        }
-    }
-
     public bool IsAlive
     {
         get { return m_currentHealth > 0; }

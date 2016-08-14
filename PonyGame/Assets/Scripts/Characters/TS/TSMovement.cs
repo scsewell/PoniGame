@@ -102,6 +102,12 @@ public class TSMovement : MonoBehaviour
         get { return m_isGrounded; }
     }
 
+    private bool m_isRunning = false;
+    public bool IsRunning
+    {
+        get { return m_isRunning; }
+    }
+
     void Start()
     {
         m_controller = GetComponent<CharacterController>();
@@ -115,6 +121,7 @@ public class TSMovement : MonoBehaviour
      */
     public void ExecuteMovement(MoveInputs inputs)
     {
+        m_isRunning = inputs.Run;
         m_attemptedSpeed = Mathf.MoveTowards(m_attemptedSpeed, inputs.Forward * (inputs.Run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
         Vector3 moveVelocity = transform.forward * m_attemptedSpeed;
         moveVelocity.y = m_actualVelocity.y;

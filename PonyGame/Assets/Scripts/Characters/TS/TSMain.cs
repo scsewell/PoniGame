@@ -41,6 +41,11 @@ public class TSMain : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Controls.JustDown(GameButton.ConsiderSuicide))
+        {
+            m_health.ApplyDamage(m_health.MaxHealth / 10);
+        }
+
         if (m_health.IsAlive)
         {
             MoveInputs inputs;
@@ -68,13 +73,6 @@ public class TSMain : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (m_health.IsAlive)
-        {
-            m_animation.AliveLateUpdate();
-        }
-        else
-        {
-            m_animation.DeadLateUpdate();
-        }
+        m_animation.PostAnimationUpdate(m_health.IsAlive);
     }
 }

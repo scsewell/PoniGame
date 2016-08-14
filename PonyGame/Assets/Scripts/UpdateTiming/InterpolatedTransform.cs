@@ -3,20 +3,22 @@
 public class InterpolatedTransform : IInterpolated<TransformData>
 {
     private Transform m_transform;
-    private float m_positionThreshold = 0;
-    private float m_rotationThreshold = 0;
-    private float m_scaleThreshold = 0;
 
-    public InterpolatedTransform(Transform transform)
+    private float m_positionThreshold;
+    private float m_rotationThreshold;
+    private float m_scaleThreshold;
+
+    public InterpolatedTransform(Transform transform, float positionThreshold = 0, float rotationThreshold = 0, float scaleThreshold = 0)
     {
         m_transform = transform;
+        SetThresholds(positionThreshold, rotationThreshold, scaleThreshold);
     }
 
-    public void SetThresholds(float position, float rotation, float scale)
+    public void SetThresholds(float positionThreshold, float rotationThreshold, float scaleThreshold)
     {
-        m_positionThreshold = position;
-        m_rotationThreshold = rotation;
-        m_scaleThreshold = scale;
+        m_positionThreshold = positionThreshold;
+        m_rotationThreshold = rotationThreshold;
+        m_scaleThreshold = scaleThreshold;
     }
 
     public TransformData GetInterpolatedValue(TransformData older, TransformData newer, float interpolationFactor)

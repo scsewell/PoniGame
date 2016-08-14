@@ -5,14 +5,14 @@ public class InterpolatedFloat : IInterpolated<float>
 {
     private Func<float> m_originalReader;
     private Action<float> m_originalAffector;
+    
+    private float m_threshold;
 
-    private Transform m_transform;
-    private float m_threshold = 0;
-
-    public InterpolatedFloat(Func<float> originalReader, Action<float> originalAffector)
+    public InterpolatedFloat(Func<float> originalReader, Action<float> originalAffector, float threshold = 0)
     {
         m_originalReader = originalReader;
         m_originalAffector = originalAffector;
+        SetThreshold(threshold);
     }
 
     public void SetThreshold(float threshold)
