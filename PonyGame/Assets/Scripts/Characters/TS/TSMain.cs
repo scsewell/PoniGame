@@ -62,7 +62,6 @@ public class TSMain : MonoBehaviour
     {
         if (m_health.IsAlive)
         {
-            m_movement.Update();
             m_animation.PreAnimationUpdate(IsPlayer);
         }
     }

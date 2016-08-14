@@ -109,7 +109,7 @@ public class TSAnimation : MonoBehaviour
 
     public void PreAnimationUpdate(bool isPlayer)
     {
-        //m_animator.enabled = true;
+        m_animator.enabled = true;
 
         float targetH = 0;
         float targetV = 0;
@@ -221,19 +221,26 @@ public class TSAnimation : MonoBehaviour
 
     private void SetRagdoll(bool activated)
     {
-        foreach (Rigidbody body in GetComponentsInChildren<Rigidbody>())
+        foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
         {
-            if (body.gameObject != gameObject)
+            if (rigidbody.gameObject != gameObject)
             {
-                body.isKinematic = !activated;
+                rigidbody.isKinematic = !activated;
                 if (activated)
                 {
-                    body.velocity = m_movement.ActualVelocity;
+                    rigidbody.velocity = m_movement.ActualVelocity;
                     if (!body.GetComponent<TransformInterpolator>())
                     {
                         body.gameObject.AddComponent<TransformInterpolator>();
                     }
                 }
+            }
+        }
+        foreach (Collider collider in GetComponentsInChildren<Collider>())
+        {
+            if (collider.gameObject != gameObject)
+            {
+                collider.enabled = activated;
             }
         }
     }
