@@ -3,24 +3,21 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource m_ambience;
-    [SerializeField]
-    public AudioSource m_deathSound;
+    [SerializeField] private AudioSource m_ambience;
+    [SerializeField] private AudioSource m_deathSound;
 
-    private static bool m_playDeathSound = false;
-
-    void Update()
+    private void Start()
     {
-        if (m_playDeathSound)
-        {
-            m_deathSound.Play();
-            m_playDeathSound = false;
-        }
-	}
+        GameController.GameOver += OnGameOver;
+    }
 
-    public static void PlayDeathSound()
+    private void OnDestroy()
     {
-        m_playDeathSound = true;
+        GameController.GameOver -= OnGameOver;
+    }
+
+    public void OnGameOver()
+    {
+        m_deathSound.Play();
     }
 }

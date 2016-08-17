@@ -116,6 +116,11 @@ public class TSMovement : MonoBehaviour
         m_transformInterpolator.ForgetPreviousValues();
     }
 
+    public void SetColliderEnabled(bool enabled)
+    {
+        m_controller.enabled = enabled;
+    }
+
     /*
      * Moves the character based on the provided input
      */

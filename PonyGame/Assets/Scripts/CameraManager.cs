@@ -31,14 +31,7 @@ public class CameraManager : MonoBehaviour
     private TonemappingColorGrading m_colorGrading;
 
     private TonemappingColorGrading.ColorGradingSettings m_defaultGrading;
-
-
-    private static bool m_fadeToGrey = false;
-    public static bool FadeToGrey
-    {
-        get { return m_fadeToGrey; }
-        set { m_fadeToGrey = value; }
-    }
+    private bool m_fadeToGrey = false;
 
     void Start()
     {
@@ -50,6 +43,18 @@ public class CameraManager : MonoBehaviour
         m_colorGrading = m_cam.GetComponent<TonemappingColorGrading>();
 
         m_defaultGrading = m_colorGrading.colorGrading;
+
+        GameController.GameOver += OnGameOver;
+    }
+
+    void OnDestroy()
+    {
+        GameController.GameOver -= OnGameOver;
+    }
+
+    private void OnGameOver()
+    {
+        m_fadeToGrey = true;
     }
 
     void Update()

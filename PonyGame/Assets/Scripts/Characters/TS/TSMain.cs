@@ -33,19 +33,12 @@ public class TSMain : MonoBehaviour
 
     private void OnDie()
     {
-        if (IsPlayer)
-        {
-            GameController.PlayerDied();
-        }
+        m_movement.SetColliderEnabled(false);
+        GameController.RemoveCharacter(transform);
     }
 
     private void FixedUpdate()
     {
-        if (Controls.JustDown(GameButton.ConsiderSuicide))
-        {
-            m_health.ApplyDamage(m_health.MaxHealth / 10);
-        }
-
         if (m_health.IsAlive)
         {
             MoveInputs inputs;

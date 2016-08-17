@@ -141,7 +141,7 @@ public class TSAnimation : MonoBehaviour
 
     public void PostAnimationUpdate(bool isAlive)
     {
-        float frown = isAlive ? 1 - m_health.HealthFraction : 0.5f;
+        float frown = isAlive ? Mathf.Clamp01(Mathf.Pow(1 - m_health.HealthFraction, 3)) : 0.5f;
         float mouthOpen = isAlive ? 0 : 0.2f;
 
         m_frownWeight = Mathf.Lerp(m_frownWeight, frown, 4.0f * Time.deltaTime);

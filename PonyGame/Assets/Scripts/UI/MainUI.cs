@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class MainUI : MonoBehaviour
 {
-    [SerializeField] private CameraRig m_cameraRig;
-    [SerializeField] private Canvas m_canvas;
-    [SerializeField] private RectTransform m_lockSprite;
+    [SerializeField] private Canvas m_gameCanvas;
+    [SerializeField] private Canvas m_gameOverCanvas;
+    [SerializeField] private bool m_fadeUIOnGameOver = true;
+    [SerializeField] private float m_gameOverFadeWait = 5.0f;
+    [SerializeField] private float m_gameOverFadeDuration = 2.0f;
 
-    [Tooltip("The angle new lock targets must be within from the input direction to be considered")]
-    [SerializeField] [Range(-720, 720)]
-    private float m_lockRotateSpeed = 0.0f;
-
+    private float m_gameOverFadeTime = 0;
 
     private static bool m_lockCursor = true;
     public static bool IsCursorLocked
@@ -25,12 +26,20 @@ public class MainUI : MonoBehaviour
         get { return m_lockCursor; }
     }
 
-    void Start()
+    private void Start()
     {
         SetCusorLock(m_lockCursor);
+        m_gameOverCanvas.GetComponentsInChildren<CanvasRenderer>().ToList().ForEach(r => r.SetAlpha(0));
+
+        GameController.GameOver += OnGameOver;
     }
-	
-	void Update()
+
+    private void OnDestroy()
+    {
+        GameController.GameOver -= OnGameOver;
+    }
+
+    private void Update()
     {
         if (Controls.VisualJustDown(GameButton.Menu))
         {
@@ -38,23 +47,29 @@ public class MainUI : MonoBehaviour
             m_lockCursor = m_isMenuOpen;
         }
 
-        SetCusorLock(m_lockCursor);
-
-        m_lockSprite.GetComponent<Image>().enabled = false;
-        if (m_cameraRig.LockTarget)
+        if (m_gameOverFadeTime != 0)
         {
-            Vector3 screenPos = Camera.main.WorldToViewportPoint(m_cameraRig.LockTarget.position);
-            m_lockSprite.anchorMin = screenPos;
-            m_lockSprite.anchorMax = screenPos;
-            if (screenPos.z > 0)
+            float fade = Mathf.Clamp01((Time.time - (m_gameOverFadeTime + m_gameOverFadeWait)) / m_gameOverFadeDuration);
+            m_gameCanvas.GetComponentsInChildren<CanvasRenderer>().ToList().ForEach(r => r.SetAlpha(1 - fade));
+            m_gameOverCanvas.GetComponentsInChildren<CanvasRenderer>().ToList().ForEach(r => r.SetAlpha(fade));
+            if (fade == 1)
             {
-                m_lockSprite.GetComponent<Image>().enabled = true;
+                m_gameOverFadeTime = 0;
             }
         }
-        m_lockSprite.Rotate(Vector3.forward, m_lockRotateSpeed * Time.deltaTime);
+
+        SetCusorLock(m_lockCursor);
     }
-    
-    void SetCusorLock(bool locked)
+
+    private void OnGameOver()
+    {
+        if (m_fadeUIOnGameOver)
+        {
+            m_gameOverFadeTime = Time.time;
+        }
+    }
+
+    private void SetCusorLock(bool locked)
     {
         Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = !locked;

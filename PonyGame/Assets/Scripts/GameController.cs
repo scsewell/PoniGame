@@ -8,19 +8,36 @@ using System.Linq;
  */
 public class GameController : MonoBehaviour
 {
-    public Transform defaultCharacter;
-    public Transform spawnPoint;
-    
+    //[SerializeField] private Transform defaultCharacterPrefab;
+    //[SerializeField] private Transform spawnPoint;
+    [SerializeField] private CameraRig cameraRig;
+
     private static List<Transform> m_characters;
     private static Transform m_player;
+    
+
     private static CameraRig m_cameraRig;
+    public static CameraRig CameraRig
+    {
+        get { return m_cameraRig; }
+    }
+
+    private static bool m_isGameOver = false;
+    public static bool isGameOver
+    {
+        get { return m_isGameOver; }
+    }
+
+    public delegate void GameOverHandler();
+    public static event GameOverHandler GameOver;
 
     public delegate void CharacterChangeHandler(Transform newCharacter);
     public static event CharacterChangeHandler CharacterChanged;
 
-    void Start()
+    void Awake()
     {
         m_characters = new List<Transform>();
+        m_cameraRig = cameraRig;
     }
 
     public static void AddCharacter(Transform transform)
@@ -33,39 +50,43 @@ public class GameController : MonoBehaviour
 
     public static void RemoveCharacter(Transform transform)
     {
-        if (m_characters.Contains(transform))
+        if (m_characters.Remove(transform))
         {
-            m_characters.Remove(transform);
+            ResetCharacter(transform);
+            if (transform == m_player && m_characters.Count > 0)
+            {
+                SetPlayerCharacter(m_characters.First());
+            }
+            else if (transform == m_player)
+            {
+                m_player = null;
+                if (GameOver != null)
+                {
+                    GameOver();
+                }
+            }
         }
-    }
-
-    public static void PlayerDied()
-    {
-        AudioManager.PlayDeathSound();
-        CameraManager.FadeToGrey = true;
     }
 
     private void Update()
     {
-        if (m_characters.Count == 0)
-        {
-            Instantiate(defaultCharacter, spawnPoint.position, spawnPoint.rotation);
-        }
-
         if (m_player == null && m_characters.Count > 0)
         {
-            SetPlayer(m_characters.First());
+            SetPlayerCharacter(m_characters.First());
         }
-
-        if (Controls.VisualJustDown(GameButton.SwitchCharacter))
+        if (m_characters.Count > 0 && Controls.VisualJustDown(GameButton.SwitchCharacter))
         {
-            SetPlayer(m_characters[(m_characters.IndexOf(m_player) + 1) % m_characters.Count]);
-            m_characters.Where(c => c != m_player).ToList().ForEach(c => ResetPlayer(c));
+            SetPlayerCharacter(m_characters[(m_characters.IndexOf(m_player) + 1) % m_characters.Count]);
+        }
+        if (m_player != null &&  Controls.VisualJustDown(GameButton.ConsiderSuicide))
+        {
+            m_player.GetComponent<Health>().ApplyDamage(m_player.GetComponent<Health>().MaxHealth / 10);
         }
     }
 
-    private void SetPlayer(Transform newPlayer)
+    private static void SetPlayerCharacter(Transform newPlayer)
     {
+        m_characters.ForEach(c => ResetCharacter(c));
         m_player = newPlayer;
         newPlayer.tag = "Player";
         if (CharacterChanged != null)
@@ -74,7 +95,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void ResetPlayer(Transform oldPlayer)
+    private static void ResetCharacter(Transform oldPlayer)
     {
         oldPlayer.tag = "Untagged";
     }

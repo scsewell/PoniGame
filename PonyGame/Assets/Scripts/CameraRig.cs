@@ -130,15 +130,15 @@ public class CameraRig : MonoBehaviour
         InterpolatedFloat zoom = new InterpolatedFloat(() => (m_zoom), (val) => { m_zoom = val; });
         m_zoomInterpolator = gameObject.AddComponent<FloatInterpolator>().Initialize(zoom);
         
-        GameController.CharacterChanged += Initialize;
+        GameController.CharacterChanged += PlayerCharacterChanged;
     }
 
     void OnDestroy()
     {
-        GameController.CharacterChanged -= Initialize;
+        GameController.CharacterChanged -= PlayerCharacterChanged;
     }
 
-    void Initialize(Transform player)
+    void PlayerCharacterChanged(Transform player)
     {
         m_player = player;
         m_playerHealth = m_player.GetComponent<Health>();
