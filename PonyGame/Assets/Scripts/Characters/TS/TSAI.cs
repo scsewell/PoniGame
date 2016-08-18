@@ -136,4 +136,9 @@ public class TSAI : MonoBehaviour
 
         return moveInput;
     }
+
+    public float GetTargetBearing()
+    {
+        return m_player != null ? Utils.GetBearing(transform.forward, m_player.position - transform.position, Vector3.up) : 0;
+    }
 }

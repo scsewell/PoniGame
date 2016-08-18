@@ -74,11 +74,11 @@ public class GameController : MonoBehaviour
         {
             SetPlayerCharacter(m_characters.First());
         }
-        if (m_characters.Count > 0 && Controls.VisualJustDown(GameButton.SwitchCharacter))
+        if (m_characters.Count > 1 && Controls.VisualJustDown(GameButton.SwitchCharacter))
         {
             SetPlayerCharacter(m_characters[(m_characters.IndexOf(m_player) + 1) % m_characters.Count]);
         }
-        if (m_player != null &&  Controls.VisualJustDown(GameButton.ConsiderSuicide))
+        if (m_player != null && Controls.VisualJustDown(GameButton.ConsiderSuicide))
         {
             m_player.GetComponent<Health>().ApplyDamage(m_player.GetComponent<Health>().MaxHealth / 10);
         }
