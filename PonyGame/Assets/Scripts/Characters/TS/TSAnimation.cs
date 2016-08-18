@@ -52,6 +52,7 @@ public class TSAnimation : MonoBehaviour
     [SerializeField] private SkinnedMeshRenderer m_lowerEyelashesMesh;
     [SerializeField] private SkinnedMeshRenderer m_mouthMesh;
     [SerializeField] private Transform m_headBone;
+    [SerializeField] private Transform m_chestBone;
     [SerializeField] private AudioSource frontLeftHoof;
     [SerializeField] private AudioSource frontRightHoof;
     [SerializeField] private AudioSource backLeftHoof;
@@ -67,6 +68,7 @@ public class TSAnimation : MonoBehaviour
     private float m_lookV = 0;
     private float m_forwardSpeed = 0;
     private Quaternion m_lastHeadRot;
+    private Quaternion m_lastHeadLocalRot;
     private bool m_lookAtCamera = false;
     private float m_currentBlinkTime = 0;
     private Dictionary<Transform, TransformData> m_basePose;
@@ -90,6 +92,8 @@ public class TSAnimation : MonoBehaviour
 
         SetRagdoll(false);
         StoreBasePose();
+        m_lastHeadRot = m_headBone.rotation;
+        m_lastHeadLocalRot = m_headBone.localRotation;
     }
 
     void OnDestroy()
@@ -128,6 +132,10 @@ public class TSAnimation : MonoBehaviour
             float targetBearingV = m_lookAtCamera ? lookBearingV + 20 : -lookBearingV;
             targetV = Mathf.Clamp(targetBearingV / 40, -1, 1);
         }
+        else
+        {
+            m_lookAtCamera = false;
+        }
 
         float lerpFac = headRotateSpeed * Time.deltaTime;
         m_lookH = Mathf.Lerp(m_lookH, targetH, lerpFac);
@@ -150,7 +158,6 @@ public class TSAnimation : MonoBehaviour
         if (isAlive)
         {
             // head camera tracking
-            float lookAngVelocity = 0;
             if (m_lookAtCamera)
             {
                 Vector3 disp = Camera.main.transform.position - m_headBone.position;
@@ -159,14 +166,15 @@ public class TSAnimation : MonoBehaviour
                 float verticalSoftening = Mathf.Max(Mathf.Abs(vertLookAng) - headVerticalAngSoft, 0) * headVerticalSoftFactor;
                 Quaternion verticalSoftened = lookDir * Quaternion.AngleAxis(verticalSoftening, Vector3.right);
                 Quaternion targetRot = verticalSoftened * Quaternion.AngleAxis(30.0f, Vector3.right);
-
-                Quaternion newRot = Quaternion.Slerp(m_lastHeadRot, targetRot, headRotateSpeed * Time.deltaTime);
-                m_headBone.rotation = newRot;
-                lookAngVelocity = Quaternion.Angle(newRot, m_lastHeadRot) / Time.deltaTime;
+                
+                m_headBone.rotation = Quaternion.Slerp(m_lastHeadRot, targetRot, headRotateSpeed * Time.deltaTime);
             }
             m_lastHeadRot = m_headBone.rotation;
 
-            // random blinking
+            // blinking
+            float lookAngVelocity = Quaternion.Angle(m_lastHeadLocalRot, m_headBone.localRotation) / Time.deltaTime;
+            m_lastHeadLocalRot = m_headBone.localRotation;
+
             if (m_currentBlinkTime == 0 && (Random.value * blinkChance < Time.deltaTime || lookAngVelocity > blinkingMotionThreshold))
             {
                 m_currentBlinkTime += Time.deltaTime;
@@ -238,6 +246,10 @@ public class TSAnimation : MonoBehaviour
             if (activated)
             {
                 rigidbody.velocity = m_movement.ActualVelocity;
+                if (rigidbody.transform == m_chestBone && m_movement.ActualVelocity.magnitude < 1.0f)
+                {
+                    rigidbody.velocity += 1.5f * m_chestBone.right * (Random.value > 0.5f ? 1 : -1);
+                }
                 if (!rigidbody.GetComponent<TransformInterpolator>())
                 {
                     TransformInterpolator interpolator = rigidbody.gameObject.AddComponent<TransformInterpolator>();
