@@ -35,4 +35,10 @@ public static class Utils
     {
         return new Vector2(-Mathf.Atan2(vec.y, vec.x), Mathf.PI - Mathf.Acos(vec.z / vec.magnitude));
     }
+
+    public static bool InDuration(float startTime, float duration)
+    {
+        float fac = ((Time.time - startTime) / duration);
+        return fac > 0 && fac <= 1;
+    }
 }

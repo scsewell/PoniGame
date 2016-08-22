@@ -4,14 +4,18 @@ using System.Collections;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float m_maxHealth = 100;
+    [SerializeField] private float m_staggerDamageTolerance = 10;
 
     private float m_currentHealth;
 
     public delegate void DeathHandler();
     public event DeathHandler OnDie;
 
-    public delegate void HurtHandler();
+    public delegate void HurtHandler(float healthFractionLost);
     public event HurtHandler OnHurt;
+
+    public delegate void StaggerHandler();
+    public event StaggerHandler OnStagger;
 
     private void Start()
     {
@@ -47,7 +51,11 @@ public class Health : MonoBehaviour
         m_currentHealth = Mathf.Max(m_currentHealth - damage, 0);
         if (OnHurt != null)
         {
-            OnHurt();
+            OnHurt(damage / m_maxHealth);
+        }
+        if (OnStagger != null && damage > m_staggerDamageTolerance)
+        {
+            OnStagger();
         }
         if (OnDie != null && !IsAlive)
         {

@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
         }
         if (m_player != null && Controls.VisualJustDown(GameButton.ConsiderSuicide))
         {
-            m_player.GetComponent<Health>().ApplyDamage(m_player.GetComponent<Health>().MaxHealth / 10);
+            m_player.GetComponent<Health>().ApplyDamage(10);
         }
     }
 

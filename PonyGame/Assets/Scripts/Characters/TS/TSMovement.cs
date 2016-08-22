@@ -77,11 +77,24 @@ public class TSMovement : MonoBehaviour
     [Range(0, 5)]
     public float pushStrength = 0.5f;
 
+    [Tooltip("How long the character has reduced movement after sustaining enough damage")]
+    [Range(0, 2)]
+    public float staggerDuration = 0.35f;
+
+    [Tooltip("How fast the character may try to move while staggered (Units / Second)")]
+    [Range(0, 4)]
+    public float staggerMoveSpeed = 0.25f;
+
+    [Tooltip("How fast the character may rotate while staggered (Degrees / Second)")]
+    [Range(0, 2000)]
+    public float staggerRotateSpeed = 120;
+
 
     private CharacterController m_controller;
     private TransformInterpolator m_transformInterpolator;
     
     private float m_angVelocity = 0;
+    private float m_staggerTime = Mathf.NegativeInfinity;
 
 
     private Vector3 m_actualVelocity = Vector3.zero;
@@ -121,13 +134,21 @@ public class TSMovement : MonoBehaviour
         m_controller.enabled = enabled;
     }
 
+    public void Stagger()
+    {
+        m_staggerTime = Time.time;
+    }
+
     /*
      * Moves the character based on the provided input
      */
     public void ExecuteMovement(MoveInputs inputs)
     {
+        bool isStaggered = Utils.InDuration(m_staggerTime, staggerDuration);
+
         m_isRunning = inputs.Run;
-        m_attemptedSpeed = Mathf.MoveTowards(m_attemptedSpeed, inputs.Forward * (inputs.Run ? runSpeed : walkSpeed), acceleration * Time.deltaTime);
+        float targetSpeed = inputs.Forward * (isStaggered ? staggerMoveSpeed : (inputs.Run ? runSpeed : walkSpeed));
+        m_attemptedSpeed = Mathf.MoveTowards(m_attemptedSpeed, targetSpeed, acceleration * Time.deltaTime);
         Vector3 moveVelocity = transform.forward * m_attemptedSpeed;
         moveVelocity.y = m_actualVelocity.y;
 
@@ -183,7 +204,7 @@ public class TSMovement : MonoBehaviour
         m_actualVelocity = (transform.position - oldPosition) / Time.deltaTime;
         m_actualVelocity.y = m_actualVelocity.y > 0 ? Mathf.Min(m_actualVelocity.y, moveVelocity.y) : Mathf.Max(m_actualVelocity.y, moveVelocity.y);
 
-        float maxTurnSpeed = m_isGrounded ? rotSpeed : airRotSpeed;
+        float maxTurnSpeed = isStaggered ? staggerRotateSpeed : (m_isGrounded ? rotSpeed : airRotSpeed);
         float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.Turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.Turn / 180);
         m_angVelocity = Mathf.Clamp(Mathf.MoveTowards(m_angVelocity, targetAngVelocity, maxTorque * Time.deltaTime), -maxTurnSpeed, maxTurnSpeed);
 

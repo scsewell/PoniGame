@@ -22,6 +22,7 @@ public class TSMain : MonoBehaviour
         m_health = GetComponent<Health>();
         
         m_health.OnDie += OnDie;
+        m_health.OnStagger += OnStagger;
 
         GameController.AddCharacter(transform);
     }
@@ -29,12 +30,20 @@ public class TSMain : MonoBehaviour
     void OnDestroy()
     {
         m_health.OnDie -= OnDie;
+        m_health.OnStagger -= OnStagger;
     }
 
     private void OnDie()
     {
-        m_movement.SetColliderEnabled(false);
         GameController.RemoveCharacter(transform);
+        m_animation.OnDie();
+        m_movement.SetColliderEnabled(false);
+    }
+
+    private void OnStagger()
+    {
+        m_animation.Flinch();
+        m_movement.Stagger();
     }
 
     private void FixedUpdate()
@@ -66,6 +75,6 @@ public class TSMain : MonoBehaviour
 
     private void LateUpdate()
     {
-        m_animation.PostAnimationUpdate(m_health.IsAlive);
+        m_animation.PostAnimationUpdate(m_health);
     }
 }

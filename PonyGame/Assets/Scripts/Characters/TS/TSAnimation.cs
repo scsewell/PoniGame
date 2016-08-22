@@ -60,7 +60,6 @@ public class TSAnimation : MonoBehaviour
     [SerializeField] private AudioClip[] hoofsteps;
     
     private TSMovement m_movement;
-    private Health m_health;
     private Animator m_animator;
     private CameraRig m_camRig;
 
@@ -77,18 +76,18 @@ public class TSAnimation : MonoBehaviour
     private float m_blinkWeight = 0;
     private float m_mouthOpenWeight = 0;
     private float m_frownWeight = 0;
-    
+    private bool m_flinch = false;
+    private int m_flinchVariation = 0;
+
+
     void Start()
     {
         m_movement = GetComponent<TSMovement>();
-        m_health = GetComponent<Health>();
         m_animator = GetComponent<Animator>();
         m_camRig = FindObjectOfType<CameraRig>();
 
         InterpolatedFloat speed = new InterpolatedFloat(() => (m_forwardSpeed), (val) => { m_forwardSpeed = val; });
         gameObject.AddComponent<FloatInterpolator>().Initialize(speed);
-        
-        m_health.OnDie += OnDie;
 
         SetRagdoll(false);
         StoreBasePose();
@@ -96,15 +95,21 @@ public class TSAnimation : MonoBehaviour
         m_lastHeadLocalRot = m_headBone.localRotation;
     }
 
-    void OnDestroy()
-    {
-        m_health.OnDie -= OnDie;
-    }
-
-    private void OnDie()
+    public void OnDie()
     {
         SetRagdoll(true);
         m_deathTime = Time.time;
+    }
+
+    public void Flinch()
+    {
+        if (m_movement.IsGrounded)
+        {
+            m_currentBlinkTime += Time.deltaTime;
+            m_flinch = true;
+            m_flinchVariation = (m_flinchVariation + 1) % 2;
+            m_animator.SetInteger("FlinchVariation", m_flinchVariation);
+        }
     }
 
     public void FixedUpdate()
@@ -115,7 +120,7 @@ public class TSAnimation : MonoBehaviour
     public void PreAnimationUpdate(bool isPlayer)
     {
         m_animator.enabled = true;
-
+        
         float targetH = 0;
         float targetV = 0;
 
@@ -145,20 +150,23 @@ public class TSAnimation : MonoBehaviour
         m_animator.SetFloat("LookHorizontal", m_lookH);
         m_animator.SetFloat("LookVertical", m_lookV);
         m_animator.SetBool("MidAir", !m_movement.IsGrounded);
+        m_animator.SetBool("Flinch", m_flinch);
+
+        if (m_flinch && IsFlinching())
+        {
+            m_flinch = false;
+        }
     }
 
-    public void PostAnimationUpdate(bool isAlive)
+    public void PostAnimationUpdate(Health health)
     {
-        float frown = isAlive ? Mathf.Clamp01(Mathf.Pow(1 - m_health.HealthFraction, 3)) : 0.5f;
-        float mouthOpen = isAlive ? 0 : 0.2f;
+        float frownTarget;
+        float mouthOpenTarget;
 
-        m_frownWeight = Mathf.Lerp(m_frownWeight, frown, 4.0f * Time.deltaTime);
-        m_mouthOpenWeight = Mathf.Lerp(m_mouthOpenWeight, mouthOpen, 12.0f * Time.deltaTime);
-
-        if (isAlive)
+        if (health.IsAlive)
         {
             // head camera tracking
-            if (m_lookAtCamera)
+            if (m_lookAtCamera && !IsFlinching())
             {
                 Vector3 disp = Camera.main.transform.position - m_headBone.position;
                 Quaternion lookDir = Quaternion.LookRotation(disp, transform.up);
@@ -189,11 +197,16 @@ public class TSAnimation : MonoBehaviour
                     m_currentBlinkTime = 0;
                 }
             }
+
+            frownTarget = IsFlinching() ? 1.0f : Mathf.Clamp01(Mathf.Pow(1 - health.HealthFraction, 3));
+            mouthOpenTarget = IsFlinching() ? 0.5f : 0;
         }
         else
         {
             m_animator.enabled = false;
             m_blinkWeight = (Mathf.Lerp(m_blinkWeight, 1, 1.5f * Time.deltaTime));
+            frownTarget = 0.5f;
+            mouthOpenTarget = 0.2f;
 
             if (!m_basePoseApplied)
             {
@@ -205,11 +218,15 @@ public class TSAnimation : MonoBehaviour
                 }
                 foreach (Transform child in m_basePose.Keys)
                 {
-                    TransformData.Apply(m_basePose[child], child);
+                    TransformData.Apply(TransformData.Interpolate(child, m_basePose[child], lerpFac), child);
                 }
             }
         }
         
+        // smoothing shape keys
+        m_frownWeight = Mathf.Lerp(m_frownWeight, frownTarget, 4.0f * Time.deltaTime);
+        m_mouthOpenWeight = Mathf.Lerp(m_mouthOpenWeight, mouthOpenTarget, 12.0f * Time.deltaTime);
+
         // blink shape keys
         float blinkWeight = Mathf.Clamp01(m_blinkWeight) * 100;
         m_bodyMesh.SetBlendShapeWeight(0, blinkWeight);
@@ -224,6 +241,15 @@ public class TSAnimation : MonoBehaviour
         // frown shape keys
         float frownWeight = Mathf.Clamp01(m_frownWeight) * 100;
         m_bodyMesh.SetBlendShapeWeight(2, frownWeight);
+    }
+
+    private bool IsFlinching()
+    {
+        if (!m_animator)
+        {
+            return false;
+        }
+        return m_animator.GetCurrentAnimatorStateInfo(0).IsTag("Flinch") || m_animator.GetNextAnimatorStateInfo(0).IsTag("Flinch");
     }
 
     private void StoreBasePose()

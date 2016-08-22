@@ -59,7 +59,7 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    private void Hurt()
+    private void Hurt(float healthFractionLost)
     {
         m_hurtFac = 1;
 
