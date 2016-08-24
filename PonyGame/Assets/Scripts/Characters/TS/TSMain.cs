@@ -5,6 +5,7 @@ public class TSMain : MonoBehaviour
 {
     private TSAI m_AI;
     private TSMovement m_movement;
+    private TSMagic m_magic;
     private TSAnimation m_animation;
     private Health m_health;
 
@@ -18,6 +19,7 @@ public class TSMain : MonoBehaviour
     {
         m_AI = GetComponent<TSAI>();
         m_movement = GetComponent<TSMovement>();
+        m_magic = GetComponent<TSMagic>();
         m_animation = GetComponent<TSAnimation>();
         m_health = GetComponent<Health>();
         
@@ -38,6 +40,7 @@ public class TSMain : MonoBehaviour
         GameController.RemoveCharacter(transform);
         m_animation.OnDie();
         m_movement.SetColliderEnabled(false);
+        m_magic.SetCanUseMagic(false);
     }
 
     private void OnStagger()

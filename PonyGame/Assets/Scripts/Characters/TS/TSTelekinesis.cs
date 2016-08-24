@@ -20,6 +20,10 @@ public class TSTelekinesis : MonoBehaviour
     private float m_loseRange = 11f;
 
     [SerializeField]
+    [Range(0, 2)]
+    private float m_minDistance = 1f;
+
+    [SerializeField]
     [Range(0, 20)]
     private float m_velocityScale = 4f;
 
@@ -48,9 +52,15 @@ public class TSTelekinesis : MonoBehaviour
     private float m_angVelocityDamp = 0.05f;
 
 
+    private TSMagic m_magic;
+
     private Rigidbody m_tkTarget;
     private float m_distance;
 
+    private void Start()
+    {
+        m_magic = GetComponent<TSMagic>();
+    }
 
     private void FixedUpdate()
     {
@@ -59,11 +69,11 @@ public class TSTelekinesis : MonoBehaviour
             m_tkTarget = (m_tkTarget == null) ? FindTKTarget() : null;
             if (m_tkTarget != null)
             {
-                m_distance = Vector3.Distance(m_tkTarget.transform.position, transform.position);
+                m_distance = Mathf.Max(Vector3.Distance(m_tkTarget.transform.position, transform.position), m_minDistance);
             }
         }
 
-        if (m_tkTarget != null && Vector3.Distance(transform.position, m_tkTarget.transform.position) > m_loseRange)
+        if ((m_tkTarget != null && Vector3.Distance(transform.position, m_tkTarget.transform.position) > m_loseRange) || !m_magic.CanUseMagic)
         {
             m_tkTarget = null;
         }
@@ -73,7 +83,8 @@ public class TSTelekinesis : MonoBehaviour
             Transform cam = Camera.main.transform;
             float camToPlayerDistance = Vector3.Dot(cam.forward, (transform.position - cam.position));
             Vector3 targetPos = cam.position + (camToPlayerDistance + m_distance) * cam.forward;
-            Vector3 velocity = m_velocityScale * (targetPos - m_tkTarget.transform.position);
+            Vector3 spherePos = m_distance * (targetPos - transform.position).normalized + transform.position;
+            Vector3 velocity = m_velocityScale * (spherePos - m_tkTarget.transform.position);
             Vector3 bobVelocity = m_bobStrength * Mathf.Sin(Time.time * m_bobFrequency) * Vector3.up;
             Vector3 targetVelocity = Vector3.ClampMagnitude(velocity + bobVelocity, m_maxVelocity) + ((m_gravityOffset / m_velocitySmoothing) * -Physics.gravity);
             m_tkTarget.velocity = Vector3.Lerp(m_tkTarget.velocity, targetVelocity, m_velocitySmoothing * Time.deltaTime);
@@ -88,7 +99,7 @@ public class TSTelekinesis : MonoBehaviour
         float bestSuitability = m_minGrabCenterness;
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Telekinesis"))
         {
-            Rigidbody body = go.transform.root.GetComponent<Rigidbody>();
+            Rigidbody body = go.GetComponent<Rigidbody>();
             if (body == null)
             {
                 continue;
