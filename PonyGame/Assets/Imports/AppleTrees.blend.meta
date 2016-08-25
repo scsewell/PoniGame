@@ -3,7 +3,7 @@ guid: e773f1c0363e3fd44a47fef4477b34a1
 timeCreated: 1441642498
 licenseType: Free
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
     100002: DarkGreenApple
@@ -24,6 +24,7 @@ ModelImporter:
     100032: AppleTreeLQ6
     100034: AppleTreeLQ7
     100036: AppleTreeLQ8
+    100038: AppleMagic
     400000: //RootNode
     400002: DarkGreenApple
     400004: DarkRedApple
@@ -43,6 +44,7 @@ ModelImporter:
     400032: AppleTreeLQ6
     400034: AppleTreeLQ7
     400036: AppleTreeLQ8
+    400038: AppleMagic
     2300000: DarkGreenApple
     2300002: DarkRedApple
     2300004: GreenApple
@@ -61,6 +63,7 @@ ModelImporter:
     2300030: AppleTreeLQ6
     2300032: AppleTreeLQ7
     2300034: AppleTreeLQ8
+    2300036: AppleMagic
     3300000: DarkGreenApple
     3300002: DarkRedApple
     3300004: GreenApple
@@ -79,6 +82,7 @@ ModelImporter:
     3300030: AppleTreeLQ6
     3300032: AppleTreeLQ7
     3300034: AppleTreeLQ8
+    3300036: AppleMagic
     4300000: DarkRedApple
     4300002: DarkGreenApple
     4300004: RedApple
@@ -97,6 +101,7 @@ ModelImporter:
     4300030: AppleTreeHQ3
     4300032: AppleTreeHQ2
     4300034: AppleTreeHQ1
+    4300036: AppleMagic
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -106,6 +111,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -113,16 +119,16 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .449999988
+    globalScale: 0.45
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -139,24 +145,25 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

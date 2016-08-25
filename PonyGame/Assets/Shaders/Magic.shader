@@ -12,13 +12,11 @@
 		_Amplitude("Amplitude", Range(0, 0.1)) = 0.1
 		_TimeFrequency("Time Frequency", Range(0, 16.0)) = 6
 		_SpatialFrequency("Spatial Frequency", Range(0, 64)) = 6
-		[HideInInspector]
-		_pos("ObjectPos", Vector) = (0,0,0,0)
 	}
 
 	SubShader
 		{
-		Tags { "RenderType" = "Transparent" "Queue" = "Transparent" }
+		Tags { "RenderType" = "Transparent" "Queue" = "Transparent" "DisableBatching" = "True"}
 		
 		CGPROGRAM
 		#pragma surface surf Magic alpha:fade fullforwardshadows vertex:disp tessellate:tess tessphong:_Phong nolightmap
