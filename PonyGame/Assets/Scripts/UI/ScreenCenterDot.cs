@@ -13,6 +13,6 @@ public class ScreenCenterDot : MonoBehaviour
 	
 	void Update ()
     {
-        m_image.enabled = GameController.CameraRig.LockTarget == null;
+        m_image.enabled = GameController.CameraRig.LockTarget == null && !GameController.IsGameOver;
     }
 }

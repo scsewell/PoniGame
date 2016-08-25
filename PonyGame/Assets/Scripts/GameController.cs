@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     }
 
     private static bool m_isGameOver = false;
-    public static bool isGameOver
+    public static bool IsGameOver
     {
         get { return m_isGameOver; }
     }
@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour
             else if (transform == m_player)
             {
                 m_player = null;
+                m_isGameOver = true;
                 if (GameOver != null)
                 {
                     GameOver();

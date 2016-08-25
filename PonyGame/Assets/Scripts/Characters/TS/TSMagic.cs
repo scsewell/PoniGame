@@ -4,6 +4,13 @@ using System.Linq;
 
 public class TSMagic : MonoBehaviour
 {
+    [SerializeField]
+    private Color m_magicColor = Color.white;
+    public Color MagicColor
+    {
+        get { return m_magicColor; }
+    }
+
     private bool m_canUseMagic = true;
     public bool CanUseMagic
     {
