@@ -12,6 +12,8 @@
 		_Amplitude("Amplitude", Range(0, 0.1)) = 0.1
 		_TimeFrequency("Time Frequency", Range(0, 16.0)) = 6
 		_SpatialFrequency("Spatial Frequency", Range(0, 64)) = 6
+		[HideInInspector]
+		_pos("ObjectPos", Vector) = (0,0,0,0)
 	}
 
 	SubShader
@@ -47,7 +49,7 @@
 
 		void disp(inout appdata v)
 		{
-			v.vertex.xyz += v.normal * (sin(_Time * _TimeFrequency + length(v.vertex) * 20 * _SpatialFrequency) * _Amplitude + _Displacement);
+			v.vertex.xyz += v.normal * (sin(_Time * _TimeFrequency + dot((mul(UNITY_MATRIX_MV, v.vertex - float4(0, 0, 0, 1))), float3(1, 1, 0.2)) * _SpatialFrequency) * _Amplitude + _Displacement);
 		}
 
 		half _MinAlpha;
@@ -67,7 +69,7 @@
 
 		fixed4 _Color;
 
-		void surf (Input IN, inout SurfaceOutput o)
+		void surf(Input IN, inout SurfaceOutput o)
 		{
 			fixed4 c = _Color;
 			o.Albedo = c.rgb;
