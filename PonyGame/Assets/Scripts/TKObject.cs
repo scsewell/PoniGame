@@ -21,14 +21,13 @@ public class TKObject : MonoBehaviour
     private Color m_color;
     private float m_emissionFraction;
 
-    private bool m_active = false;
-    public bool Active
+    private bool m_isGrabbed = false;
+    public bool IsGrabbed
     {
-        get { return m_active; }
-        set { m_active = value; }
+        get { return m_isGrabbed; }
+        set { m_isGrabbed = value; }
     }
     
-
     private void Start()
     {
         m_renderer = GetComponent<MeshRenderer>();
@@ -55,8 +54,8 @@ public class TKObject : MonoBehaviour
         m_renderer.enabled = (m_color.a > 0);
 
         float maxDelta = (1 / TRANSITION_TIME) * Time.deltaTime;
-        m_color.a = Mathf.MoveTowards(m_color.a, m_active ? 1 : 0, maxDelta);
-        m_emissionFraction = Mathf.MoveTowards(m_emissionFraction, m_active ? 1 : 0, maxDelta);
+        m_color.a = Mathf.MoveTowards(m_color.a, m_isGrabbed ? 1 : 0, maxDelta);
+        m_emissionFraction = Mathf.MoveTowards(m_emissionFraction, m_isGrabbed ? 1 : 0, maxDelta);
         
         if (m_renderer.enabled)
         {

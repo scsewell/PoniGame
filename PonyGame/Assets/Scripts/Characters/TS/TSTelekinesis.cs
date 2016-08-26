@@ -64,26 +64,26 @@ public class TSTelekinesis : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Controls.JustDown(GameButton.Telekinesis))
+        if (Controls.JustDown(GameButton.Telekinesis) && (m_magic.IsUsingMagic != (m_tkTarget == null)))
         {
             TKObject newTarget = (m_tkTarget == null) ? FindTKTarget() : null;
             if (newTarget != null)
             {
-                newTarget.Active = true;
-                newTarget.SetColor(m_magic.MagicColor);
+                m_tkTarget = newTarget;
+                m_tkTarget.IsGrabbed = true;
+                m_tkTarget.SetColor(m_magic.MagicColor);
+                m_magic.IsUsingMagic = true;
                 m_distance = Mathf.Max(Vector3.Distance(newTarget.transform.position, transform.position), m_minDistance);
             }
-            else if (m_tkTarget != null)
+            else
             {
-                m_tkTarget.Active = false;
+                StopTK();
             }
-            m_tkTarget = newTarget;
         }
 
         if (m_tkTarget != null && (Vector3.Distance(transform.position, m_tkTarget.transform.position) > m_loseRange || !m_magic.CanUseMagic))
         {
-            m_tkTarget.Active = false;
-            m_tkTarget = null;
+            StopTK();
         }
 
         if (m_tkTarget != null)
@@ -108,15 +108,29 @@ public class TSTelekinesis : MonoBehaviour
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Telekinesis"))
         {
             TKObject tkObject = go.GetComponent<TKObject>();
-            Vector3 dir = (go.transform.position - cam.position).normalized;
-            float suitability = Vector3.Dot(cam.forward, dir);
+            Vector3 disp = (go.transform.position - cam.position);
+            float suitability = Vector3.Dot(cam.forward, disp.normalized);
             float distance = Vector3.Distance(go.transform.position, transform.position);
-            if (suitability > bestSuitability && distance < m_maxGrabRange && Physics.Linecast(cam.position, go.transform.position, m_lineOfSightBlocking))
+            if (suitability > bestSuitability && distance < m_maxGrabRange)
             {
-                mostSuitable = tkObject;
-                bestSuitability = suitability;
+                RaycastHit[] hits = Physics.RaycastAll(cam.position, disp, disp.magnitude, m_lineOfSightBlocking);
+                if (!hits.Any(hit => hit.collider.attachedRigidbody != tkObject.Rigidbody))
+                {
+                    mostSuitable = tkObject;
+                    bestSuitability = suitability;
+                }
             }
         }
         return mostSuitable;
+    }
+
+    private void StopTK()
+    {
+        if (m_tkTarget != null)
+        {
+            m_tkTarget.IsGrabbed = false;
+            m_tkTarget = null;
+            m_magic.IsUsingMagic = false;
+        }
     }
 }

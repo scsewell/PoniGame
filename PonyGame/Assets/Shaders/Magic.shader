@@ -11,7 +11,7 @@
 		_Displacement("Displacement", Range(0, 0.2)) = 0.1
 		_Amplitude("Amplitude", Range(0, 0.1)) = 0.1
 		_TimeFrequency("Time Frequency", Range(0, 16.0)) = 6
-		_SpatialFrequency("Spatial Frequency", Range(0, 64)) = 6
+		_SpatialFrequency("Spatial Frequency", Range(0, 128)) = 6
 	}
 
 	SubShader

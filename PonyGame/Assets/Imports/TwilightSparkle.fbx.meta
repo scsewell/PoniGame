@@ -97,6 +97,7 @@ ModelImporter:
     100178: TS_Rig
     100180: //RootNode
     100182: Base_Eyes
+    100184: HornMagic
     400000: Base_Body
     400002: Base_Eye.L
     400004: Base_Eye.R
@@ -189,16 +190,19 @@ ModelImporter:
     400178: TS_Rig
     400180: //RootNode
     400182: Base_Eyes
+    400184: HornMagic
     2300000: Base_Eye.L
     2300002: Base_Eye.R
     2300004: Base_Horn
     2300006: Base_Eyes
     2300008: Base_Mouth
+    2300010: HornMagic
     3300000: Base_Eye.L
     3300002: Base_Eye.R
     3300004: Base_Horn
     3300006: Base_Eyes
     3300008: Base_Mouth
+    3300010: HornMagic
     4300000: Base_Eye.L
     4300002: Base_Eye.R
     4300004: Base_Horn
@@ -208,6 +212,7 @@ ModelImporter:
     4300012: TS_EyelashesUpper
     4300014: TS_Hair
     4300016: Base_Eyes
+    4300018: HornMagic
     7400000: TS_Rig|TS_Gallop
     7400002: TS_Rig|TS_Idle
     7400004: TS_Rig|TS_Jump

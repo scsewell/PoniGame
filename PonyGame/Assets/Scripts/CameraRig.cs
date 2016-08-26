@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class CameraRig : MonoBehaviour
 {
@@ -344,6 +345,12 @@ public class CameraRig : MonoBehaviour
     {
         Vector3 screenPos = camera.GetComponent<Camera>().WorldToViewportPoint(target.position);
         bool onScreen = screenPos.z > 0 && screenPos.x > 0 && screenPos.x < 1 && screenPos.y > 0 && screenPos.y < 1;
-        return (!onlyLockOnScreen || onScreen) && !Physics.Linecast(camera.position, target.position, lineOfSightBlocking);
+        if ((!onlyLockOnScreen || onScreen))
+        {
+            Vector3 disp = (target.position - camera.position);
+            RaycastHit[] hits = Physics.RaycastAll(camera.position, disp, disp.magnitude, lineOfSightBlocking);
+            return !hits.Any(hit => hit.transform.root != target.root);
+        }
+        return false;
     }
 }

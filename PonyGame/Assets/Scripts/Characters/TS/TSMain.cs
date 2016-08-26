@@ -40,7 +40,7 @@ public class TSMain : MonoBehaviour
         GameController.RemoveCharacter(transform);
         m_animation.OnDie();
         m_movement.SetColliderEnabled(false);
-        m_magic.SetCanUseMagic(false);
+        m_magic.CanUseMagic = false;
     }
 
     private void OnStagger()
@@ -74,6 +74,7 @@ public class TSMain : MonoBehaviour
         {
             m_animation.PreAnimationUpdate(IsPlayer);
         }
+        m_magic.UpdateVisuals();
     }
 
     private void LateUpdate()
