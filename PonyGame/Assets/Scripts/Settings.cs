@@ -43,7 +43,9 @@ public class Settings : MonoBehaviour
         {
             Screen.SetResolution(resolution.width, resolution.height, fullscreen);
         }
-        //Application.targetFrameRate = 30;
+
+        //Application.targetFrameRate = 999;
+        //QualitySettings.vSyncCount = 1;
 
         QualitySettings.SetQualityLevel((int)shadows);
 

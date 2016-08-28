@@ -10,13 +10,28 @@ namespace InputController
     public class BufferedButton
     {
         private List<ButtonSource> m_sources;
-        private List<List<Dictionary<ButtonSource, bool>>> m_buffers;
-        // consider private List<List<bool>> m_buffers; store any()s
 
-        public BufferedButton(List<ButtonSource> sources)
+        private bool m_canBeMuted;
+        public bool CanBeMuted
         {
-            m_sources = new List<ButtonSource>(sources);
+            get { return m_canBeMuted; }
+        }
 
+        private List<List<Dictionary<ButtonSource, bool>>> m_buffers;
+
+
+        public BufferedButton(bool canBeMuted, List<ButtonSource> sources)
+        {
+            m_canBeMuted = canBeMuted;
+            m_sources = new List<ButtonSource>(sources);
+            ResetBuffers();
+        }
+
+        /*
+         * Initializes the buffer lists from the current sources
+         */
+        public void ResetBuffers()
+        {
             m_buffers = new List<List<Dictionary<ButtonSource, bool>>>();
             m_buffers.Add(new List<Dictionary<ButtonSource, bool>>());
             m_buffers.Last().Add(new Dictionary<ButtonSource, bool>());
@@ -104,7 +119,6 @@ namespace InputController
         public void RecordUpdateState()
         {
             m_buffers.Last().Add(new Dictionary<ButtonSource, bool>());
-            // consider m_buffers.Last().Add(m_sources.Any((source) => (source.ButtonIsDown())));
 
             foreach (ButtonSource source in m_sources)
             {

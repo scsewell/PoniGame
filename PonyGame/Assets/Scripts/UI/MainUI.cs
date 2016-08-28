@@ -23,12 +23,11 @@ public class MainUI : MonoBehaviour
     private static bool m_isMenuOpen = false;
     public static bool IsMenuOpen
     {
-        get { return m_lockCursor; }
+        get { return IsMenuOpen; }
     }
 
     private void Start()
     {
-        SetCusorLock(m_lockCursor);
         m_gameOverCanvas.GetComponentsInChildren<CanvasRenderer>().ToList().ForEach(r => r.SetAlpha(0));
 
         GameController.GameOver += OnGameOver;
@@ -41,11 +40,13 @@ public class MainUI : MonoBehaviour
 
     private void Update()
     {
-        if (Controls.VisualJustDown(GameButton.Menu))
+        if (Controls.JustDown(GameButton.Menu))
         {
             m_isMenuOpen = !m_isMenuOpen;
-            m_lockCursor = m_isMenuOpen;
         }
+        
+        Controls.IsMuted = m_isMenuOpen;
+        SetCusorLock(!m_isMenuOpen);
 
         if (m_gameOverFadeTime != 0)
         {
@@ -57,8 +58,6 @@ public class MainUI : MonoBehaviour
                 m_gameOverFadeTime = 0;
             }
         }
-
-        SetCusorLock(m_lockCursor);
     }
 
     private void OnGameOver()
@@ -71,7 +70,8 @@ public class MainUI : MonoBehaviour
 
     private void SetCusorLock(bool locked)
     {
-        Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
+        m_lockCursor = locked;
         Cursor.visible = !locked;
+        Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }

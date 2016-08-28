@@ -51,6 +51,13 @@ public class TSTelekinesis : MonoBehaviour
     [Range(0, 1)]
     private float m_angVelocityDamp = 0.05f;
 
+    [SerializeField]
+    [Range(0, 40)]
+    private float m_throwVelocity = 15f;
+
+    [SerializeField]
+    [Range(0, 1)]
+    private float m_throwMassFactor = 1.0f;
 
     private TSMagic m_magic;
 
@@ -64,7 +71,7 @@ public class TSTelekinesis : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Controls.JustDown(GameButton.Telekinesis) && (m_magic.IsUsingMagic != (m_tkTarget == null)))
+        if (Controls.JustDown(GameButton.TK) && (m_magic.IsUsingMagic != (m_tkTarget == null)))
         {
             TKObject newTarget = (m_tkTarget == null) ? FindTKTarget() : null;
             if (newTarget != null)
@@ -79,6 +86,13 @@ public class TSTelekinesis : MonoBehaviour
             {
                 StopTK();
             }
+        }
+        
+        if (m_tkTarget != null && Controls.JustDown(GameButton.Primary))
+        {
+            float speed = m_throwVelocity * ((m_throwMassFactor / m_tkTarget.Rigidbody.mass) + (1 - m_throwMassFactor));
+            m_tkTarget.Rigidbody.velocity = speed * Camera.main.transform.forward;
+            StopTK();
         }
 
         if (m_tkTarget != null && (Vector3.Distance(transform.position, m_tkTarget.transform.position) > m_loseRange || !m_magic.CanUseMagic))

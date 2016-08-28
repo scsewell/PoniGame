@@ -8,13 +8,13 @@ using InputController;
 // Actions needing a key binding.
 public enum GameButton
 {
-    Menu, Walk, WalkToggle, Jump, Lock, Telekinesis, SwitchCharacter, ConsiderSuicide,
+    Menu, Walk, WalkToggle, Jump, Lock, Primary, Secondary, TK, SwitchCharacter, ConsiderSuicide,
 }
 
 // Actions needing an axis binding.
 public enum GameAxis
 {
-    LookX, LookY, LockX, LockY, MoveX, MoveY, Zoom,
+    LookX, LookY, LockX, LockY, MoveX, MoveY, Zoom, TKDistance
 }
 
 [RequireComponent(typeof(ControlsEarlyUpdate))]
@@ -36,6 +36,13 @@ public class Controls : MonoBehaviour
         get { return m_axis; }
     }
 
+    private static bool m_isMuted = false;
+    public static bool IsMuted
+    {
+        get { return m_isMuted; }
+        set { m_isMuted = value; }
+    }
+
     void Awake()
     {
         loadDefaultControls();
@@ -44,7 +51,7 @@ public class Controls : MonoBehaviour
     /*
      * Needs to run at the end of every FixedUpdate frame to handle the input buffers.
      */
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         foreach (BufferedButton button in m_buttons.Values)
         {
@@ -78,40 +85,50 @@ public class Controls : MonoBehaviour
     {
         m_buttons = new Dictionary<GameButton, BufferedButton>();
         
-        m_buttons.Add(GameButton.Menu, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.Menu, new BufferedButton(false, new List<ButtonSource>
         {
             new KeyButton(KeyCode.Escape),
             new JoystickButton(GamepadButton.Start)
         }));
-        m_buttons.Add(GameButton.Walk, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.Walk, new BufferedButton(true, new List<ButtonSource>
         {
             new KeyButton(KeyCode.LeftShift),
         }));
-        m_buttons.Add(GameButton.WalkToggle, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.WalkToggle, new BufferedButton(true, new List<ButtonSource>
         {
             new KeyButton(KeyCode.LeftControl),
         }));
-        m_buttons.Add(GameButton.Jump, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.Jump, new BufferedButton(true, new List<ButtonSource>
         {
             new KeyButton(KeyCode.Space),
             new JoystickButton(GamepadButton.A)
         }));
-        m_buttons.Add(GameButton.Lock, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.Lock, new BufferedButton(true, new List<ButtonSource>
         {
             new KeyButton(KeyCode.Q),
             new JoystickButton(GamepadButton.RStick)
         }));
-        m_buttons.Add(GameButton.Telekinesis, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.Primary, new BufferedButton(true, new List<ButtonSource>
         {
-            new KeyButton(KeyCode.Z),
+            new KeyButton(KeyCode.Mouse0),
+            new JoystickButton(GamepadButton.RTrigger)
+        }));
+        m_buttons.Add(GameButton.Secondary, new BufferedButton(true, new List<ButtonSource>
+        {
+            new KeyButton(KeyCode.Mouse1),
             new JoystickButton(GamepadButton.LTrigger)
         }));
-        m_buttons.Add(GameButton.SwitchCharacter, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.TK, new BufferedButton(true, new List<ButtonSource>
+        {
+            new KeyButton(KeyCode.Z),
+            new JoystickButton(GamepadButton.Y)
+        }));
+        m_buttons.Add(GameButton.SwitchCharacter, new BufferedButton(true, new List<ButtonSource>
         {
             new KeyButton(KeyCode.Tab),
             new JoystickButton(GamepadButton.Back)
         }));
-        m_buttons.Add(GameButton.ConsiderSuicide, new BufferedButton(new List<ButtonSource>
+        m_buttons.Add(GameButton.ConsiderSuicide, new BufferedButton(true, new List<ButtonSource>
         {
             new KeyButton(KeyCode.K),
         }));
@@ -152,6 +169,11 @@ public class Controls : MonoBehaviour
         }));
         m_axis.Add(GameAxis.Zoom, new BufferedAxis(new List<AxisSource>
         {
+            new KeyAxis(KeyCode.Equals, KeyCode.Minus),
+            new KeyAxis(KeyCode.KeypadPlus, KeyCode.KeypadMinus),
+        }));
+        m_axis.Add(GameAxis.TKDistance, new BufferedAxis(new List<AxisSource>
+        {
             new MouseAxis(MouseAxis.Axis.ScrollWheel),
         }));
     }
@@ -161,55 +183,28 @@ public class Controls : MonoBehaviour
      */
     public static bool IsDown(GameButton button)
     {
-        return m_buttons[button].IsDown();
+        BufferedButton bufferedButton = m_buttons[button];
+        return !(m_isMuted && bufferedButton.CanBeMuted) && bufferedButton.IsDown();
     }
 
     /*
-     * Returns true if a relevant keyboard or joystick key was pressed since the last gameplay update.
+     * Returns true if a relevant keyboard or joystick key was pressed since the last appropriate update.
      */
     public static bool JustDown(GameButton button)
     {
-        if (Time.deltaTime != Time.fixedDeltaTime)
-        {
-            Debug.LogWarning("Tried to get gampelpay tick inputs from Update!");
-        }
-        return m_buttons[button].JustDown();
+        BufferedButton bufferedButton = m_buttons[button];
+        bool isFixed = (Time.deltaTime == Time.fixedDeltaTime);
+        return !(m_isMuted && bufferedButton.CanBeMuted) && (isFixed ? bufferedButton.JustDown() : bufferedButton.VisualJustDown());
     }
 
     /*
-     * Returns true if a relevant keyboard or joystick key was released since the last gameplay update.
+     * Returns true if a relevant keyboard or joystick key was released since the last appropriate update.
      */
     public static bool JustUp(GameButton button)
     {
-        if (Time.deltaTime != Time.fixedDeltaTime)
-        {
-            Debug.LogWarning("Tried to get gampelpay tick inputs from Update!");
-        }
-        return m_buttons[button].JustUp();
-    }
-
-    /*
-     * Returns true if a relevant keyboard or joystick key was pressed this frame.
-     */
-    public static bool VisualJustDown(GameButton button)
-    {
-        if (Time.deltaTime == Time.fixedDeltaTime)
-        {
-            Debug.LogWarning("Tried to use immediate inputs from FixedUpdate!");
-        }
-        return m_buttons[button].VisualJustDown();
-    }
-
-    /*
-     * Returns true if a relevant keyboard or joystick key was released this frame.
-     */
-    public static bool VisualJustUp(GameButton button)
-    {
-        if (Time.deltaTime == Time.fixedDeltaTime)
-        {
-            Debug.LogWarning("Tried to get immediate inputs from FixedUpdate!");
-        }
-        return m_buttons[button].VisualJustUp();
+        BufferedButton bufferedButton = m_buttons[button];
+        bool isFixed = (Time.deltaTime == Time.fixedDeltaTime);
+        return !(m_isMuted && bufferedButton.CanBeMuted) && (isFixed ? bufferedButton.JustUp() : bufferedButton.VisualJustUp());
     }
 
     /*
@@ -217,7 +212,7 @@ public class Controls : MonoBehaviour
      */
     public static float AverageValue(GameAxis axis)
     {
-        return m_axis[axis].AverageValue();
+        return m_isMuted ? 0 : m_axis[axis].AverageValue();
     }
 
     /*
@@ -225,6 +220,6 @@ public class Controls : MonoBehaviour
      */
     public static float CumulativeValue(GameAxis axis)
     {
-        return m_axis[axis].CumulativeValue();
+        return m_isMuted ? 0 : m_axis[axis].CumulativeValue();
     }
 }
