@@ -61,7 +61,7 @@ public class TSMagic : MonoBehaviour
         m_emissionFraction = 0;
     }
 
-    public void FixedUpdate()
+    public void MainUpdate()
     {
 
 	}

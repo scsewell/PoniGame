@@ -64,6 +64,7 @@ public class TSMain : MonoBehaviour
                 inputs = m_AI.GetInputs();
             }
             m_movement.ExecuteMovement(inputs);
+            m_magic.MainUpdate();
             m_animation.FixedUpdate();
         }
     }

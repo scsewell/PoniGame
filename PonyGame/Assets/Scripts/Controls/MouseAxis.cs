@@ -28,7 +28,7 @@ namespace InputController
         {
             switch (mouseAxis)
             {
-                case Axis.ScrollWheel: return ThresholdValue(Input.GetAxis("Mouse ScrollWheel")) * 0.8f / Time.deltaTime;
+                case Axis.ScrollWheel: return ThresholdValue(Input.GetAxis("Mouse ScrollWheel")) * 0.08f / Time.deltaTime;
                 case Axis.MouseX: return ThresholdValue(Input.GetAxis("Mouse X")) * 0.008f / Time.deltaTime;
                 case Axis.MouseY: return ThresholdValue(Input.GetAxis("Mouse Y")) * 0.008f / Time.deltaTime;
             }

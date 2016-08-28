@@ -13,8 +13,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private CameraRig cameraRig;
 
     private static List<Transform> m_characters;
+
     private static Transform m_player;
-    
+    public static Transform Player
+    {
+        get { return m_player; }
+    }
 
     private static CameraRig m_cameraRig;
     public static CameraRig CameraRig

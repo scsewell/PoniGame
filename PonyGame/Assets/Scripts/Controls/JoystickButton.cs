@@ -19,7 +19,7 @@ namespace InputController
             return GetButtonValue(m_button);
         }
 
-        private static bool GetButtonValue(GamepadButton button)
+        public static bool GetButtonValue(GamepadButton button)
         {
             switch (button)
             {

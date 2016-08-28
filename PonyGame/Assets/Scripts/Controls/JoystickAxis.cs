@@ -42,9 +42,13 @@ namespace InputController
                 case GamepadAxis.RStickY:
                     return -Input.GetAxis("R_YAxis");
                 case GamepadAxis.Triggers:
+                    //*
+                    return Input.GetAxis("Triggers");
+                    /*/
                     float LTrigger = Input.GetAxis("TriggersL");
                     float RTrigger = Input.GetAxis("TriggersR");
                     return RTrigger - LTrigger;
+                    //*/
             }
             return 0;
         }

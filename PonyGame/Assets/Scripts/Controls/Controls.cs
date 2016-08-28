@@ -14,7 +14,7 @@ public enum GameButton
 // Actions needing an axis binding.
 public enum GameAxis
 {
-    LookX, LookY, LockX, LockY, MoveX, MoveY, Zoom, TKDistance
+    LookX, LookY, LockX, LockY, MoveX, MoveY, Zoom, TKDistance, TKRotateX, TKRotateY
 }
 
 [RequireComponent(typeof(ControlsEarlyUpdate))]
@@ -175,6 +175,17 @@ public class Controls : MonoBehaviour
         m_axis.Add(GameAxis.TKDistance, new BufferedAxis(new List<AxisSource>
         {
             new MouseAxis(MouseAxis.Axis.ScrollWheel),
+            new JoystickButtonAxis(GamepadButton.RShoulder, GamepadButton.LShoulder, 0.1f)
+        }));
+        m_axis.Add(GameAxis.TKRotateX, new BufferedAxis(new List<AxisSource>
+        {
+            new MouseAxis(MouseAxis.Axis.MouseX),
+            new JoystickAxis(GamepadAxis.RStickX, 2.0f, 1.0f)
+        }));
+        m_axis.Add(GameAxis.TKRotateY, new BufferedAxis(new List<AxisSource>
+        {
+            new MouseAxis(MouseAxis.Axis.MouseY),
+            new JoystickAxis(GamepadAxis.RStickY, 2.0f, 1.0f)
         }));
     }
 

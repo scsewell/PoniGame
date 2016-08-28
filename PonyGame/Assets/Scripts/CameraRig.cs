@@ -180,39 +180,52 @@ public class CameraRig : MonoBehaviour
                 }
             }
 
-            float rotateX = 0;
-            if (MainUI.IsCursorLocked)
+            bool canLook = true;
+            if (GameController.Player)
+            {
+                TSTelekinesis tk = GameController.Player.GetComponent<TSTelekinesis>();
+                if (tk != null)
+                {
+                    canLook = (tk.TKTarget == null || !Controls.IsDown(GameButton.Secondary));
+                }
+            }
+            
+            if (MainUI.IsCursorLocked && canLook)
             {
                 if (m_lockTarget == null)
                 {
-                    rotateX = Mathf.Clamp(Controls.AverageValue(GameAxis.LookX) * lookXSensitivity, -lookXRateCap, lookXRateCap);
-                    m_elevation += Mathf.Clamp(-Controls.AverageValue(GameAxis.LookY) * lookYSensitivity, -lookYRateCap, lookYRateCap);
-                }
-                m_zoomTarget = Mathf.Clamp(m_zoomTarget + -Controls.AverageValue(GameAxis.Zoom) * scrollZoomSensitivity, minZoom, maxZoom);
+                    float rotateX = Mathf.Clamp(Controls.AverageValue(GameAxis.LookX) * lookXSensitivity, -lookXRateCap, lookXRateCap);
+                    transform.Rotate(0, rotateX, 0, Space.Self);
 
-                Vector2 lockSearchDir = new Vector2(Controls.AverageValue(GameAxis.LockX), Controls.AverageValue(GameAxis.LockY));
-                if (lockSearchDir.magnitude > 0 && !m_alreadyChangedLock)
-                {
-                    Transform newTarget = ChangeLockTarget(lockSearchDir);
-                    m_alreadyChangedLock = (newTarget != m_lockTarget);
-                    m_lockTarget = newTarget;
+                    float elevationDelta = Mathf.Clamp(-Controls.AverageValue(GameAxis.LookY) * lookYSensitivity, -lookYRateCap, lookYRateCap);
+                    m_elevation = Mathf.Clamp(m_elevation + elevationDelta, minElevation, maxElevation);
                 }
-                if (lockSearchDir.magnitude == 0)
+                else
                 {
-                    m_alreadyChangedLock = false;
+                    Vector2 lockSearchDir = new Vector2(Controls.AverageValue(GameAxis.LockX), Controls.AverageValue(GameAxis.LockY));
+                    if (lockSearchDir.magnitude > 0 && !m_alreadyChangedLock)
+                    {
+                        Transform newTarget = ChangeLockTarget(lockSearchDir);
+                        m_alreadyChangedLock = (newTarget != m_lockTarget);
+                        m_lockTarget = newTarget;
+                    }
+                    if (lockSearchDir.magnitude == 0)
+                    {
+                        m_alreadyChangedLock = false;
+                    }
                 }
             }
-            transform.Rotate(0, rotateX, 0, Space.Self);
+
+            m_zoomTarget = Mathf.Clamp(m_zoomTarget - (scrollZoomSensitivity * Controls.AverageValue(GameAxis.Zoom)), minZoom, maxZoom);
             m_zoom = Mathf.Lerp(m_zoom, m_zoomTarget, Time.deltaTime * zoomSmoothing);
-            m_elevation = Mathf.Clamp(m_elevation, minElevation, maxElevation);
-            
+
             // unlock if the current target is too far
             if (m_lockTarget && (m_lockTarget.position - m_player.position).magnitude > lockLoseRange)
             {
                 m_lockTarget = null;
             }
 
-            if (m_lockTarget)
+            if (m_lockTarget != null)
             {
                 Vector3 disp = m_lockTarget.position - transform.position;
                 Vector3 dir = Vector3.ProjectOnPlane(disp, Vector3.up);
