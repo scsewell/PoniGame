@@ -20,8 +20,16 @@ public static class Utils
 
         return new Vector2(cos * tx - sin * ty, sin * tx + cos * ty);
     }
+    
+    /**
+     * Transforms a [0, 360] angle to a [-180,180] angle
+     */
+    public static float TransformAngle(float ang)
+    {
+        return (((ang + 540) % 360) - 180);
+    }
 
-    /*
+    /**
      * Gets the bearing in degrees between two vectors projected onto a plane
      */
     public static float GetBearing(Vector3 vec1, Vector3 vec2, Vector3 planeNormal)

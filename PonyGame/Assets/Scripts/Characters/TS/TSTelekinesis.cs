@@ -53,10 +53,6 @@ public class TSTelekinesis : MonoBehaviour
 
     [SerializeField]
     [Range(0, 40)]
-    private float m_throwVelocity = 15f;
-
-    [SerializeField]
-    [Range(0, 40)]
     private float m_maxThrowVelocity = 20f;
 
     [SerializeField]
@@ -80,6 +76,7 @@ public class TSTelekinesis : MonoBehaviour
     private float m_originalMaxAngVel;
     private float m_lastOrientTime;
     private bool m_reorienting = false;
+    private bool m_throwing = false;
 
     private TKObject m_tkTarget;
     public TKObject TKTarget
@@ -99,13 +96,16 @@ public class TSTelekinesis : MonoBehaviour
             TKObject newTarget = (m_tkTarget == null) ? FindTKTarget() : null;
             if (newTarget != null)
             {
-                m_magic.IsUsingMagic = true;
                 m_tkTarget = newTarget;
+
                 m_tkTarget.IsGrabbed = true;
                 m_tkTarget.SetColor(m_magic.MagicColor);
+                m_tkTarget.CollisionNotifier.OnCollision += OnTargetCollision;
                 m_originalMaxAngVel = m_tkTarget.Rigidbody.maxAngularVelocity;
                 m_tkTarget.Rigidbody.maxAngularVelocity = 40;
                 m_distance = Mathf.Max(Vector3.Distance(newTarget.transform.position, transform.position), m_minDistance);
+
+                m_magic.IsUsingMagic = true;
             }
             else
             {
@@ -118,20 +118,14 @@ public class TSTelekinesis : MonoBehaviour
             StopTK();
         }
 
-        if (m_tkTarget != null && Controls.JustDown(GameButton.Primary))
-        {
-            Vector3 dir = Camera.main.transform.forward;
-            if (GameController.CameraRig.LockTarget != null)
-            {
-                dir = (GameController.CameraRig.LockTarget.position - m_tkTarget.transform.position).normalized;
-            }
-            m_tkTarget.Rigidbody.velocity = Vector3.ClampMagnitude((m_throwVelocity / GetMassFactor()) * dir, m_maxThrowVelocity);
-            StopTK();
-        }
-        
         if (m_tkTarget != null)
         {
             m_distance = Mathf.Clamp(m_distance + (m_distanceSensitivity * Controls.AverageValue(GameAxis.TKDistance)), m_minDistance, m_maxGrabRange);
+
+            if (Controls.JustDown(GameButton.Primary))
+            {
+                m_throwing = true;
+            }
 
             if (Controls.JustDown(GameButton.Secondary))
             {
@@ -148,7 +142,7 @@ public class TSTelekinesis : MonoBehaviour
                     m_lastOrientTime = Time.time;
                 }
             }
-
+            
             if (!m_reorienting && Controls.IsDown(GameButton.Secondary))
             {
                 float rotateX = Controls.AverageValue(GameAxis.TKRotateX);
@@ -163,7 +157,7 @@ public class TSTelekinesis : MonoBehaviour
                     float angle;
                     Vector3 axis;
                     difference.ToAngleAxis(out angle, out axis);
-                    angle = (((angle + 540) % 360) - 180);
+                    angle = Utils.TransformAngle(angle);
                     float maxMagnitude = m_rotateSpeed / GetMassFactor();
                     m_tkTarget.Rigidbody.angularVelocity = Mathf.Clamp(angle, -maxMagnitude, maxMagnitude) * axis;
                 }
@@ -182,12 +176,26 @@ public class TSTelekinesis : MonoBehaviour
         if (m_tkTarget != null)
         {
             Transform cam = Camera.main.transform;
-            float camToPlayerDistance = Vector3.Dot(cam.forward, (transform.position - cam.position));
-            Vector3 targetPos = cam.position + (camToPlayerDistance + m_distance) * cam.forward;
-            Vector3 spherePos = m_distance * (targetPos - transform.position).normalized + transform.position;
-            Vector3 velocity = m_velocityScale * (spherePos - m_tkTarget.transform.position);
-            Vector3 bobVelocity = m_bobStrength * Mathf.Sin(Time.time * m_bobFrequency) * Vector3.up;
-            Vector3 targetVelocity = (Vector3.ClampMagnitude(velocity + bobVelocity, m_maxVelocity) / GetMassFactor()) + ((m_gravityOffset / m_velocitySmoothing) * -Physics.gravity);
+            Vector3 targetVelocity;
+            if (!m_throwing)
+            {
+                float camToPlayerDistance = Vector3.Dot(cam.forward, (transform.position - cam.position));
+                Vector3 targetPos = cam.position + (camToPlayerDistance + m_distance) * cam.forward;
+                Vector3 spherePos = m_distance * (targetPos - transform.position).normalized + transform.position;
+                Vector3 velocity = m_velocityScale * (spherePos - m_tkTarget.transform.position);
+                Vector3 bobVelocity = m_bobStrength * Mathf.Sin(Time.time * m_bobFrequency) * Vector3.up;
+                targetVelocity = Vector3.ClampMagnitude(velocity + bobVelocity, m_maxVelocity / GetMassFactor());
+            }
+            else
+            {
+                Vector3 dir = cam.forward;
+                if (GameController.CameraRig.LockTarget != null)
+                {
+                    dir = (GameController.CameraRig.LockTarget.position - m_tkTarget.transform.position).normalized;
+                }
+                targetVelocity = dir * m_maxVelocity / GetMassFactor();
+            }
+            targetVelocity += ((m_gravityOffset / m_velocitySmoothing) * -Physics.gravity);
             m_tkTarget.Rigidbody.velocity = Vector3.Lerp(m_tkTarget.Rigidbody.velocity, targetVelocity, m_velocitySmoothing * Time.deltaTime);
         }
     }
@@ -221,8 +229,11 @@ public class TSTelekinesis : MonoBehaviour
         if (m_tkTarget != null)
         {
             m_reorienting = false;
+            m_throwing = false;
             m_tkTarget.Rigidbody.maxAngularVelocity = m_originalMaxAngVel;
             m_tkTarget.IsGrabbed = false;
+            m_tkTarget.CollisionNotifier.OnCollision -= OnTargetCollision;
+
             m_tkTarget = null;
             m_magic.IsUsingMagic = false;
         }
@@ -230,6 +241,14 @@ public class TSTelekinesis : MonoBehaviour
 
     private float GetMassFactor()
     {
-        return m_tkTarget != null ? (m_massFactor * m_tkTarget.Rigidbody.mass) + (1 - m_massFactor) : 1;
+        return m_tkTarget != null ? (m_massFactor * Mathf.Max(m_tkTarget.Rigidbody.mass, 0.5f)) + (1 - m_massFactor) : 1;
+    }
+
+    private void OnTargetCollision()
+    {
+        if (m_throwing)
+        {
+            StopTK();
+        }
     }
 }

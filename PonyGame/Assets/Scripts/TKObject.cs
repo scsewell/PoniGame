@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class TKObject : MonoBehaviour
@@ -20,6 +21,12 @@ public class TKObject : MonoBehaviour
     private float m_baseEmissionRate;
     private Color m_color;
     private float m_emissionFraction;
+    
+    private CollisionNotifier m_collisionNotifier;
+    public CollisionNotifier CollisionNotifier
+    {
+        get { return m_collisionNotifier; }
+    }
 
     private bool m_isGrabbed = false;
     public bool IsGrabbed
@@ -27,9 +34,11 @@ public class TKObject : MonoBehaviour
         get { return m_isGrabbed; }
         set { m_isGrabbed = value; }
     }
-    
+
     private void Start()
     {
+        m_collisionNotifier = m_rigidbody.gameObject.AddComponent<CollisionNotifier>();
+
         m_renderer = GetComponent<MeshRenderer>();
         m_renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 
