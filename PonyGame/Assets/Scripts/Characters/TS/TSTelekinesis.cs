@@ -52,10 +52,6 @@ public class TSTelekinesis : MonoBehaviour
     private float m_angVelocityDamp = 0.05f;
 
     [SerializeField]
-    [Range(0, 40)]
-    private float m_maxThrowVelocity = 20f;
-
-    [SerializeField]
     [Range(0, 1)]
     private float m_massFactor = 1.0f;
 
@@ -151,9 +147,10 @@ public class TSTelekinesis : MonoBehaviour
             }
             else if (m_reorienting)
             {
-                if (Quaternion.Angle(Camera.main.transform.rotation, m_tkTarget.Rigidbody.transform.rotation) > 2)
+                Quaternion camRotReverse = Camera.main.transform.rotation * Quaternion.Euler(0, 180, 0);
+                if (Quaternion.Angle(camRotReverse, m_tkTarget.Rigidbody.transform.rotation) > 2)
                 {
-                    Quaternion difference = Camera.main.transform.rotation * Quaternion.Inverse(m_tkTarget.Rigidbody.transform.rotation);
+                    Quaternion difference = camRotReverse * Quaternion.Inverse(m_tkTarget.Rigidbody.transform.rotation);
                     float angle;
                     Vector3 axis;
                     difference.ToAngleAxis(out angle, out axis);

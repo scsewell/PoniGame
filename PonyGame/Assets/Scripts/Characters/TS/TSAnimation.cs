@@ -128,7 +128,8 @@ public class TSAnimation : MonoBehaviour
         {
             float lookBearingH = Utils.GetBearing(transform.forward, Camera.main.transform.forward, Vector3.up);
 
-            m_lookAtCamera = Mathf.Abs(lookBearingH) > (m_lookAtCamera ? headLookEndAng : headLookBeginAng);
+            m_lookAtCamera = Mathf.Abs(Utils.GetBearing(transform.forward, Camera.main.transform.forward, transform.up)) > (m_lookAtCamera ? headLookEndAng : headLookBeginAng) &&
+                                Vector3.Dot((Camera.main.transform.position - transform.position).normalized, transform.forward) > Mathf.Cos(Mathf.Deg2Rad * (m_lookAtCamera ? 75 : 70));
 
             float targetBearingH = m_lookAtCamera ? -Mathf.Sign(lookBearingH) * (180 - Mathf.Abs(lookBearingH)) : lookBearingH;
             targetH = Mathf.Clamp(targetBearingH / headHorizontalAng, -1, 1);

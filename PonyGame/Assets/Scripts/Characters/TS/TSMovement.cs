@@ -95,6 +95,7 @@ public class TSMovement : MonoBehaviour
     
     private float m_angVelocity = 0;
     private float m_staggerTime = Mathf.NegativeInfinity;
+    private float m_slipTime = Mathf.NegativeInfinity;
 
 
     private Vector3 m_actualVelocity = Vector3.zero;
@@ -121,6 +122,7 @@ public class TSMovement : MonoBehaviour
         get { return m_isRunning; }
     }
 
+
     void Start()
     {
         m_controller = GetComponent<CharacterController>();
@@ -143,6 +145,45 @@ public class TSMovement : MonoBehaviour
      * Moves the character based on the provided input
      */
     public void ExecuteMovement(MoveInputs inputs)
+    {
+        bool isStaggered = Utils.InDuration(m_staggerTime, staggerDuration);
+        
+        m_isRunning = inputs.Run;
+        float targetSpeed = inputs.Forward * (isStaggered ? staggerMoveSpeed : (inputs.Run ? runSpeed : walkSpeed));
+        GetComponent<Rigidbody>().AddForce(targetSpeed * transform.forward);
+        //m_attemptedSpeed = Mathf.MoveTowards(m_attemptedSpeed, targetSpeed, acceleration * Time.deltaTime);
+        //Vector3 moveVelocity = transform.forward * m_attemptedSpeed;
+
+        Vector3 lowerSphereCenter = transform.TransformPoint(m_controller.center) + Vector3.down * (m_controller.height * 0.5f - (m_controller.radius + 0.01f));
+        RaycastHit[] hits = Physics.SphereCastAll(lowerSphereCenter, m_controller.radius, Vector3.down, 0.02f + m_controller.skinWidth, m_groundSpherecast, QueryTriggerInteraction.Ignore);
+        m_isGrounded = hits != null && hits.Length > 0;
+
+        // if there is only one hit, Unity doesn't always return the correct normal, using Vector3.Up instead with SphereCastAll. SphereCast works however...
+        if (hits != null && hits.Length == 1)
+        {
+            RaycastHit hit;
+            m_isGrounded = Physics.SphereCast(lowerSphereCenter, m_controller.radius, Vector3.down, out hit, 0.02f + m_controller.skinWidth, m_groundSpherecast, QueryTriggerInteraction.Ignore);
+            hits[0] = hit;
+        }
+
+        float maxTurnSpeed = isStaggered ? staggerRotateSpeed : (m_isGrounded ? rotSpeed : airRotSpeed);
+        float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.Turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.Turn / 180);
+        m_angVelocity = Mathf.Clamp(Mathf.MoveTowards(m_angVelocity, targetAngVelocity, maxTorque * Time.deltaTime), -maxTurnSpeed, maxTurnSpeed);
+
+        float deltaRotation = m_angVelocity * Time.deltaTime;
+        if (Mathf.Abs(inputs.Turn) < Mathf.Abs(deltaRotation))
+        {
+            deltaRotation = inputs.Turn;
+            m_angVelocity = 0;
+        }
+
+        transform.Rotate(0, deltaRotation, 0, Space.Self);
+    }
+
+    /*
+     * Moves the character based on the provided input
+     */
+    public void ExecuteMovementAA(MoveInputs inputs)
     {
         bool isStaggered = Utils.InDuration(m_staggerTime, staggerDuration);
 
@@ -171,10 +212,15 @@ public class TSMovement : MonoBehaviour
 
             NormalInfo normalInfo = GetGroundNormal(normalSamples, groundSmoothRadius, m_controller.slopeLimit, 90);
             alignNormal = normalInfo.limitedNormal ?? (normalInfo.normal ?? Vector3.up);
-            
-            if (Vector3.Dot(bestHit.normal, Vector3.up) < Mathf.Cos(m_controller.slopeLimit * Mathf.Deg2Rad) && moveVelocity.y <= 0)
+
+            bool slipping = Vector3.Dot(bestHit.normal, Vector3.up) < Mathf.Cos(m_controller.slopeLimit / 2 * Mathf.Deg2Rad) && moveVelocity.y <= 0;
+            if (slipping || (Time.time - m_slipTime) < 1.0f)
             {
-                moveVelocity = Vector3.ProjectOnPlane(Vector3.down * 150 * Time.deltaTime, bestHit.normal);
+                if (slipping)
+                {
+                    m_slipTime = Time.deltaTime;
+                }
+                moveVelocity = m_actualVelocity + Vector3.ProjectOnPlane(Physics.gravity * Time.deltaTime, bestHit.normal);
             }
             else if (inputs.Jump)
             {
