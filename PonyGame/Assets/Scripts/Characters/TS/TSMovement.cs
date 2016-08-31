@@ -146,25 +146,32 @@ public class TSMovement : MonoBehaviour
      */
     public void ExecuteMovement(MoveInputs inputs)
     {
-        bool isStaggered = Utils.InDuration(m_staggerTime, staggerDuration);
-        
-        m_isRunning = inputs.Run;
-        float targetSpeed = inputs.Forward * (isStaggered ? staggerMoveSpeed : (inputs.Run ? runSpeed : walkSpeed));
-        GetComponent<Rigidbody>().AddForce(targetSpeed * transform.forward);
-        //m_attemptedSpeed = Mathf.MoveTowards(m_attemptedSpeed, targetSpeed, acceleration * Time.deltaTime);
-        //Vector3 moveVelocity = transform.forward * m_attemptedSpeed;
+        Rigidbody m_rigidbody = GetComponent<Rigidbody>();
+        CapsuleCollider m_collider = GetComponent<CapsuleCollider>();
 
-        Vector3 lowerSphereCenter = transform.TransformPoint(m_controller.center) + Vector3.down * (m_controller.height * 0.5f - (m_controller.radius + 0.01f));
-        RaycastHit[] hits = Physics.SphereCastAll(lowerSphereCenter, m_controller.radius, Vector3.down, 0.02f + m_controller.skinWidth, m_groundSpherecast, QueryTriggerInteraction.Ignore);
+        Vector3 lowerSphereCenter = transform.TransformPoint(m_collider.center) + Vector3.down * (m_collider.height * 0.5f - (m_collider.radius + 0.01f));
+        RaycastHit[] hits = Physics.SphereCastAll(lowerSphereCenter, m_collider.radius, Vector3.down, 0.02f, m_groundSpherecast, QueryTriggerInteraction.Ignore);
         m_isGrounded = hits != null && hits.Length > 0;
 
         // if there is only one hit, Unity doesn't always return the correct normal, using Vector3.Up instead with SphereCastAll. SphereCast works however...
         if (hits != null && hits.Length == 1)
         {
             RaycastHit hit;
-            m_isGrounded = Physics.SphereCast(lowerSphereCenter, m_controller.radius, Vector3.down, out hit, 0.02f + m_controller.skinWidth, m_groundSpherecast, QueryTriggerInteraction.Ignore);
+            m_isGrounded = Physics.SphereCast(lowerSphereCenter, m_collider.radius, Vector3.down, out hit, 0.02f, m_groundSpherecast, QueryTriggerInteraction.Ignore);
             hits[0] = hit;
         }
+
+        bool isStaggered = Utils.InDuration(m_staggerTime, staggerDuration);
+        
+        m_isRunning = inputs.Run;
+        float targetSpeed = inputs.Forward * (isStaggered ? staggerMoveSpeed : (inputs.Run ? runSpeed : walkSpeed));
+        if (m_isGrounded)
+        {
+            m_rigidbody.AddForce(targetSpeed * 40 * transform.forward);
+            m_rigidbody.AddForce(-0.02f * m_rigidbody.velocity);
+        }
+        //m_attemptedSpeed = Mathf.MoveTowards(m_attemptedSpeed, targetSpeed, acceleration * Time.deltaTime);
+        //Vector3 moveVelocity = transform.forward * m_attemptedSpeed;
 
         float maxTurnSpeed = isStaggered ? staggerRotateSpeed : (m_isGrounded ? rotSpeed : airRotSpeed);
         float targetAngVelocity = forwardAngVelocity * Mathf.Sign(inputs.Turn) + (oppositeAngVelocity - forwardAngVelocity) * (inputs.Turn / 180);
