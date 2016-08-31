@@ -1,0 +1,35 @@
+Magic bar
+More flinch animations (for a total of 3)
+Magic sounds
+Hurt sound
+player rigidbody pushing needs to be improved (clamp velocity)
+Fix coords of rigidbodies
+
+TK
+Blink Teleportw
+Compositional Magic (see magica, ambient prologue)
+Ice (everyone skates on, including player!)
+Sheild
+Buck attack
+weak magic projectiles
+
+Try to focus on stunning enemies, with direct attacks being weak. Player should be very vunerable while charging strong magic attacks, should
+need to stun enemies to be able to pull off with out damage.
+
+
+
+
+
+
+
+Consider:
+finegrained interpolation thresholding (only checking subset of properties and/or only affecting subset of properties)
+(e.g. platforms moving up or down only have changing displacement, cheaper to just check/change that?)
+(and many things don't rescale ever or frequently)
+IInterpolated constructor should be passed initial threshold values, which it calls SetThreshold with
+(avoids needing to call SetThreshold right after constructing the IInterpolated)
+only store value of useThreshold in Interpolator and thresholds in IInterpolated; at most, leave Interpolators with convenience accessors
+
+Light Baking (Realtime/Baked/Both?)
+Ability to look around somewhat while locked on.
+Change lock poles, "innacurate" part of projection, to avoid objects we want to lock on.
