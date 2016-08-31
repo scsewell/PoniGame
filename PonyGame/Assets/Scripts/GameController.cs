@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     private static Transform m_player;
     private static Transform m_harness;
     private static Transform m_cart;
+    private static Transform[] m_targetable;
     private static bool m_playerSwitched = false;
 
 
@@ -19,6 +20,11 @@ public class GameController : MonoBehaviour
     {
         m_harness = harness;
         m_cart = harness.root;
+
+        m_targetable = new Transform[3];
+        m_targetable[0] = characters[0];
+        m_targetable[1] = characters[1];
+        m_targetable[2] = m_cart;
     }
 
     void Update()
@@ -80,7 +86,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No player!");
+            Debug.LogError("No player set!");
             return null;
         }
     }
@@ -94,7 +100,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No harness!");
+            Debug.LogError("No harness set!");
             return null;
         }
     }
@@ -108,7 +114,21 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No cart!");
+            Debug.LogError("No cart set!");
+            return null;
+        }
+    }
+
+    // returns the objects targetable by enemies
+    public static Transform[] GetTargetable()
+    {
+        if (m_targetable != null)
+        {
+            return m_targetable;
+        }
+        else
+        {
+            Debug.LogError("No targetable objects set!");
             return null;
         }
     }

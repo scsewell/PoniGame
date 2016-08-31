@@ -13,6 +13,7 @@ public class SetRenderOrder : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+        /*
 		if (GetComponent<MeshRenderer>() != null)
 		{
 			foreach (Material mat in GetComponent<MeshRenderer>().materials)
@@ -28,5 +29,6 @@ public class SetRenderOrder : MonoBehaviour
 				mat.renderQueue = renderQue;
 			}
 		}
+        */
 	}
 }

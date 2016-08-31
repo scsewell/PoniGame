@@ -110,7 +110,7 @@ public class TSMovement : MonoBehaviour
 
             if (move.magnitude > 0)
             {
-                inputs.turn = GetBearing(transform.forward, Camera.main.transform.rotation * move);
+                inputs.turn = Utils.GetBearing(transform.forward, Camera.main.transform.rotation * move);
                 inputs.forward = move.magnitude;
             }
             inputs.run = Input.GetKey(KeyCode.LeftShift) || device.RightTrigger.State ? !m_run : m_run;
@@ -122,16 +122,6 @@ public class TSMovement : MonoBehaviour
         {
             ExecuteMovement(GetComponent<TSAI>().GetMovement());
         }
-    }
-
-    /*
-     * Gets the bearing in degrees between two vectors as viewed from above
-     */
-    public float GetBearing(Vector3 dir1, Vector3 dir2)
-    {
-        float vec1 = Quaternion.LookRotation(Vector3.ProjectOnPlane(dir1, Vector3.up), Vector3.up).eulerAngles.y;
-        float vec2 = Quaternion.LookRotation(Vector3.ProjectOnPlane(dir2, Vector3.up), Vector3.up).eulerAngles.y;
-        return -Mathf.DeltaAngle(vec2, vec1);
     }
 
 
@@ -154,7 +144,7 @@ public class TSMovement : MonoBehaviour
         if (m_controller.isGrounded)
         {
             // align the character to the ground being stood on
-            Vector3 normal = GetGroundNormal(normalSamples, groundSmoothRadius);
+            Vector3 normal = Utils.GetGroundNormal(transform, m_controller, normalSamples, groundSmoothRadius, debugView);
             Quaternion targetRot = Quaternion.LookRotation(Vector3.Cross(transform.right, normal), normal);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * groundAlignSpeed);
 
@@ -227,49 +217,7 @@ public class TSMovement : MonoBehaviour
         body.AddForceAtPosition(pushDir * 0.5f, hit.point, ForceMode.Impulse);
     }
 
-
-    /*
-     * Samples the ground beneath the character in a circle and returns the average normal of the ground at those points
-     */
-    private Vector3 GetGroundNormal(int samples, float radius)
-    {
-        Vector3 normal = Vector3.zero;
-
-        for (int i = 0; i < samples; i++)
-        {
-            Vector3 offset = Quaternion.Euler(0, i * (360.0f / samples), 0) * Vector3.forward * radius;
-            Vector3 SamplePos = transform.TransformPoint(offset + m_controller.center);
-            Vector3 SampleDir = transform.TransformPoint(offset + Vector3.down * 0.05f);
-           
-            RaycastHit hit;
-            if (Physics.Linecast(SamplePos, SampleDir, out hit) && hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground") && Vector3.Dot(hit.normal, Vector3.up) > 0.75f)
-            {
-                normal += hit.normal;
-
-                if (debugView)
-                {
-                    Debug.DrawLine(SamplePos, hit.point, Color.cyan);
-                    Debug.DrawLine(hit.point, hit.point + hit.normal * 0.25f, Color.yellow);
-                }
-            }
-        }
-
-        if (normal != Vector3.zero)
-        {
-            if (debugView)
-            {
-                Debug.DrawLine(transform.position, transform.position + normal.normalized * 0.35f, Color.red);
-            }
-
-            return normal.normalized;
-        }
-        else
-        {
-            return Vector3.up;
-        }
-    }
-
-
+    
     /*
      * Tries to hitch the pony and the cart
      */

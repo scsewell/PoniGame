@@ -9,11 +9,11 @@
  
 	SubShader 
 	{
-		Tags { "Queue" = "Geometry" }
+		Tags { "RenderType" = "Opaque" "Queue" = "Geometry" }
 		Name "BASE"
 		ZWrite On
-		//ZTest LEqual
-		//Blend SrcAlpha OneMinusSrcAlpha
+		ZTest LEqual
+		Blend SrcAlpha OneMinusSrcAlpha
 	
 		CGPROGRAM
 		#pragma surface surf Lambert

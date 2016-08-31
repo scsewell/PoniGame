@@ -1,0 +1,2072 @@
+fileFormatVersion: 2
+guid: 2f00a7c7e71efa14b87b3e6337f198b1
+timeCreated: 1444597349
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: chest
+    100002: chest_end
+    100004: chestCTR
+    100006: Eye.l
+    100008: Eye.l_end
+    100010: Eye.r
+    100012: Eye.r_end
+    100014: EyeCTR.l
+    100016: EyeCTR.r
+    100018: foreLeg1.l
+    100020: foreLeg1.l_end
+    100022: foreLeg1.r
+    100024: foreLeg1.r_end
+    100026: foreLeg1IK.l
+    100028: foreLeg1IK.r
+    100030: foreLeg2.l
+    100032: foreLeg2.l_end
+    100034: foreLeg2.r
+    100036: foreLeg2.r_end
+    100038: foreLeg2IK.l
+    100040: foreLeg2IK.r
+    100042: foreLeg3.l
+    100044: foreLeg3.r
+    100046: foreLeg3IK.l
+    100048: foreLeg3IK.r
+    100050: foreLeg4.l
+    100052: foreLeg4.l_end
+    100054: foreLeg4.r
+    100056: foreLeg4.r_end
+    100058: foreLeg4CTR.l
+    100060: foreLeg4CTR.l_end
+    100062: foreLeg4CTR.r
+    100064: foreLeg4CTR.r_end
+    100066: Head
+    100068: HeadCTR
+    100070: hindLeg1.l
+    100072: hindLeg1.l_end
+    100074: hindLeg1.r
+    100076: hindLeg1.r_end
+    100078: hindLeg1IK.l
+    100080: hindLeg1IK.r
+    100082: hindLeg2.l
+    100084: hindLeg2.l_end
+    100086: hindLeg2.r
+    100088: hindLeg2.r_end
+    100090: hindLeg2IK.l
+    100092: hindLeg2IK.r
+    100094: hindLeg3.l
+    100096: hindLeg3.l_end
+    100098: hindLeg3.r
+    100100: hindLeg3.r_end
+    100102: hindLeg3IK.l
+    100104: hindLeg3IK.r
+    100106: hindLeg4.l
+    100108: hindLeg4.r
+    100110: hindLeg4IK.l
+    100112: hindLeg4IK.r
+    100114: hindLeg5.l
+    100116: hindLeg5.l_end
+    100118: hindLeg5.r
+    100120: hindLeg5.r_end
+    100122: hindLeg5CTR.l
+    100124: hindLeg5CTR.l_end
+    100126: hindLeg5CTR.r
+    100128: hindLeg5CTR.r_end
+    100130: Hip
+    100132: Hip_end
+    100134: HipCTR
+    100136: holz1
+    100138: holz1_end
+    100140: holz2
+    100142: holz2_end
+    100144: holz3
+    100146: holz3_end
+    100148: jaw
+    100150: jaw_end
+    100152: jawCTR
+    100154: neck
+    100156: neck_end
+    100158: neckCTR
+    100160: Root
+    100162: shoulder.l
+    100164: shoulder.l_end
+    100166: shoulder.r
+    100168: shoulder.r_end
+    100170: shoulderCTR.l
+    100172: shoulderCTR.r
+    100174: tail1
+    100176: tail1_end
+    100178: tail1CTR
+    100180: tail2
+    100182: tail2_end
+    100184: tail2CTR
+    100186: tail3
+    100188: tail3_end
+    100190: tail3CTR
+    100192: //RootNode
+    100194: TWmesh
+    100196: TWolfRig
+    400000: chest
+    400002: chest_end
+    400004: chestCTR
+    400006: Eye.l
+    400008: Eye.l_end
+    400010: Eye.r
+    400012: Eye.r_end
+    400014: EyeCTR.l
+    400016: EyeCTR.r
+    400018: foreLeg1.l
+    400020: foreLeg1.l_end
+    400022: foreLeg1.r
+    400024: foreLeg1.r_end
+    400026: foreLeg1IK.l
+    400028: foreLeg1IK.r
+    400030: foreLeg2.l
+    400032: foreLeg2.l_end
+    400034: foreLeg2.r
+    400036: foreLeg2.r_end
+    400038: foreLeg2IK.l
+    400040: foreLeg2IK.r
+    400042: foreLeg3.l
+    400044: foreLeg3.r
+    400046: foreLeg3IK.l
+    400048: foreLeg3IK.r
+    400050: foreLeg4.l
+    400052: foreLeg4.l_end
+    400054: foreLeg4.r
+    400056: foreLeg4.r_end
+    400058: foreLeg4CTR.l
+    400060: foreLeg4CTR.l_end
+    400062: foreLeg4CTR.r
+    400064: foreLeg4CTR.r_end
+    400066: Head
+    400068: HeadCTR
+    400070: hindLeg1.l
+    400072: hindLeg1.l_end
+    400074: hindLeg1.r
+    400076: hindLeg1.r_end
+    400078: hindLeg1IK.l
+    400080: hindLeg1IK.r
+    400082: hindLeg2.l
+    400084: hindLeg2.l_end
+    400086: hindLeg2.r
+    400088: hindLeg2.r_end
+    400090: hindLeg2IK.l
+    400092: hindLeg2IK.r
+    400094: hindLeg3.l
+    400096: hindLeg3.l_end
+    400098: hindLeg3.r
+    400100: hindLeg3.r_end
+    400102: hindLeg3IK.l
+    400104: hindLeg3IK.r
+    400106: hindLeg4.l
+    400108: hindLeg4.r
+    400110: hindLeg4IK.l
+    400112: hindLeg4IK.r
+    400114: hindLeg5.l
+    400116: hindLeg5.l_end
+    400118: hindLeg5.r
+    400120: hindLeg5.r_end
+    400122: hindLeg5CTR.l
+    400124: hindLeg5CTR.l_end
+    400126: hindLeg5CTR.r
+    400128: hindLeg5CTR.r_end
+    400130: Hip
+    400132: Hip_end
+    400134: HipCTR
+    400136: holz1
+    400138: holz1_end
+    400140: holz2
+    400142: holz2_end
+    400144: holz3
+    400146: holz3_end
+    400148: jaw
+    400150: jaw_end
+    400152: jawCTR
+    400154: neck
+    400156: neck_end
+    400158: neckCTR
+    400160: Root
+    400162: shoulder.l
+    400164: shoulder.l_end
+    400166: shoulder.r
+    400168: shoulder.r_end
+    400170: shoulderCTR.l
+    400172: shoulderCTR.r
+    400174: tail1
+    400176: tail1_end
+    400178: tail1CTR
+    400180: tail2
+    400182: tail2_end
+    400184: tail2CTR
+    400186: tail3
+    400188: tail3_end
+    400190: tail3CTR
+    400192: //RootNode
+    400194: TWmesh
+    400196: TWolfRig
+    4300000: TWmesh
+    7400000: TWolfRig|Attack
+    7400002: TWolfRig|FallApart
+    7400004: TWolfRig|Hurt
+    7400006: TWolfRig|Idle
+    7400008: TWolfRig|Reassamble
+    7400010: TWolfRig|Run
+    7400012: TWolfRig|Walk
+    7400014: TWolfRig|AttackShort
+    9500000: //RootNode
+    13700000: TWmesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: TWolfRig|Attack
+      takeName: TWolfRig|Attack
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TWolfRig|FallApart
+      takeName: TWolfRig|FallApart
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TWolfRig|Hurt
+      takeName: TWolfRig|Hurt
+      firstFrame: 1
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TWolfRig|Idle
+      takeName: TWolfRig|Idle
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TWolfRig|Reassamble
+      takeName: TWolfRig|Reassamble
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TWolfRig|Run
+      takeName: TWolfRig|Run
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TWolfRig|Walk
+      takeName: TWolfRig|Walk
+      firstFrame: 0
+      lastFrame: 51
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TWolfRig|AttackShort
+      takeName: TWolfRig|AttackShort
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: TWmesh
+        weight: 1
+      - path: TWolfRig
+        weight: 1
+      - path: TWolfRig/Root
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg3.l/foreLeg4.l/foreLeg4.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.l/foreLeg4CTR.l/foreLeg4CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg3.r/foreLeg4.r/foreLeg4.r_end
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r
+        weight: 1
+      - path: TWolfRig/Root/foreLeg3IK.r/foreLeg4CTR.r/foreLeg4CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg4.l/hindLeg5.l/hindLeg5.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.l/hindLeg5CTR.l/hindLeg5CTR.l_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg4.r/hindLeg5.r/hindLeg5.r_end
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r
+        weight: 1
+      - path: TWolfRig/Root/hindLeg4IK.r/hindLeg5CTR.r/hindLeg5CTR.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/chest/chest_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/holz2/holz2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.l/Eye.l/Eye.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/Head/EyeCTR.r/Eye.r/Eye.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/HeadCTR/jawCTR/jaw/jaw_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/holz1/holz1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/neckCTR/neck/neck_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg1.l/foreLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/foreLeg1IK.l/foreLeg2IK.l/foreLeg2.l/foreLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.l/shoulder.l/shoulder.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg1.r/foreLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/foreLeg1IK.r/foreLeg2IK.r/foreLeg2.r/foreLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/chestCTR/shoulderCTR.r/shoulder.r/shoulder.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg1.l/hindLeg1.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg2.l/hindLeg2.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.l/hindLeg2IK.l/hindLeg3IK.l/hindLeg3.l/hindLeg3.l_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg1.r/hindLeg1.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg2.r/hindLeg2.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/hindLeg1IK.r/hindLeg2IK.r/hindLeg3IK.r/hindLeg3.r/hindLeg3.r_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/Hip/Hip_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/holz3/holz3_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail1/tail1_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail2/tail2_end
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3
+        weight: 1
+      - path: TWolfRig/Root/HipCTR/tail1CTR/tail2CTR/tail3CTR/tail3/tail3_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

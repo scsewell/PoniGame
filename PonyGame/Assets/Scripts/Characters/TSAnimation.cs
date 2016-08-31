@@ -45,7 +45,7 @@ public class TSAnimation : MonoBehaviour
     {
         bool isPlayer = gameObject.tag == "Player";
 
-        float lookBearingH = m_movement.GetBearing(transform.forward, Camera.main.transform.forward);
+        float lookBearingH = Utils.GetBearing(transform.forward, Camera.main.transform.forward);
         bool faceCamera = Mathf.Abs(lookBearingH) > headReverseAng;
         float targetBearingH = faceCamera ? -Mathf.Sign(lookBearingH) * (180 - Mathf.Abs(lookBearingH)) : lookBearingH;
         float targetH = Mathf.Clamp(targetBearingH / headHorizontalAng, -1, 1);
